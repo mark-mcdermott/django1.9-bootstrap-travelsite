@@ -1,0 +1,30 @@
+- model: webapp.flight
+  pk: 1
+  fields:
+    depart_city: Philadelphia
+    depart_state: PA
+    depart_datetime: 2018-12-30 13:01
+    arrive_city: Dallas
+    arrive_state: TX
+    arrive_datetime: 2019-01-01 10:01
+    price: 100.00
+- model: webapp.flight
+  pk: 2
+  fields:
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-10-30 11:02
+    arrive_city: Houston
+    arrive_state: TX
+    arrive_datetime: 2018-10-31 12:30
+    price: 100.00
+
+- model: webapp.hotel
+  pk: 1
+  fields:
+    name: The W
+    street: 7683 Chavez St
+    city: Austin
+    state: TX
+    zip: 78757
+    price: 200.00
