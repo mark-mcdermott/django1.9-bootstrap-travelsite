@@ -1,0 +1,160 @@
+---
+
+# airlines #
+
+- model: proto.airline
+  pk: 1
+  fields:
+    name: United Airlines
+
+- model: proto.airline
+  pk: 2
+  fields:
+    name: Delta Air Lines
+
+- model: proto.airline
+  pk: 3
+  fields:
+    name: American Airlines
+
+- model: proto.airline
+  pk: 4
+  fields:
+    name: American Airlines
+
+- model: proto.airline
+  pk: 5
+  fields:
+    name: JetBlue
+
+# cities #
+
+- model: proto.city
+  pk: 1
+  fields:
+    name: Austin
+    state: TX
+    country: US
+
+- model: proto.city
+  pk: 2
+  fields:
+    name: Boston
+    state: MA
+    country: US
+
+- model: proto.city
+  pk: 3
+  fields:
+    name: Chicago
+    state: IL
+    country: US
+
+- model: proto.city
+  pk: 4
+  fields:
+    name: San Francisco
+    state: CA
+    country: US
+
+- model: proto.city
+  pk: 5
+  fields:
+    name: Ciudad de Mexico
+    state: DF
+    country: MX
+
+# hotels #
+
+- model: proto.hotel
+  pk: 1
+  fields:
+    name: Omni
+    cities: [1,2,3,4,5]
+    number_of_rooms: 250
+
+- model: proto.hotel
+  pk: 2
+  fields:
+    name: Wyndham
+    cities: [1,2,3,4,5]
+    number_of_rooms: 150
+
+- model: proto.hotel
+  pk: 3
+  fields:
+    name: Four Seasons
+    cities: [1,2,3,4,5]
+    number_of_rooms: 85
+
+- model: proto.hotel
+  pk: 4
+  fields:
+    name: Sheraton
+    cities: [1,2,3,4,5]
+    number_of_rooms: 185
+
+- model: proto.hotel
+  pk: 5
+  fields:
+    name: Hyatt
+    cities: [1,2,3,4,5]
+    number_of_rooms: 215
+
+- model: proto.hotel
+  pk: 6
+  fields:
+    name: Motel 6
+    cities: [1,2,3,4]
+    number_of_rooms: 47
+
+- model: proto.hotel
+  pk: 7
+  fields:
+    name: Driskill Hotel
+    cities: [1]
+    number_of_rooms: 55
+
+- model: proto.hotel
+  pk: 8
+  fields:
+    name: The Liberty
+    cities: [2]
+    number_of_rooms: 55
+
+- model: proto.hotel
+  pk: 9
+  fields:
+    name: The Drake Hotel
+    cities: [3]
+    number_of_rooms: 535
+
+- model: proto.hotel
+  pk: 10
+  fields:
+    name: W Mexico City
+    cities: [5]
+    number_of_rooms: 335
+
+# flights #
+
+- model: proto.flight
+  pk: 1
+  fields:
+    flight_number: 'Delta 1868'
+    airline: 2
+    source: 1
+    destination: 2
+    departure_time: '19:30:00'
+    arrival_time: '22:56:00'
+    miles: 1000
+    international: False
+
+# flight instances #
+
+- model: proto.flightinstance
+  pk: 1
+  fields:
+    flight: 1
+    date: '2019-01-01'
+    status: 'FF'
