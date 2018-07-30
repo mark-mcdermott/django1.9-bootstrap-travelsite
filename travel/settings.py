@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'webapp',
     'proto',
+    'snippets',
 ]
 
 MIDDLEWARE_CLASSES = [
