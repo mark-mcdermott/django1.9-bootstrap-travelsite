@@ -1,13 +1,13 @@
-from django.conf import settings
 from django.conf.urls import url, include
-from django.conf.urls.static import static
-from django.contrib import admin
-from django.views.generic import RedirectView
+from rest_framework import routers
+from proto import views
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^proto/', include('proto.urls')),
-    url(r'^webapp/', include('webapp.urls')),
-    url('', RedirectView.as_view(url='/webapp/', permanent=False)),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    url(r'^', include(router.urls)),
+    url(r'api_auth/', include('rest_framework.urls', namespace='rest_framework')),
+]
 
