@@ -2,5 +2,5 @@ body{padding-top:120px}pre{background:#f7f7f9}@media (min-width: 768px){body>.na
 
 p.instruction { font-size: 125%; }
 div.browse { margin-top: 50px; }
-form.customer-wants input {   width: 18px; height: 18px; }
+form.customer-wants input[type="checkbox"] {   width: 18px; height: 18px; }
 form.customer-wants label { margin-left: 5px; margin-right: 20px; font-size: 125%; }
