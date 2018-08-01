@@ -16,6 +16,10 @@ def flightsApi(request):
         tocity = request.GET.get('tocity', '')
         if fromcity is '' and tocity is '':
             flights = Flight.objects.all()
+        elif tocity is '':
+            flights = Flight.objects.filter(depart_city__iexact=fromcity)
+        elif fromcity is '':
+            flights = Flight.objects.filter(arrive_city__iexact=tocity)
         else:
             flights = Flight.objects.filter(depart_city__iexact=fromcity,arrive_city__iexact=tocity)
         flights_serialized = serializers.serialize('json', flights)
