@@ -38,3 +38,15 @@ def hotelsApi(request):
         return JsonResponse(hotels_serialized, safe=False)
     elif request.method == "POST":
         return HttpResponse("post request")
+
+# stubs
+def bookingApi(request):
+    return HttpResponse("booking api stub")
+def reservationApi(request):
+    return HttpResponse("reservation api stub")
+def feedbackApi(request):
+    return HttpResponse("feedback api stub")
+def historyApi(request):
+    return HttpResponse("history api stub")
+def dealsApi(request):
+    return HttpResponse("deals api stub")
