@@ -1,40 +1,40 @@
 - model: webapp.flight
   pk: 1
   fields:
-    depart_city: philadelphia
+    depart_city: Philadelphia
     depart_state: PA
     depart_datetime: 2018-12-30 13:01
-    arrive_city: dallas
+    arrive_city: Dallas
     arrive_state: TX
     arrive_datetime: 2019-01-01 10:01
     price: 100.00
 - model: webapp.flight
   pk: 2
   fields:
-    depart_city: austin
+    depart_city: Austin
     depart_state: TX
     depart_datetime: 2018-10-30 11:02
-    arrive_city: houston
+    arrive_city: Houston
     arrive_state: TX
     arrive_datetime: 2018-10-31 12:30
     price: 200.00
 - model: webapp.flight
   pk: 3
   fields:
-    depart_city: oklahoma city
+    depart_city: Oklahoma City
     depart_state: OK
     depart_datetime: 2018-09-03 04:15
-    arrive_city: dallas
+    arrive_city: Dallas
     arrive_state: TX
     arrive_datetime: 2018-09-03 06:01
     price: 58.00
 - model: webapp.flight
   pk: 4
   fields:
-    depart_city: santa clara
+    depart_city: Santa Clara
     depart_state: CA
     depart_datetime: 2018-11-30 13:01
-    arrive_city: new york
+    arrive_city: New York
     arrive_state: NY
     arrive_datetime: 2019-12-01 10:01
     price: 100.00
@@ -44,7 +44,7 @@
   fields:
     name: The W
     street: 7683 Chavez St
-    city: austin
+    city: Austin
     state: TX
     zip: 78705
     price: 200.00
@@ -53,7 +53,7 @@
   fields:
     name: Red Roof Inn
     street: 1234 Guadalupe St
-    city: austin
+    city: Austin
     state: TX
     zip: 78757
     price: 200.00
@@ -62,7 +62,7 @@
   fields:
     name: Riata
     street: 150 Test St
-    city: dallas
+    city: Dallas
     state: TX
     zip: 78758
     price: 150.00
