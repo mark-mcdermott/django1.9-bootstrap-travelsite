@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^reservation-api$', views.reservationApi, name='reservation api'),
     url(r'^feedback-api$', views.feedbackApi, name='feedback api'),
     url(r'^history-api$', views.historyApi, name='history api'),
-    url(r'^deals-api$', views.dealsApi, name='deals api')
+    url(r'^deals-api$', views.dealsApi, name='deals api')#,
+    #url(r'^$', views.login, name='login')
 
 ]
