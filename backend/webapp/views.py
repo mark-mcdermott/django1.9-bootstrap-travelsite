@@ -23,6 +23,8 @@ def flightsApi(request):
         else:
             flights = Flight.objects.filter(depart_city__iexact=fromcity,arrive_city__iexact=tocity)
         flights_serialized = serializers.serialize('json', flights)
+        # flights_serialized['Access-Control-Allow-Origin'] = '*'
+        # flights_serialized['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS, PUT'
         return JsonResponse(flights_serialized, safe=False)
     elif request.method == "POST":
         return HttpResponse("post request")
