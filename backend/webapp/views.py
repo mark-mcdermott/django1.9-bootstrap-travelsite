@@ -104,18 +104,15 @@ def feedbackApi(request):
 
 @csrf_exempt
 def dealsApi(request):
-    if request.method == "POST":
-        d = Deal(
-            arrive_city = request.POST.get("arrive_city", ""),
-            arrive_state = request.POST.get("arrive_state", ""),
-            arrive_datetime = request.POST.get("arrive_datetime", ""),
-            depart_city = request.POST.get("depart_city", ""),
-            depart_state = request.POST.get("depart_state", ""),
-            depart_datetime = request.POST.get("depart_datetime", ""),
-            price_low = request.POST.get("price_low", ""),
-            price_high = request.POST.get("price_high", ""),
-        )
-        d.save()
+    if request.method == "GET":
+        city = request.GET.get('city', '')
+        if city is '':
+            deals = Deal.objects.all()
+        else:
+            deals = Deal.objects.filter(arrive_city=city)
+        deals_serialized = serializers.serialize('json', deals)
+        return JsonResponse(deals_serialized, safe=False)
+    elif request.method == "POST":
         return HttpResponse("deals post request")
 
 @csrf_exempt

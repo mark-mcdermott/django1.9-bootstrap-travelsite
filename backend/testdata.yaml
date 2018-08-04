@@ -82,3 +82,14 @@
     credit_number: 1234567890123456
     credit_expiration: 2018-11-30 13:01
     credit_security: 123
+- model: webapp.deal
+  pk: 1
+  fields:
+    arrive_city: Philadelphia
+    arrive_state: PA
+    arrive_datetime: 2018-11-30 13:01
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-11-30 11:01
+    price_low: 100
+    price_high: 200
