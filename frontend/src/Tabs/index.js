@@ -12,6 +12,8 @@ import Typography from '@material-ui/core/Typography';
 import './tabs.css';
 import Flight from '../Flight';
 import Hotel from '../Hotel';
+import HotelFlights from '../HotelFlights';
+import Deals from '../Deals';
 
 function TabContainer(props) {
   return (
@@ -77,8 +79,8 @@ class ScrollableTabsButtonForce extends React.Component {
         </AppBar>
         {value === 0 && <Flight className="tabContent" />}
         {value === 1 && <Hotel className="tabContent" />}
-        {value === 2 && <TabContainer className="tabContent">Item Three</TabContainer>}
-        {value === 3 && <TabContainer className="tabContent">Item Four</TabContainer>}
+        {value === 2 && <HotelFlights className="tabContent" />}
+        {value === 3 && <Deals className="tabContent" />}
       </div>
     );
   }

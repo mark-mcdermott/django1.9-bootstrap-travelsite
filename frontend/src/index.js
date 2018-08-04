@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom'
 import './index.css';
-import App from './App';
+import AppRoute from './Router';
 
-ReactDOM.render(<App />, document.getElementById('page'));
+ReactDOM.render(<AppRoute />, document.getElementById('page'));
