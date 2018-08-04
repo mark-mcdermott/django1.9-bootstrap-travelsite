@@ -149,3 +149,8 @@ padding: 15px;
 background: rgba(119,119,119,.2);
     color: #000 !important;
 }
+
+.logout {
+  cursor: pointer;
+  text-decoration: underline;
+}
