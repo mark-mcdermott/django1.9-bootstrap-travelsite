@@ -135,11 +135,17 @@
     position: relative;
 }
 
+.MuiTabs-scroller-42,
+.userForm {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
+}
+
+
 .AppFooter {
 min-height: 50px;
 padding: 15px;
 background: rgba(119,119,119,.2);
     color: #000 !important;
 }
-
-

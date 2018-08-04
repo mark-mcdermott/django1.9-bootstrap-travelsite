@@ -73,11 +73,11 @@ class Flight extends React.Component {
     return (
       <div className={this.props.className}>
       <form className="userForm">
-          <div className="userFormGroup">
-            <label htmlFor="date" className="formLabel">From:</label>
-              <div className="formField">
-                <input type="text" id="location" className="formControl" placeholder="Search Location" onChange={this.fromChange} />
-              </div>
+      <div className="userFormGroup">
+        <label htmlFor="date" className="formLabel">From:</label>
+          <div className="formField">
+            <input type="text" id="location" className="formControl" placeholder="Search Location" onChange={this.fromChange} />
+          </div>
           </div>
           <div className="userFormGroup">
             <label htmlFor="date" className="formLabel">To:</label>
