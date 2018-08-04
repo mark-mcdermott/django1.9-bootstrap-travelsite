@@ -192,10 +192,11 @@ def historyApi(request):
 @csrf_exempt
 def loginApi(request):
     if request.method == "POST":
-        # cust_name = request.POST.get("cust_name", "")
-        # credit_type = request.POST.get("credit_type", "")
-        # credit_name = request.POST.get("credit_name", "")
-        # credit_number = request.POST.get("credit_number", "")
-        # credit_expiration = request.POST.get("credit_expiration", "")
-        # credit_security = request.POST.get("credit_security", "")
-        return HttpResponse("create user post request")
+        email = request.POST.get("email", "")
+        password = request.POST.get("password", "")
+        user = User.objects.filter(email__iexact=email,password=password)
+        if user:
+            user_serialized = serializers.serialize('json', user)
+            return JsonResponse(user_serialized, safe=False)
+        else:
+            return HttpResponse('no matching email & password in database')
