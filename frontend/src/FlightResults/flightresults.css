@@ -13,3 +13,7 @@ background: #FFDD00;
         width:180px;
         cursor: pointer;
 }
+
+.bookingResponse {
+    color: #000;
+}

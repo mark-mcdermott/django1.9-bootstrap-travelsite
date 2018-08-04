@@ -58,7 +58,7 @@ class LoginForm extends Component {
           <div>
               <div id="buttons">
               <p id="loginButton" onClick={this.switch.bind(null,"login")} className={this.state.login ? "yellow":"blue"}> Login</p>
-                <p id="signupButton" onClick={this.switch.bind(null,"signup")} className={this.state.signup ? "yellow":"blue"}>Sign In</p>
+                <p id="signupButton" onClick={this.switch.bind(null,"signup")} className={this.state.signup ? "yellow":"blue"}>Sign up</p>
                 
               </div>
       
