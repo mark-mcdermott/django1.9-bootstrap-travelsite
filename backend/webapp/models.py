@@ -53,3 +53,7 @@ class Reservation(models.Model):
     hotel_price = models.DecimalField(max_digits=6, decimal_places=2)
     arrive_datetime = models.DateTimeField(default='')
     depart_datetime = models.DateTimeField(default='')
+
+class Feedback(models.Model):
+    feedback_text = models.TextField()
+    feedback_rating = models.IntegerField()
