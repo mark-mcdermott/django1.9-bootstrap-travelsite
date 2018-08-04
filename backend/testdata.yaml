@@ -38,7 +38,6 @@
     arrive_state: NY
     arrive_datetime: 2019-12-01 10:01
     price: 100.00
-
 - model: webapp.hotel
   pk: 1
   fields:
@@ -66,3 +65,12 @@
     state: TX
     zip: 78758
     price: 150.00
+- model: webapp.user
+  pk: 1
+  fields:
+    cust_name: Mark McDermott
+    credit_type: Visa
+    credit_name: Mark McDermott
+    credit_number: 1234567890123456
+    credit_expiration: 2018-11-30 13:01
+    credit_security: 123

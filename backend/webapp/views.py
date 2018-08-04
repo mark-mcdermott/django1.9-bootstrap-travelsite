@@ -132,6 +132,18 @@ def createUserApi(request):
 
 @csrf_exempt
 def getUserApi(request):
+    if request.method == "GET":
+        user = request.GET.get('user', '')
+        if user is '':
+            users = User.objects.all()
+        else:
+            users = User.objects.filter(cust_name=user)
+        users_serialized = serializers.serialize('json', users)
+        return JsonResponse(users_serialized, safe=False)
+    elif request.method == "POST":
+        return HttpResponse("post request")
+
+
     return HttpResponse("get user api stub")
 
 @csrf_exempt
