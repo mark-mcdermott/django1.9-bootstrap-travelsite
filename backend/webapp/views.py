@@ -119,15 +119,24 @@ def dealsApi(request):
 def createUserApi(request):
     if request.method == "POST":
         u = User(
-            cust_name = request.POST.get("cust_name", ""),
+            username = request.POST.get("username", ""),
+            email = request.POST.get("email", ""),
+            password = request.POST.get("password", ""),
+            name_first = request.POST.get("name_first", ""),
+            name_middle = request.POST.get("name_middle", ""),
+            name_last = request.POST.get("name_last", ""),
+            address_street = request.POST.get("address_street", ""),
+            address_city = request.POST.get("address_city", ""),
+            address_state = request.POST.get("address_state", ""),
+            address_zip = request.POST.get("address_zip", ""),
             credit_type = request.POST.get("credit_type", ""),
             credit_name = request.POST.get("credit_name", ""),
             credit_number = request.POST.get("credit_number", ""),
             credit_expiration = request.POST.get("credit_expiration", ""),
-            credit_security = request.POST.get("credit_security", ""),
+            credit_security = request.POST.get("credit_security", "")
         )
         u.save()
-        return HttpResponse("create user post request")
+        return HttpResponse("create user post request!")
 
 @csrf_exempt
 def getUserApi(request):
@@ -179,3 +188,14 @@ def historyApi(request):
         return JsonResponse(bookings_serialized, safe=False)
     elif request.method == "POST":
         return HttpResponse("history post request")
+
+@csrf_exempt
+def loginApi(request):
+    if request.method == "POST":
+        # cust_name = request.POST.get("cust_name", "")
+        # credit_type = request.POST.get("credit_type", "")
+        # credit_name = request.POST.get("credit_name", "")
+        # credit_number = request.POST.get("credit_number", "")
+        # credit_expiration = request.POST.get("credit_expiration", "")
+        # credit_security = request.POST.get("credit_security", "")
+        return HttpResponse("create user post request")
