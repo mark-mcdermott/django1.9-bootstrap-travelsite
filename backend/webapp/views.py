@@ -169,5 +169,13 @@ def getFlightStatusApi(request):
 
 @csrf_exempt
 def historyApi(request):
-    # transactions (reverse lookup)
-    return HttpResponse("history api stub")
+    if request.method == "GET":
+        user = request.GET.get('user', '')
+        if user is '':
+            bookings = Booking.objects.all()
+        else:
+            bookings = Booking.objects.filter(cust_name__iexact=user)
+        bookings_serialized = serializers.serialize('json', bookings)
+        return JsonResponse(bookings_serialized, safe=False)
+    elif request.method == "POST":
+        return HttpResponse("history post request")
