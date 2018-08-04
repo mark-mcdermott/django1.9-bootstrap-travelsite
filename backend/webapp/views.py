@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from .models import Flight, Hotel, Booking, Reservation, Feedback, Deal, User
+from .models import Flight, Hotel, Booking, Reservation, Feedback, Deal, User, Status
 from django.http import JsonResponse
 from django.core import serializers
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from datetime import datetime
+import time
 
 def index(request):
     return render(request, 'home.html', {
@@ -148,8 +150,25 @@ def getUserApi(request):
 
 @csrf_exempt
 def getFlightStatusApi(request):
-    # do one text field here
-    return HttpResponse("get flight status api stub")
+    if request.method == "GET":
+        flightId = request.GET.get('flight', '')
+        if flightId is '':
+            return HttpResponse("get request did not include flight id.  For example (http://localhost:8000/get-flight-status-api?flight=1)")
+        else:
+            fmt = '%Y-%m-%d %H:%M'
+            flight = Flight.objects.get(flight_id=flightId)
+            expected = flight.arrive_datetime
+            estimated = flight.est_arrive_datetime
+            difference = int((estimated - expected).total_seconds() / 60)
+            if difference < -5:
+                status = str(abs(difference)) + ' minutes early'
+            elif difference > 5:
+                status = str(difference) + ' minutes late'
+            else:
+                status = 'on time'
+            return HttpResponse(status)
+    elif request.method == "POST":
+        return HttpResponse("post get flight status request")
 
 @csrf_exempt
 def historyApi(request):

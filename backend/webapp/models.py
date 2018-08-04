@@ -3,12 +3,14 @@ from django.utils import timezone
 from django.db import models
 
 class Flight(models.Model):
+    flight_id = models.IntegerField()
     depart_city = models.CharField(max_length=255)
     depart_state = models.CharField(max_length=2)
     depart_datetime = models.DateTimeField(default='')
     arrive_city = models.CharField(max_length=255)
     arrive_state = models.CharField(max_length=2)
     arrive_datetime = models.DateTimeField(default='')
+    est_arrive_datetime = models.DateTimeField(default='')
     price = models.DecimalField(max_digits=6, decimal_places=2)
 
 class Hotel(models.Model):
@@ -76,3 +78,6 @@ class User(models.Model):
     credit_expiration = models.DateTimeField(default='')
     credit_security = models.IntegerField()
     # bookings?
+
+class Status(models.Model):
+    status = models.CharField(max_length=255)

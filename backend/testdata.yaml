@@ -1,42 +1,50 @@
 - model: webapp.flight
   pk: 1
   fields:
+    flight_id: 1
     depart_city: Philadelphia
     depart_state: PA
     depart_datetime: 2018-12-30 13:01
     arrive_city: Dallas
     arrive_state: TX
     arrive_datetime: 2019-01-01 10:01
+    est_arrive_datetime: 2019-01-01 9:50
     price: 100.00
 - model: webapp.flight
   pk: 2
   fields:
+    flight_id: 2
     depart_city: Austin
     depart_state: TX
     depart_datetime: 2018-10-30 11:02
     arrive_city: Houston
     arrive_state: TX
     arrive_datetime: 2018-10-31 12:30
+    est_arrive_datetime: 2018-10-31 12:30
     price: 200.00
 - model: webapp.flight
   pk: 3
   fields:
+    flight_id: 3
     depart_city: Oklahoma City
     depart_state: OK
     depart_datetime: 2018-09-03 04:15
     arrive_city: Dallas
     arrive_state: TX
     arrive_datetime: 2018-09-03 06:01
+    est_arrive_datetime: 2018-09-03 06:03
     price: 58.00
 - model: webapp.flight
   pk: 4
   fields:
+    flight_id: 4
     depart_city: Santa Clara
     depart_state: CA
     depart_datetime: 2018-11-30 13:01
     arrive_city: New York
     arrive_state: NY
     arrive_datetime: 2019-12-01 10:01
+    est_arrive_datetime: 2019-12-01 9:50
     price: 100.00
 - model: webapp.hotel
   pk: 1
