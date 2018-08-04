@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import axios from 'axios';
 import './App.css';
 
 class Signup extends React.Component {
@@ -20,16 +21,60 @@ class Signup extends React.Component {
 };
 
 class Login extends Component {
-    onLogin = () => {
-        this.props.onLogin();
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            loginError: false,
+        }
     }
+    onLogin = () => {
+        const {email, password } = this.state;
+        var bodyFormData = new FormData();
+        bodyFormData.set('email', email);
+        bodyFormData.set('password', password);
+        axios({
+          method: 'post',
+          url: 'http://localhost:8000/login-api',
+          data: bodyFormData,
+          config: { headers: { 'Content-Type': 'multipart/form-data' } }
+        })
+          .then((response) => {
+            console.log(response);
+            this.setState({
+                loginError: false,
+              })
+            this.props.onLogin(response.fields);
+          })
+          .catch((error) => {
+            console.log(error);
+            this.setState({
+              loginError: true,
+            })
+          });
+    }
+    updateEmail = (e) => {
+        this.setState({
+            email: e.target.value,
+        });
+    }
+
+    updatePassword = (e) => {
+        this.setState({
+            password: e.target.value,
+        });
+    }
+
+
     render() {
         return (
             <div>
                 <div id="login">
-                    <input type="email" id="email" placeholder="Email" />
-                    <input type="password" id="password" placeholder="Password" />
+                    <input type="email" id="email" placeholder="Email" onChange={this.updateEmail}/>
+                    <input type="password" id="password" placeholder="Password" onChange={this.updatePassword} />
                     <button id="send" onClick={this.onLogin}>Login</button>
+                    {this.state.loginError && <p className="loginError">Login Failed </p>}
                 </div>
             </div>)
     }

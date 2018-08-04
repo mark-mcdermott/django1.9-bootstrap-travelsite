@@ -10,20 +10,21 @@ class  AppRoute extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoggedIn: true,
+            isLoggedIn: false,
         };
         console.log("it is refresh");
     }
-    onLogin = () => {
+    onLogin = (userDetails) => {
         this.setState({
-            isLoggedIn: true
+            isLoggedIn: true,
+            userDetails,
         });
 
     }
     onLogOut = (e) => {
         e.preventDefault();
         this.setState({
-            isLoggedIn: true
+            isLoggedIn: false
         });
     }
     render() {

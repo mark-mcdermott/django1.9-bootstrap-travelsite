@@ -132,3 +132,7 @@ font-weight: 400;
 .SubmitButton {
 
 }
+
+.loginError {
+  color: red;
+}
