@@ -12,7 +12,8 @@ urlpatterns = [
     url(r'^deals-api$', views.dealsApi, name='deals api'),
     url(r'^create-user-api$', views.createUserApi, name='create user api'),
     url(r'^get-user-api$', views.getUserApi, name='get user api'),
-    url(r'^get-flight-status-api$', views.getFlightStatusApi, name='get flight status api')#,
+    url(r'^get-flight-status-api$', views.getFlightStatusApi, name='get flight status api'),
+    url(r'^login-api$', views.loginApi, name='login api')#,
     #url(r'^$', views.login, name='login')
 
 ]

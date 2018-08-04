@@ -71,13 +71,21 @@ class Deal(models.Model):
     price_high = models.DecimalField(max_digits=6, decimal_places=2)
 
 class User(models.Model):
-    cust_name = models.CharField(max_length=255)
+    username = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
+    name_first = models.CharField(max_length=255)
+    name_middle = models.CharField(max_length=255)
+    name_last = models.CharField(max_length=255)
+    address_street = models.CharField(max_length=255)
+    address_city = models.CharField(max_length=255)
+    address_state = models.CharField(max_length=255)
+    address_zip = models.CharField(max_length=255)
     credit_type = models.CharField(max_length=255)
     credit_name = models.CharField(max_length=255)
     credit_number = models.IntegerField()
     credit_expiration = models.DateTimeField(default='')
     credit_security = models.IntegerField()
-    # bookings?
 
 class Status(models.Model):
     status = models.CharField(max_length=255)

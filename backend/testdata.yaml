@@ -76,11 +76,20 @@
 - model: webapp.user
   pk: 1
   fields:
-    cust_name: Mark McDermott
+    username: markmcdermott
+    email: mark@markmcdermott.io
+    password: password
+    name_first: Mark
+    name_middle: Halbasch
+    name_last: McDermott
+    address_street: 123 Happy St
+    address_city: Austin
+    address_state: TX
+    address_zip: 78757
     credit_type: Visa
-    credit_name: Mark McDermott
+    credit_name: Mark markmcdermott
     credit_number: 1234567890123456
-    credit_expiration: 2018-11-30 13:01
+    credit_expiration: 2018-09-03 06:01
     credit_security: 123
 - model: webapp.deal
   pk: 1
