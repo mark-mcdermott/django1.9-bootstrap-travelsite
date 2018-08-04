@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
-import Tabs from '../Tabs';
-import App from '../App';
-import Account from '../Account';
+// import Tabs from '../Tabs';
+// import App from '../App';
+// import Account from '../Account';
 
 
 class Signup extends React.Component {
