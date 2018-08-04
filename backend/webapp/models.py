@@ -57,3 +57,13 @@ class Reservation(models.Model):
 class Feedback(models.Model):
     feedback_text = models.TextField()
     feedback_rating = models.IntegerField()
+
+class Deal(models.Model):
+    arrive_city = models.CharField(max_length=255)
+    arrive_state = models.CharField(max_length=2)
+    arrive_datetime = models.DateTimeField(default='')
+    depart_city = models.CharField(max_length=255)
+    depart_state = models.CharField(max_length=2)
+    depart_datetime = models.DateTimeField(default='')
+    price_low = models.DecimalField(max_digits=6, decimal_places=2)
+    price_high = models.DecimalField(max_digits=6, decimal_places=2)

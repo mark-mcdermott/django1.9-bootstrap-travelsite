@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Flight, Hotel, Booking, Reservation, Feedback
+from .models import Flight, Hotel, Booking, Reservation, Feedback, Deal
 from django.http import JsonResponse
 from django.core import serializers
 from django.http import HttpResponse
@@ -101,12 +101,20 @@ def feedbackApi(request):
         return HttpResponse("feedback post request")
 
 @csrf_exempt
-def historyApi(request):
-    return HttpResponse("history api stub")
-
-@csrf_exempt
 def dealsApi(request):
-    return HttpResponse("deals api stub")
+    if request.method == "POST":
+        d = Deal(
+            arrive_city = request.POST.get("arrive_city", ""),
+            arrive_state = request.POST.get("arrive_state", ""),
+            arrive_datetime = request.POST.get("arrive_datetime", ""),
+            depart_city = request.POST.get("depart_city", ""),
+            depart_state = request.POST.get("depart_state", ""),
+            depart_datetime = request.POST.get("depart_datetime", ""),
+            price_low = request.POST.get("price_low", ""),
+            price_high = request.POST.get("price_high", ""),
+        )
+        d.save()
+        return HttpResponse("deals post request")
 
 @csrf_exempt
 def createUserApi(request):
@@ -119,3 +127,7 @@ def getUserApi(request):
 @csrf_exempt
 def getFlightStatusApi(request):
     return HttpResponse("get flight status api stub")
+
+@csrf_exempt
+def historyApi(request):
+    return HttpResponse("history api stub")
