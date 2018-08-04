@@ -53,7 +53,7 @@ class FlightResults extends React.Component {
     .then((response) => {
       console.log(response);
       this.setState({
-        bookingResult: response,
+        bookingResult: 'Booking completed successfully',
         bookingStatus: true,
       })
     })
