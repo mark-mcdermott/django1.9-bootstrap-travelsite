@@ -1,0 +1,1050 @@
+---
+
+# airlines #
+
+- model: proto.airline
+  pk: 1
+  fields:
+    name: United Airlines
+
+- model: proto.airline
+  pk: 2
+  fields:
+    name: Delta Air Lines
+
+- model: proto.airline
+  pk: 3
+  fields:
+    name: Singapore Airlines
+
+- model: proto.airline
+  pk: 4
+  fields:
+    name: American Airlines
+
+- model: proto.airline
+  pk: 5
+  fields:
+    name: JetBlue
+    
+- model: proto.airline
+  pk: 6
+  fields:
+    name: British Airways
+ 
+- model: proto.airline
+  pk: 7
+  fields:
+    name: Emirates
+
+# cities #
+
+- model: proto.city
+  pk: 1
+  fields:
+    name: Austin
+    state: TX
+    country: US
+
+- model: proto.city
+  pk: 2
+  fields:
+    name: Boston
+    state: MA
+    country: US
+
+- model: proto.city
+  pk: 3
+  fields:
+    name: Chicago
+    state: IL
+    country: US
+
+- model: proto.city
+  pk: 4
+  fields:
+    name: San Francisco
+    state: CA
+    country: US
+
+- model: proto.city
+  pk: 5
+  fields:
+    name: Ciudad de Mexico
+    state: DF
+    country: MX
+    
+- model: proto.city
+  pk: 6
+  fields:
+    name: New Delhi
+    state: DH
+    country: IN
+
+- model: proto.city
+  pk: 7
+  fields:
+    name: Hyderabad
+    state: TN
+    country: IN
+
+- model: proto.city
+  pk: 8
+  fields:
+    name: Sydney
+    state: SY
+    country: AU
+    
+- model: proto.city
+  pk: 9
+  fields:
+    name: Zurich
+    state: Zu
+    country: SW
+
+- model: proto.city
+  pk: 10
+  fields:
+    name: Cairo
+    state: CA
+    country: EG
+    
+- model: proto.city
+  pk: 11
+  fields:
+    name: England
+    state: En
+    country: UK
+
+- model: proto.city
+  pk: 11
+  fields:
+    name: Beijing
+    state: BE
+    country: CH
+    
+# hotels #
+
+- model: proto.hotel
+  pk: 1
+  fields:
+    name: Omni
+    cities: [1,2,3,4,5]
+    number_of_rooms: 250
+
+- model: proto.hotel
+  pk: 2
+  fields:
+    name: Wyndham
+    cities: [1,2,3,4,5]
+    number_of_rooms: 150
+
+- model: proto.hotel
+  pk: 3
+  fields:
+    name: Four Seasons
+    cities: [1,2,3,4,5]
+    number_of_rooms: 85
+
+- model: proto.hotel
+  pk: 4
+  fields:
+    name: Sheraton
+    cities: [1,2,3,4,5]
+    number_of_rooms: 185
+
+- model: proto.hotel
+  pk: 5
+  fields:
+    name: Hyatt
+    cities: [1,2,3,4,5]
+    number_of_rooms: 215
+
+- model: proto.hotel
+  pk: 6
+  fields:
+    name: Motel 6
+    cities: [1,2,3,4]
+    number_of_rooms: 47
+
+- model: proto.hotel
+  pk: 7
+  fields:
+    name: Driskill Hotel
+    cities: [1]
+    number_of_rooms: 55
+
+- model: proto.hotel
+  pk: 8
+  fields:
+    name: The Liberty
+    cities: [2]
+    number_of_rooms: 55
+
+- model: proto.hotel
+  pk: 9
+  fields:
+    name: The Drake Hotel
+    cities: [3]
+    number_of_rooms: 535
+
+- model: proto.hotel
+  pk: 10
+  fields:
+    name: W Mexico City
+    cities: [5]
+    number_of_rooms: 335
+
+# flights #
+
+# ***** Austin to Boston *****
+
+- model: proto.flight
+  pk: 1
+  fields:
+    flight_number: Delta 1868
+    airline: 2
+    source: 1
+    destination: 2
+    departure_time: "19:30:00"
+    arrival_time: "22:56:00"
+    miles: 1000
+    international: False
+    
+- model: proto.flight
+  pk: 2
+  fields:
+    flight_number: SA 1500
+    airline: 3
+    source: 1
+    destination: 2
+    departure_time: "07:30:00"
+    arrival_time: "11:56:00"
+    miles: 1000
+    international: False
+    
+- model: proto.flight
+  pk: 3
+  fields:
+    flight_number: AA 2000
+    airline: 4
+    source: 1
+    destination: 2
+    departure_time: "04:30:00"
+    arrival_time: "08:56:00"
+    miles: 1000
+    international: False
+    
+- model: proto.flight
+  pk: 4
+  fields:
+    flight_number: UA 2500
+    airline: 1
+    source: 1
+    destination: 2
+    departure_time: "10:30:00"
+    arrival_time: "13:45:00"
+    miles: 1000
+    international: False
+
+- model: proto.flight
+  pk: 5
+  fields:
+    flight_number: JB 3000
+    airline: 5
+    source: 1
+    destination: 2
+    departure_time: "22:30:00"
+    arrival_time: "05:56:00"
+    miles: 1000
+    international: False
+    
+# ***** Austin to Chicago *****
+
+- model: proto.flight
+  pk: 6
+  fields:
+    flight_number: Delta 1869
+    airline: 2
+    source: 1
+    destination: 3
+    departure_time: "18:30:00"
+    arrival_time: "22:56:00"
+    miles: 1167
+    international: False
+    
+- model: proto.flight
+  pk: 7
+  fields:
+    flight_number: SA 1501
+    airline: 3
+    source: 1
+    destination: 3
+    departure_time: "06:30:00"
+    arrival_time: "11:56:00"
+    miles: 1167
+    international: False
+    
+- model: proto.flight
+  pk: 8
+  fields:
+    flight_number: AA 2001
+    airline: 4
+    source: 1
+    destination: 3
+    departure_time: "03:30:00"
+    arrival_time: "08:56:00"
+    miles: 1167
+    international: False
+    
+- model: proto.flight
+  pk: 9
+  fields:
+    flight_number: UA 2501
+    airline: 1
+    source: 1
+    destination: 3
+    departure_time: "09:30:00"
+    arrival_time: "13:45:00"
+    miles: 1167
+    international: False
+
+- model: proto.flight
+  pk: 10
+  fields:
+    flight_number: JB 3001
+    airline: 5
+    source: 1
+    destination: 3
+    departure_time: "21:30:00"
+    arrival_time: "05:56:00"
+    miles: 1167
+    international: False
+    
+# ***** Austin to San Frrancisco *****
+  
+- model: proto.flight
+  pk: 11
+  fields:
+    flight_number: Delta 1870
+    airline: 2
+    source: 1
+    destination: 4
+    departure_time: "19:45:00"
+    arrival_time: "23:56:00"
+    miles: 1758
+    international: False
+    
+- model: proto.flight
+  pk: 12
+  fields:
+    flight_number: SA 1502
+    airline: 3
+    source: 1
+    destination: 4
+    departure_time: "08:30:00"
+    arrival_time: "11:56:00"
+    miles: 1758
+    international: False
+    
+- model: proto.flight
+  pk: 13
+  fields:
+    flight_number: AA 2002
+    airline: 4
+    source: 1
+    destination: 4
+    departure_time: "05:30:00"
+    arrival_time: "08:56:00"
+    miles: 1758
+    international: False
+    
+- model: proto.flight
+  pk: 14
+  fields:
+    flight_number: UA 2502
+    airline: 1
+    source: 1
+    destination: 4
+    departure_time: "11:30:00"
+    arrival_time: "13:45:00"
+    miles: 1758
+    international: False
+
+- model: proto.flight
+  pk: 15
+  fields:
+    flight_number: JB 3002
+    airline: 5
+    source: 1
+    destination: 4
+    departure_time: "23:37:00"
+    arrival_time: "05:56:00"
+    miles: 1758
+    international: False
+    
+# ***** International Austin to de Mexico *****
+    
+- model: proto.flight
+  pk: 16
+  fields:
+    flight_number: Delta 1871
+    airline: 2
+    source: 1
+    destination: 5
+    departure_time: "19:45:00"
+    arrival_time: "23:56:00"
+    miles: 1758
+    international: True
+    
+- model: proto.flight
+  pk: 17
+  fields:
+    flight_number: SA 1503
+    airline: 3
+    source: 1
+    destination: 5
+    departure_time: "08:30:00"
+    arrival_time: "11:56:00"
+    miles: 1758
+    international: True
+    
+- model: proto.flight
+  pk: 18
+  fields:
+    flight_number: AA 2003
+    airline: 4
+    source: 1
+    destination: 5
+    departure_time: "05:30:00"
+    arrival_time: "08:56:00"
+    miles: 1758
+    international: True
+    
+- model: proto.flight
+  pk: 19
+  fields:
+    flight_number: UA 2503
+    airline: 1
+    source: 1
+    destination: 5
+    departure_time: "11:30:00"
+    arrival_time: "13:45:00"
+    miles: 1758
+    international: True
+
+- model: proto.flight
+  pk: 20
+  fields:
+    flight_number: JB 3003
+    airline: 5
+    source: 1
+    destination: 5
+    departure_time: "23:37:00"
+    arrival_time: "05:56:00"
+    miles: 1758
+    international: True
+    
+# ***** Austin to New Delhi *****
+    
+- model: proto.flight
+  pk: 21
+  fields:
+    flight_number: Delta 1872
+    airline: 2
+    source: 1
+    destination: 6
+    departure_time: "19:55:00"
+    arrival_time: "23:56:00"
+    miles: 8350
+    international: True
+    
+- model: proto.flight
+  pk: 22
+  fields:
+    flight_number: SA 1504
+    airline: 3
+    source: 1
+    destination: 6
+    departure_time: "08:45:00"
+    arrival_time: "11:56:00"
+    miles: 8350
+    international: True
+    
+- model: proto.flight
+  pk: 23
+  fields:
+    flight_number: AA 2004
+    airline: 4
+    source: 1
+    destination: 6
+    departure_time: "05:35:00"
+    arrival_time: "08:56:00"
+    miles: 8350
+    international: True
+    
+- model: proto.flight
+  pk: 24
+  fields:
+    flight_number: UA 2504
+    airline: 1
+    source: 1
+    destination: 6
+    departure_time: "11:30:00"
+    arrival_time: "13:45:00"
+    miles: 8350
+    international: True
+
+- model: proto.flight
+  pk: 25
+  fields:
+    flight_number: JB 3004
+    airline: 5
+    source: 1
+    destination: 6
+    departure_time: "23:37:00"
+    arrival_time: "05:56:00"
+    miles: 8350
+    international: True
+
+- model: proto.flight
+  pk: 26
+  fields:
+    flight_number: BA 4001
+    airline: 6
+    source: 1
+    destination: 6
+    departure_time: "04:37:00"
+    arrival_time: "23:56:00"
+    miles: 8350
+    international: True
+    
+- model: proto.flight
+  pk: 27
+  fields:
+    flight_number: EM 5001
+    airline: 7
+    source: 1
+    destination: 6
+    departure_time: "02:37:00"
+    arrival_time: "23:56:00"
+    miles: 8350
+    international: True
+
+# ***** Austin to Hyderabad *****
+    
+- model: proto.flight
+  pk: 28
+  fields:
+    flight_number: Delta 1873
+    airline: 2
+    source: 1
+    destination: 7
+    departure_time: "17:55:00"
+    arrival_time: "23:56:00"
+    miles: 8350
+    international: True
+    
+- model: proto.flight
+  pk: 29
+  fields:
+    flight_number: SA 1505
+    airline: 3
+    source: 1
+    destination: 7
+    departure_time: "08:45:00"
+    arrival_time: "11:56:00"
+    miles: 8350
+    international: True
+    
+- model: proto.flight
+  pk: 30
+  fields:
+    flight_number: AA 2005
+    airline: 4
+    source: 1
+    destination: 7
+    departure_time: "05:35:00"
+    arrival_time: "08:56:00"
+    miles: 8350
+    international: True
+    
+- model: proto.flight
+  pk: 31
+  fields:
+    flight_number: UA 2505
+    airline: 1
+    source: 1
+    destination: 7
+    departure_time: "11:30:00"
+    arrival_time: "13:45:00"
+    miles: 8350
+    international: True
+
+- model: proto.flight
+  pk: 32
+  fields:
+    flight_number: JB 3005
+    airline: 5
+    source: 1
+    destination: 7
+    departure_time: "23:37:00"
+    arrival_time: "05:56:00"
+    miles: 8350
+    international: True
+
+- model: proto.flight
+  pk: 33
+  fields:
+    flight_number: BA 4005
+    airline: 6
+    source: 1
+    destination: 7
+    departure_time: "04:37:00"
+    arrival_time: "23:56:00"
+    miles: 8350
+    international: True
+    
+- model: proto.flight
+  pk: 34
+  fields:
+    flight_number: EM 3405
+    airline: 7
+    source: 1
+    destination: 7
+    departure_time: "02:37:00"
+    arrival_time: "23:56:00"
+    miles: 8350
+    international: True
+
+# ***** Austin to Sydney *****
+        
+- model: proto.flight
+  pk: 35
+  fields:
+    flight_number: Delta 1876
+    airline: 2
+    source: 1
+    destination: 8
+    departure_time: "17:55:00"
+    arrival_time: "23:56:00"
+    miles: 8350
+    international: True
+    
+- model: proto.flight
+  pk: 36
+  fields:
+    flight_number: SA 1361
+    airline: 3
+    source: 1
+    destination: 8
+    departure_time: "08:45:00"
+    arrival_time: "11:56:00"
+    miles: 8350
+    international: True
+    
+- model: proto.flight
+  pk: 37
+  fields:
+    flight_number: AA 2008
+    airline: 4
+    source: 1
+    destination: 8
+    departure_time: "05:35:00"
+    arrival_time: "08:56:00"
+    miles: 8350
+    international: True
+    
+- model: proto.flight
+  pk: 38
+  fields:
+    flight_number: UA 2508
+    airline: 1
+    source: 1
+    destination: 8
+    departure_time: "11:30:00"
+    arrival_time: "13:45:00"
+    miles: 8350
+    international: True
+
+- model: proto.flight
+  pk: 39
+  fields:
+    flight_number: JB 3006
+    airline: 5
+    source: 1
+    destination: 8
+    departure_time: "23:37:00"
+    arrival_time: "05:56:00"
+    miles: 8350
+    international: True
+
+- model: proto.flight
+  pk: 40
+  fields:
+    flight_number: BA 4008
+    airline: 6
+    source: 1
+    destination: 8
+    departure_time: "04:37:00"
+    arrival_time: "23:56:00"
+    miles: 8350
+    international: True
+    
+- model: proto.flight
+  pk: 41
+  fields:
+    flight_number: EM 5009
+    airline: 7
+    source: 1
+    destination: 8
+    departure_time: "02:37:00"
+    arrival_time: "23:56:00"
+    miles: 8350
+    international: True
+
+# ***** Austin to Zurich *****
+        
+- model: proto.flight
+  pk: 42
+  fields:
+    flight_number: Delta 1877
+    airline: 2
+    source: 1
+    destination: 9
+    departure_time: "16:55:00"
+    arrival_time: "23:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 43
+  fields:
+    flight_number: SA 1506
+    airline: 3
+    source: 1
+    destination: 9
+    departure_time: "07:25:00"
+    arrival_time: "11:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 44
+  fields:
+    flight_number: AA 2006
+    airline: 4
+    source: 1
+    destination: 9
+    departure_time: "05:15:00"
+    arrival_time: "08:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 45
+  fields:
+    flight_number: UA 2506
+    airline: 1
+    source: 1
+    destination: 9
+    departure_time: "01:30:00"
+    arrival_time: "13:45:00"
+    miles: 7745
+    international: True
+
+- model: proto.flight
+  pk: 46
+  fields:
+    flight_number: JB 3008
+    airline: 5
+    source: 1
+    destination: 9
+    departure_time: "23:45:00"
+    arrival_time: "05:56:00"
+    miles: 7745
+    international: True
+
+- model: proto.flight
+  pk: 47
+  fields:
+    flight_number: BA 4006
+    airline: 6
+    source: 1
+    destination: 9
+    departure_time: "04:55:00"
+    arrival_time: "23:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 48
+  fields:
+    flight_number: EM 5006
+    airline: 7
+    source: 1
+    destination: 9
+    departure_time: "02:37:00"
+    arrival_time: "23:56:00"
+    miles: 7745
+    international: True
+   
+# *****  Austin to Cairo *****
+        
+- model: proto.flight
+  pk: 49
+  fields:
+    flight_number: Delta 1878
+    airline: 2
+    source: 1
+    destination: 10
+    departure_time: "16:55:00"
+    arrival_time: "23:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 50
+  fields:
+    flight_number: SA 1508
+    airline: 3
+    source: 1
+    destination: 10
+    departure_time: "07:25:00"
+    arrival_time: "11:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 51
+  fields:
+    flight_number: AA 2608
+    airline: 4
+    source: 1
+    destination: 10
+    departure_time: "05:15:00"
+    arrival_time: "08:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 52
+  fields:
+    flight_number: UA 2428
+    airline: 1
+    source: 1
+    destination: 10
+    departure_time: "01:30:00"
+    arrival_time: "13:45:00"
+    miles: 7745
+    international: True
+
+- model: proto.flight
+  pk: 53
+  fields:
+    flight_number: JB 1038
+    airline: 5
+    source: 1
+    destination: 10
+    departure_time: "23:45:00"
+    arrival_time: "05:56:00"
+    miles: 7745
+    international: True
+
+- model: proto.flight
+  pk: 54
+  fields:
+    flight_number: BA 4398
+    airline: 6
+    source: 1
+    destination: 10
+    departure_time: "04:55:00"
+    arrival_time: "23:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 55
+  fields:
+    flight_number: EM 5218
+    airline: 7
+    source: 1
+    destination: 10
+    departure_time: "02:37:00"
+    arrival_time: "23:56:00"
+    miles: 7745
+    international: True
+  
+# *****  Austin to England *****
+        
+- model: proto.flight
+  pk: 56
+  fields:
+    flight_number: Delta 2879
+    airline: 2
+    source: 1
+    destination: 11
+    departure_time: "16:55:00"
+    arrival_time: "23:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 57
+  fields:
+    flight_number: SA 1519
+    airline: 3
+    source: 1
+    destination: 11
+    departure_time: "07:25:00"
+    arrival_time: "11:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 58
+  fields:
+    flight_number: AA 4309
+    airline: 4
+    source: 1
+    destination: 11
+    departure_time: "05:15:00"
+    arrival_time: "08:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 59
+  fields:
+    flight_number: UA 2519
+    airline: 1
+    source: 1
+    destination: 10
+    departure_time: "01:30:00"
+    arrival_time: "13:45:00"
+    miles: 7745
+    international: True
+
+- model: proto.flight
+  pk: 60
+  fields:
+    flight_number: JB 3293
+    airline: 5
+    source: 1
+    destination: 11
+    departure_time: "23:45:00"
+    arrival_time: "05:56:00"
+    miles: 7745
+    international: True
+
+- model: proto.flight
+  pk: 61
+  fields:
+    flight_number: BA 4219
+    airline: 6
+    source: 1
+    destination: 11
+    departure_time: "04:55:00"
+    arrival_time: "23:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 62
+  fields:
+    flight_number: EM 5209
+    airline: 7
+    source: 1
+    destination: 11
+    departure_time: "02:37:00"
+    arrival_time: "23:56:00"
+    miles: 7745
+    international: True
+    
+# ***** Flights to Austin from England *****
+
+- model: proto.flight
+  pk: 63
+  fields:
+    flight_number: EM 5910
+    airline: 7
+    source: 11
+    destination: 1
+    departure_time: "02:37:00"
+    arrival_time: "23:56:00"
+    miles: 7745
+    international: True
+    
+        
+- model: proto.flight
+  pk: 64
+  fields:
+    flight_number: Delta 1880
+    airline: 2
+    source: 11
+    destination: 1
+    departure_time: "16:55:00"
+    arrival_time: "23:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 65
+  fields:
+    flight_number: SA 1510
+    airline: 3
+    source: 11
+    destination: 1
+    departure_time: "07:25:00"
+    arrival_time: "11:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 66
+  fields:
+    flight_number: AA 2010
+    airline: 4
+    source: 11
+    destination: 1
+    departure_time: "05:15:00"
+    arrival_time: "08:56:00"
+    miles: 7745
+    international: True
+    
+- model: proto.flight
+  pk: 67
+  fields:
+    flight_number: UA 2312
+    airline: 1
+    source: 11
+    destination: 1
+    departure_time: "01:30:00"
+    arrival_time: "13:45:00"
+    miles: 7745
+    international: True
+
+- model: proto.flight
+  pk: 68
+  fields:
+    flight_number: JB 3216
+    airline: 5
+    source: 11
+    destination: 1
+    departure_time: "23:45:00"
+    arrival_time: "05:56:00"
+    miles: 7745
+    international: True
+
+- model: proto.flight
+  pk: 69
+  fields:
+    flight_number: BA 4010
+    airline: 6
+    source: 11
+    destination: 11
+    departure_time: "04:55:00"
+    arrival_time: "23:56:00"
+    miles: 7745
+    international: True
+
