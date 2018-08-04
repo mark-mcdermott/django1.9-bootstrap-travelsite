@@ -109,7 +109,7 @@ def dealsApi(request):
         if city is '':
             deals = Deal.objects.all()
         else:
-            deals = Deal.objects.filter(arrive_city=city)
+            deals = Deal.objects.filter(arrive_city__iexact=city)
         deals_serialized = serializers.serialize('json', deals)
         return JsonResponse(deals_serialized, safe=False)
     elif request.method == "POST":
@@ -136,7 +136,7 @@ def getUserApi(request):
         if user is '':
             users = User.objects.all()
         else:
-            users = User.objects.filter(cust_name=user)
+            users = User.objects.filter(cust_name__iexact=user)
         users_serialized = serializers.serialize('json', users)
         return JsonResponse(users_serialized, safe=False)
     elif request.method == "POST":
@@ -169,5 +169,13 @@ def getFlightStatusApi(request):
 
 @csrf_exempt
 def historyApi(request):
-    # transactions (reverse lookup)
-    return HttpResponse("history api stub")
+    if request.method == "GET":
+        user = request.GET.get('user', '')
+        if user is '':
+            bookings = Booking.objects.all()
+        else:
+            bookings = Booking.objects.filter(cust_name__iexact=user)
+        bookings_serialized = serializers.serialize('json', bookings)
+        return JsonResponse(bookings_serialized, safe=False)
+    elif request.method == "POST":
+        return HttpResponse("history post request")

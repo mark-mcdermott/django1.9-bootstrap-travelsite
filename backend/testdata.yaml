@@ -93,3 +93,21 @@
     depart_datetime: 2018-11-30 11:01
     price_low: 100
     price_high: 200
+- model: webapp.booking
+  pk: 1
+  fields:
+    cust_name: Mark McDermott
+    airline_name: Delta
+    credit_type: Visa
+    credit_name: Mark McDermott
+    credit_number: 1234567890123456
+    credit_expiration: 2018-11-30 11:01
+    credit_security: 123
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-11-30 11:01
+    arrive_city: Dallas
+    arrive_state: TX
+    arrive_datetime: 2018-11-30 11:01
+    num_passengers: 1
+    mileage: 100
