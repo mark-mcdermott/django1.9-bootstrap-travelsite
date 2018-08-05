@@ -10,6 +10,7 @@
     arrive_datetime: 2019-01-01 10:01
     est_arrive_datetime: 2019-01-01 9:50
     price: 100.00
+    intl: false
 - model: webapp.flight
   pk: 2
   fields:
@@ -22,6 +23,7 @@
     arrive_datetime: 2018-10-31 12:30
     est_arrive_datetime: 2018-10-31 12:30
     price: 200.00
+    intl: false
 - model: webapp.flight
   pk: 3
   fields:
@@ -34,6 +36,7 @@
     arrive_datetime: 2018-11-03 06:01
     est_arrive_datetime: 2018-11-03 06:01
     price: 58.00
+    intl: false
 - model: webapp.flight
   pk: 4
   fields:
@@ -46,6 +49,7 @@
     arrive_datetime: 2018-10-15 16:01
     est_arrive_datetime: 2018-10-15 16:01
     price: 58.00
+    intl: false
 - model: webapp.flight
   pk: 5
   fields:
@@ -58,6 +62,7 @@
     arrive_datetime: 2018-10-31 12:30
     est_arrive_datetime: 2018-10-31 12:30
     price: 200.00
+    intl: false
 - model: webapp.hotel
   pk: 1
   fields:

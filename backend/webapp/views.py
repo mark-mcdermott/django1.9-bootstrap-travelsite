@@ -105,6 +105,8 @@ def flightsHotelsApi(request):
 def bookingApi(request):
     if request.method == "POST":
         ### TODO: check for milage
+        ### TODO: make two separate bookings here, check for
+        # one or two, if two book both
         b = Booking(
             cust_name = request.POST.get("cust_name", ""),
             airline_name = request.POST.get("airline_name", ""),
@@ -122,6 +124,23 @@ def bookingApi(request):
             num_passengers = request.POST.get("num_passengers", ""),
             mileage = request.POST.get("mileage", ""),
         )
+        # b = Booking(
+        #     cust_name = request.POST.get("cust_name", ""),
+        #     airline_name = request.POST.get("airline_name", ""),
+        #     credit_type = request.POST.get("credit_type", ""),
+        #     credit_name = request.POST.get("credit_name", ""),
+        #     credit_number = request.POST.get("credit_number", ""),
+        #     credit_expiration = request.POST.get("credit_expiration", ""),
+        #     credit_security = request.POST.get("credit_security", ""),
+        #     depart_city = request.POST.get("depart_city", ""),
+        #     depart_state = request.POST.get("depart_state", ""),
+        #     depart_datetime = request.POST.get("depart_datetime", ""),
+        #     arrive_city = request.POST.get("arrive_city", ""),
+        #     arrive_state = request.POST.get("arrive_state", ""),
+        #     arrive_datetime = request.POST.get("arrive_datetime", ""),
+        #     num_passengers = request.POST.get("num_passengers", ""),
+        #     mileage = request.POST.get("mileage", ""),
+        # )
         b.save()
         ### TODO: update user milage
         return HttpResponse("booking post request")

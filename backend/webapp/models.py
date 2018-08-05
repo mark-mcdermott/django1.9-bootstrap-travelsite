@@ -12,7 +12,7 @@ class Flight(models.Model):
     arrive_datetime = models.DateTimeField(default='')
     est_arrive_datetime = models.DateTimeField(default='')
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    # TODO: add intl flag
+    intl = models.BooleanField()
 
 class Hotel(models.Model):
     name = models.CharField(max_length=255)
