@@ -61,6 +61,7 @@ class Feedback(models.Model):
     feedback_rating = models.IntegerField()
 
 class Deal(models.Model):
+    username = models.CharField(max_length=255)
     arrive_city = models.CharField(max_length=255)
     arrive_state = models.CharField(max_length=2)
     arrive_datetime = models.DateTimeField(default='')

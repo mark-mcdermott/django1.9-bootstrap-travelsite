@@ -106,6 +106,7 @@
 - model: webapp.deal
   pk: 1
   fields:
+    username: none
     arrive_city: Philadelphia
     arrive_state: PA
     arrive_datetime: 2018-11-30 13:01
