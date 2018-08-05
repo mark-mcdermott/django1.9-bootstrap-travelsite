@@ -4,16 +4,157 @@ import axios from 'axios';
 import './App.css';
 
 class Signup extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            firstName: '',
+            lastName: '',
+            middleName: '',
+            mailingAddr: '',
+            email: '',
+            creditNo:'',
+            creditName: '',
+            creditSecurity:'',
+            creditExpiration: '',
+            username: '',
+            password: '',
+            regStatusShow: false,
+            regStatus: '',
+            regResultClass: 'regResultSuccess'
+        }
+    }
+    updateFName = (e) => {
+        this.setState({
+            firstName: e.target.value,
+        });
+    }
+
+    updateLName = (e) => {
+        this.setState({
+            lastName: e.target.value,
+        });
+    }
+
+    updateMName = (e) => {
+        this.setState({
+            middleName: e.target.value,
+        });
+    }
+
+    updateMailingAddr = (e) => {
+        this.setState({
+            mailingAddr: e.target.value,
+        });
+    }
+
+    updateEmail = (e) => {
+        this.setState({
+            email: e.target.value,
+        });
+    }
+
+    updateCreditCard = (e) => {
+        this.setState({
+            creditNo: e.target.value,
+        });
+    }
+
+    updateCreditName = (e) => {
+        this.setState({
+            creditName: e.target.value,
+        });
+    }
+    updateCreditSec = (e) => {
+        this.setState({
+            creditSecurity: e.target.value,
+        });
+    }
+    updateCreditExp = (e) => {
+        this.setState({
+            creditExpiration: e.target.value,
+        });
+    }
+    updateUsername = (e) => {
+        this.setState({
+            username: e.target.value,
+        });
+    }
+    updatePassword = (e) => {
+        this.setState({
+            password: e.target.value,
+        });
+    }
+
+    signUpUser = () => {
+        const {
+            firstName,
+            lastName ,
+            middleName ,
+            mailingAddr ,
+            email ,
+            creditNo,
+            creditName ,
+            creditSecurity,
+            creditExpiration ,
+            username ,
+            password,
+        } = this.state;
+
+        var bodyFormData = new FormData();
+        bodyFormData.set('cust_name', username);
+        bodyFormData.set('credit_type', 'Visa');
+        bodyFormData.set('credit_name', creditName);
+        bodyFormData.set('credit_number', creditNo);
+        bodyFormData.set('credit_expiration', creditExpiration);
+        bodyFormData.set('credit_security', creditSecurity);
+        bodyFormData.set('username', username);
+        bodyFormData.set('password', password);
+        bodyFormData.set('firstName', firstName);
+        bodyFormData.set('lastName', lastName);
+        bodyFormData.set('middleName', middleName);
+        bodyFormData.set('mailingAddr', mailingAddr);
+        bodyFormData.set('email', email);
+        axios({
+          method: 'post',
+          url: 'http://localhost:8000/create-user-api',
+          data: bodyFormData,
+          config: { headers: { 'Content-Type': 'multipart/form-data' } }
+        })
+          .then((response) => {
+              this.setState({
+                regStatusShow: true,
+                regResultClass: 'regResultSuccess',
+                regStatus: 'Registration successfully completed.'
+              })
+          })
+          .catch((error) => {
+            console.log(error);
+            this.setState({
+              regStatusShow: true,
+              regResultClass: 'regResultError',
+              regStatus: 'Registration Failed.'
+            })
+          });
+    }
+
+
     render() {
         return (
             <div>
                 <div id="signup">
-                    <input type="text" id="first" placeholder="First Name" />
-                    <input type="text" id="last" placeholder="Last Name" />
-                    <input type="email" id="email" placeholder="Email" />
-                    <input type="password" id="password" placeholder="Password" />
-                    <input type="password" id="confirm" placeholder="Confirm Password" />
-                    <button id="send">Signup</button>
+                    <input type="text" id="first" placeholder="First Name" onChange={this.updateFName} />
+                    <input type="text" id="last" placeholder="Last Name" onChange={this.updateLName}/>
+                    <input type="text" id="last" placeholder="Middle Name" onChange={this.updateMName}/>
+                    <input type="text" id="last" placeholder="Mailing Address" onChange={this.updateMailingAddr}/>
+                    <input type="email" id="email" placeholder="Email" onChange={this.updateEmail}/>
+                    <input type="number" id="last" placeholder="Credit Card Number" onChange={this.updateCreditCard}/>
+                    <input type="text" id="last" placeholder="Credit Card Name" onChange={this.updateCreditName}/>
+                    <input type="number" id="last" placeholder="Credit Card Security" onChange={this.updateCreditSec}/>
+                    <input type="date" id="last" placeholder="Credit Card Expiration" onChange={this.updateCreditExp}/>
+                    <input type="text" id="last" placeholder="Pick a username" onChange={this.updateUsername}/>
+                    <input type="password" id="password" placeholder="Password" onChange={this.updatePassword}/>
+                    <button id="send" onClick={this.signUpUser}>Signup</button>
+                    {this.state.regStatusShow &&<p className={this.state.regResultClass}>{this.state.regStatus}</p>}
                 </div>
             </div>
         )

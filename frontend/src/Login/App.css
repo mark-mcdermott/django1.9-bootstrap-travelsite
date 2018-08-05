@@ -136,3 +136,10 @@ font-weight: 400;
 .loginError {
   color: red;
 }
+.regResultError {
+  color: red;
+}
+
+.regResultSuccess {
+  color: #FFDD00;
+}
