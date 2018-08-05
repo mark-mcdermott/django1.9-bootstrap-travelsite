@@ -107,8 +107,8 @@ def bookingApi(request):
     depart_datetime2 = request.POST.get("depart_datetime2", "")
     user = User.objects.get(username__iexact=username)
     miles = user.user_miles
-    flight1_milage = request.POST.get("mileage1", ""),
-    flight2_milage = request.POST.get("mileage2", ""),
+    flight1_milage = request.POST.get("mileage1", "")
+    flight2_milage = request.POST.get("mileage2", "")
     if request.method == "POST":
         b1 = Booking(
             username =  request.POST.get("username", ""),
@@ -149,11 +149,11 @@ def bookingApi(request):
                 mileage = request.POST.get("mileage2", ""),
             )
             b2.save()
-        # miles += flight1_milage
-        # if flight2_milage is not "":
-        #     miles += flight2_milage
-        # user.user_miles = miles
-        # user.save()
+        miles += int(flight1_milage)
+        if flight2_milage is not "":
+            miles += int(flight2_milage)
+        user.user_miles = miles
+        user.save()
         return HttpResponse("booking post request")
 
 @csrf_exempt
