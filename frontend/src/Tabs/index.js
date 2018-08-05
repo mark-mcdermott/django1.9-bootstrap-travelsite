@@ -9,6 +9,7 @@ import HotelIcon from '@material-ui/icons/Hotel';
 import FlightTakeoff from '@material-ui/icons/FlightTakeoff';
 import LocationIcon from '@material-ui/icons/EditLocation';
 import DealsIcon from '@material-ui/icons/LocalAtm';
+import FeedbackIcon from '@material-ui/icons/Feedback';
 import Typography from '@material-ui/core/Typography';
 import './tabs.css';
 import Flight from '../Flight';
@@ -16,6 +17,7 @@ import Hotel from '../Hotel';
 import HotelFlights from '../HotelFlights';
 import Deals from '../Deals';
 import FlightStatus from '../FlightStatus';
+import Feedback from '../Feedback';
 
 function TabContainer(props) {
   return (
@@ -79,6 +81,8 @@ class ScrollableTabsButtonForce extends React.Component {
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/> 
             <Tab label="Deals" icon={<DealsIcon />}
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
+            <Tab label="Feedback" icon={<FeedbackIcon />}
+              classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>  
           </Tabs>
         </AppBar>
         {value === 0 && <Flight className="tabContent" />}
@@ -86,6 +90,7 @@ class ScrollableTabsButtonForce extends React.Component {
         {value === 2 && <HotelFlights className="tabContent" />}
         {value === 3 && <FlightStatus className="tabContent" />}
         {value === 4 && <Deals className="tabContent" />}
+        {value === 5 && <Feedback className="tabContent" />}
       </div>
     );
   }
