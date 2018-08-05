@@ -75,7 +75,7 @@
     arrive_datetime: 2018-10-31 12:30
     price: 200.00
     intl: true
-    status: 
+    status:
 - model: webapp.flight
   pk: 6
   fields:
@@ -160,6 +160,7 @@
     credit_number: 1234567890123456
     credit_expiration: 2018-09-03 06:01
     credit_security: 123
+    user_miles: 0
 - model: webapp.deal
   pk: 1
   fields:
@@ -181,6 +182,7 @@
 - model: webapp.booking
   pk: 1
   fields:
+    username: markmcdermott
     cust_name: Mark McDermott
     airline_name: Delta
     credit_type: Visa

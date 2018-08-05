@@ -24,6 +24,7 @@ class Hotel(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
 
 class Booking(models.Model):
+    username = models.CharField(max_length=255)
     cust_name = models.CharField(max_length=255)
     airline_name = models.CharField(max_length=255)
     credit_type = models.CharField(max_length=255)
@@ -95,6 +96,7 @@ class User(models.Model):
     credit_number = models.IntegerField()
     credit_expiration = models.DateTimeField(default='')
     credit_security = models.IntegerField()
+    user_miles = models.IntegerField()
 
 class Status(models.Model):
     status = models.CharField(max_length=255)
