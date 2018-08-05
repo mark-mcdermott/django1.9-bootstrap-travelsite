@@ -7,13 +7,15 @@ import Tab from '@material-ui/core/Tab';
 import FlightIcon from '@material-ui/icons/Flight';
 import HotelIcon from '@material-ui/icons/Hotel';
 import FlightTakeoff from '@material-ui/icons/FlightTakeoff';
-import DealsIcon from '@material-ui/icons/Bookmark';
+import LocationIcon from '@material-ui/icons/EditLocation';
+import DealsIcon from '@material-ui/icons/LocalAtm';
 import Typography from '@material-ui/core/Typography';
 import './tabs.css';
 import Flight from '../Flight';
 import Hotel from '../Hotel';
 import HotelFlights from '../HotelFlights';
 import Deals from '../Deals';
+import FlightStatus from '../FlightStatus';
 
 function TabContainer(props) {
   return (
@@ -73,6 +75,8 @@ class ScrollableTabsButtonForce extends React.Component {
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
             <Tab label="Flight+Hotel" icon={<FlightTakeoff />}
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
+            <Tab label="Flight Status" icon={<LocationIcon />}
+              classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/> 
             <Tab label="Deals" icon={<DealsIcon />}
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
           </Tabs>
@@ -80,7 +84,8 @@ class ScrollableTabsButtonForce extends React.Component {
         {value === 0 && <Flight className="tabContent" />}
         {value === 1 && <Hotel className="tabContent" />}
         {value === 2 && <HotelFlights className="tabContent" />}
-        {value === 3 && <Deals className="tabContent" />}
+        {value === 3 && <FlightStatus className="tabContent" />}
+        {value === 4 && <Deals className="tabContent" />}
       </div>
     );
   }
