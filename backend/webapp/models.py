@@ -68,6 +68,12 @@ class Deal(models.Model):
     depart_city = models.CharField(max_length=255)
     depart_state = models.CharField(max_length=2)
     depart_datetime = models.DateTimeField(default='')
+    airline_name = models.CharField(max_length=255)
+    hotel_name = models.CharField(max_length=255)
+    hotel_street = models.CharField(max_length=255)
+    hotel_city = models.CharField(max_length=255)
+    hotel_state = models.CharField(max_length=2)
+    hotel_zip = models.IntegerField()
     price_low = models.DecimalField(max_digits=6, decimal_places=2)
     price_high = models.DecimalField(max_digits=6, decimal_places=2)
 
