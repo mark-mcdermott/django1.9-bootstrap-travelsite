@@ -5,6 +5,7 @@ from django.core import serializers
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
+from decimal import Decimal
 import time
 
 def index(request):
@@ -114,13 +115,24 @@ def feedbackApi(request):
 @csrf_exempt
 def dealsApi(request):
     if request.method == "GET":
-        city = request.GET.get('city', '')
-        if city is '':
-            deals = Deal.objects.all()
+        source = request.GET.get('source', '')
+        destination = request.GET.get('destination', '')
+        date = request.GET.get('date', '')
+        fmt = '%Y-%m-%d'
+        fromdate = request.GET.get('fromdate', '')
+        todate = request.GET.get('todate', '')
+        fromdate_datetime = datetime.strptime(fromdate, fmt)
+        fromdate_day = fromdate_datetime.date()
+        todate_datetime = datetime.strptime(todate, fmt)
+        todate_day = todate_datetime.date()
+        lowprice = request.GET.get('lowprice', '')
+        highprice = request.GET.get('highprice', '')
+        if source=='' or destination=='' or fromdate=='' or todate=='' or lowprice=='' or highprice=='':
+            return HttpResponse("incorrect deals api get query string")
         else:
-            deals = Deal.objects.filter(arrive_city__iexact=city)
-        deals_serialized = serializers.serialize('json', deals)
-        return JsonResponse(deals_serialized, safe=False)
+            deals = Deal.objects.filter(depart_city__iexact=source,arrive_city__iexact=destination,price_low__lte=int(highprice),price_low__gte=int(lowprice),depart_datetime__date=fromdate_day,arrive_datetime__date=todate_day)
+            deals_serialized = serializers.serialize('json', deals)
+            return JsonResponse(deals_serialized, safe=False)
     elif request.method == "POST":
         d = Deal(
             arrive_city = request.POST.get("arrive_city", ""),
