@@ -117,7 +117,6 @@ def dealsApi(request):
     if request.method == "GET":
         source = request.GET.get('source', '')
         destination = request.GET.get('destination', '')
-        date = request.GET.get('date', '')
         fmt = '%Y-%m-%d'
         fromdate = request.GET.get('fromdate', '')
         todate = request.GET.get('todate', '')
