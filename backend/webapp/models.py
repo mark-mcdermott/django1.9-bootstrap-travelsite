@@ -10,8 +10,10 @@ class Flight(models.Model):
     arrive_city = models.CharField(max_length=255)
     arrive_state = models.CharField(max_length=2)
     arrive_datetime = models.DateTimeField(default='')
-    est_arrive_datetime = models.DateTimeField(default='')
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    intl = models.BooleanField()
+    status = models.CharField(null=True,max_length=255)
+    #est_arrive_datetime = models.DateTimeField(default='')
 
 class Hotel(models.Model):
     name = models.CharField(max_length=255)
@@ -61,12 +63,19 @@ class Feedback(models.Model):
     feedback_rating = models.IntegerField()
 
 class Deal(models.Model):
+    username = models.CharField(max_length=255)
     arrive_city = models.CharField(max_length=255)
     arrive_state = models.CharField(max_length=2)
     arrive_datetime = models.DateTimeField(default='')
     depart_city = models.CharField(max_length=255)
     depart_state = models.CharField(max_length=2)
     depart_datetime = models.DateTimeField(default='')
+    airline_name = models.CharField(max_length=255)
+    hotel_name = models.CharField(max_length=255)
+    hotel_street = models.CharField(max_length=255)
+    hotel_city = models.CharField(max_length=255)
+    hotel_state = models.CharField(max_length=2)
+    hotel_zip = models.IntegerField()
     price_low = models.DecimalField(max_digits=6, decimal_places=2)
     price_high = models.DecimalField(max_digits=6, decimal_places=2)
 

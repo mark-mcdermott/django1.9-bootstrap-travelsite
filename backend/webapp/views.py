@@ -5,6 +5,7 @@ from django.core import serializers
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
+from decimal import Decimal
 import time
 
 def index(request):
@@ -40,7 +41,19 @@ def flightsApi(request):
         # flights_serialized['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS, PUT'
         return JsonResponse(flights_serialized, safe=False)
     elif request.method == "POST":
-        return HttpResponse("post request")
+        f = Flight(
+            flight_id = request.POST.get("flight_id", ""),
+            depart_city = request.POST.get("depart_city", ""),
+            depart_state = request.POST.get("depart_state", ""),
+            depart_datetime = request.POST.get("depart_datetime", ""),
+            arrive_city = request.POST.get("arrive_city", ""),
+            arrive_state = request.POST.get("arrive_state", ""),
+            arrive_datetime = request.POST.get("arrive_datetime", ""),
+            est_arrive_datetime = request.POST.get("est_arrive_datetime", ""),
+            price = request.POST.get("price", "")
+        )
+        f.save()
+        return HttpResponse("flights post request")
 
 def hotelsApi(request):
     if request.method == "GET":
@@ -52,11 +65,48 @@ def hotelsApi(request):
         hotels_serialized = serializers.serialize('json', hotels)
         return JsonResponse(hotels_serialized, safe=False)
     elif request.method == "POST":
-        return HttpResponse("post request")
+        h = Hotel(
+            name = request.POST.get("name", ""),
+            street = request.POST.get("street", ""),
+            city = request.POST.get("city", ""),
+            state = request.POST.get("state", ""),
+            zip = request.POST.get("zip", ""),
+            price = request.POST.get("price", "")
+        )
+        h.save()
+        return HttpResponse("hotels post request")
+
+def flightsHotelsApi(request):
+    if request.method == "POST":
+        f = Flight(
+            flight_id = request.POST.get("flight_id", ""),
+            depart_city = request.POST.get("depart_city", ""),
+            depart_state = request.POST.get("depart_state", ""),
+            depart_datetime = request.POST.get("depart_datetime", ""),
+            arrive_city = request.POST.get("arrive_city", ""),
+            arrive_state = request.POST.get("arrive_state", ""),
+            arrive_datetime = request.POST.get("arrive_datetime", ""),
+            est_arrive_datetime = request.POST.get("est_arrive_datetime", ""),
+            price = request.POST.get("flight_price", "")
+        )
+        f.save()
+        h = Hotel(
+            name = request.POST.get("name", ""),
+            street = request.POST.get("street", ""),
+            city = request.POST.get("city", ""),
+            state = request.POST.get("state", ""),
+            zip = request.POST.get("zip", ""),
+            price = request.POST.get("hotel_price", "")
+        )
+        h.save()
+        return HttpResponse("hotels post request")
 
 @csrf_exempt
 def bookingApi(request):
     if request.method == "POST":
+        ### TODO: check for milage
+        ### TODO: make two separate bookings here, check for
+        # one or two, if two book both
         b = Booking(
             cust_name = request.POST.get("cust_name", ""),
             airline_name = request.POST.get("airline_name", ""),
@@ -74,7 +124,25 @@ def bookingApi(request):
             num_passengers = request.POST.get("num_passengers", ""),
             mileage = request.POST.get("mileage", ""),
         )
+        # b = Booking(
+        #     cust_name = request.POST.get("cust_name", ""),
+        #     airline_name = request.POST.get("airline_name", ""),
+        #     credit_type = request.POST.get("credit_type", ""),
+        #     credit_name = request.POST.get("credit_name", ""),
+        #     credit_number = request.POST.get("credit_number", ""),
+        #     credit_expiration = request.POST.get("credit_expiration", ""),
+        #     credit_security = request.POST.get("credit_security", ""),
+        #     depart_city = request.POST.get("depart_city", ""),
+        #     depart_state = request.POST.get("depart_state", ""),
+        #     depart_datetime = request.POST.get("depart_datetime", ""),
+        #     arrive_city = request.POST.get("arrive_city", ""),
+        #     arrive_state = request.POST.get("arrive_state", ""),
+        #     arrive_datetime = request.POST.get("arrive_datetime", ""),
+        #     num_passengers = request.POST.get("num_passengers", ""),
+        #     mileage = request.POST.get("mileage", ""),
+        # )
         b.save()
+        ### TODO: update user milage
         return HttpResponse("booking post request")
 
 @csrf_exempt
@@ -114,21 +182,38 @@ def feedbackApi(request):
 @csrf_exempt
 def dealsApi(request):
     if request.method == "GET":
-        city = request.GET.get('city', '')
-        if city is '':
-            deals = Deal.objects.all()
+        source = request.GET.get('source', '')
+        destination = request.GET.get('destination', '')
+        fmt = '%Y-%m-%d'
+        fromdate = request.GET.get('fromdate', '')
+        todate = request.GET.get('todate', '')
+        fromdate_datetime = datetime.strptime(fromdate, fmt)
+        fromdate_day = fromdate_datetime.date()
+        todate_datetime = datetime.strptime(todate, fmt)
+        todate_day = todate_datetime.date()
+        lowprice = request.GET.get('lowprice', '')
+        highprice = request.GET.get('highprice', '')
+        if source=='' or destination=='' or fromdate=='' or todate=='' or lowprice=='' or highprice=='':
+            return HttpResponse("incorrect deals api get query string")
         else:
-            deals = Deal.objects.filter(arrive_city__iexact=city)
-        deals_serialized = serializers.serialize('json', deals)
-        return JsonResponse(deals_serialized, safe=False)
+            deals = Deal.objects.filter(depart_city__iexact=source,arrive_city__iexact=destination,price_low__lte=int(highprice),price_low__gte=int(lowprice),depart_datetime__date=fromdate_day,arrive_datetime__date=todate_day)
+            deals_serialized = serializers.serialize('json', deals)
+            return JsonResponse(deals_serialized, safe=False)
     elif request.method == "POST":
         d = Deal(
+            username = request.POST.get("username", ""),
             arrive_city = request.POST.get("arrive_city", ""),
             arrive_state = request.POST.get("arrive_state", ""),
             arrive_datetime = request.POST.get("arrive_datetime", ""),
             depart_city = request.POST.get("depart_city", ""),
             depart_state = request.POST.get("depart_state", ""),
             depart_datetime = request.POST.get("depart_datetime", ""),
+            airline_name = request.POST.get("airline_name", ""),
+            hotel_name = request.POST.get("hotel_name", ""),
+            hotel_street = request.POST.get("hotel_street", ""),
+            hotel_city = request.POST.get("hotel_city", ""),
+            hotel_state = request.POST.get("hotel_state", ""),
+            hotel_zip = request.POST.get("hotel_zip", ""),
             price_low = request.POST.get("price_low", ""),
             price_high = request.POST.get("price_high", "")
         )
@@ -181,15 +266,16 @@ def getFlightStatusApi(request):
         else:
             fmt = '%Y-%m-%d %H:%M'
             flight = Flight.objects.get(flight_id=flightId)
-            expected = flight.arrive_datetime
-            estimated = flight.est_arrive_datetime
-            difference = int((estimated - expected).total_seconds() / 60)
-            if difference < -5:
-                status = str(abs(difference)) + ' minutes early'
-            elif difference > 5:
-                status = str(difference) + ' minutes late'
-            else:
-                status = 'on time'
+            status = flight.status
+            # expected = flight.arrive_datetime
+            # estimated = flight.est_arrive_datetime
+            # difference = int((estimated - expected).total_seconds() / 60)
+            # if difference < -5:
+            #     status = str(abs(difference)) + ' minutes early'
+            # elif difference > 5:
+            #     status = str(difference) + ' minutes late'
+            # else:
+            #     status = 'on time'
             return HttpResponse(status)
     elif request.method == "POST":
         return HttpResponse("post get flight status request")
