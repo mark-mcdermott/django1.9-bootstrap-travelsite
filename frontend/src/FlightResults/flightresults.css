@@ -17,3 +17,16 @@ background: #FFDD00;
 .bookingResponse {
     color: #000;
 }
+.reviewFlights {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.reviewFlightHeading{
+    font-size:20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.reviewFlightsEach{
+    flex: 2;
+}

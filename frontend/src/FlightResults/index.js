@@ -7,22 +7,19 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import axios from 'axios';
+import Card from '@material-ui/core/Card';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Typography from '@material-ui/core/Typography';
 import './flightresults.css';
 
-const styles = theme => ({
-  root: {
-    width: '100%',
-    marginTop: theme.spacing.unit * 3,
-    overflowX: 'auto',
-  },
-  table: {
-    minWidth: 700,
-  },
-});
-
-
-class FlightResults extends React.Component {
+class ShowConfirmationSectionClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,9 +27,9 @@ class FlightResults extends React.Component {
       bookingStatus: false,
     }
   }
-  bookFlight = (flightDetails) => {
-    const { user, bookingInputs: { date, to, from, returndate, passengers },  } = this.props;
-    console.log(flightDetails);
+  bookFlight = () => {
+    const { user, bookingInputs: { date, to, from, returndate, passengers },selectedFlights } = this.props;
+    const flightDetails = selectedFlights[0];
     var bodyFormData = new FormData();
     bodyFormData.set('cust_name', 'Mark McDermott');
     bodyFormData.set('airline_name', 'Delta');
@@ -49,6 +46,7 @@ class FlightResults extends React.Component {
     bodyFormData.set('arrive_datetime', flightDetails.arrive_datetime);
     bodyFormData.set('num_passengers', passengers);
     bodyFormData.set('mileage', '100');
+    bodyFormData.set('flight2', JSON.stringify(selectedFlights[1]));
     axios({
       method: 'post',
       url: 'http://localhost:8000/booking-api',
@@ -71,12 +69,147 @@ class FlightResults extends React.Component {
       });
   }
   render() {
-    const { classes, searchResults } = this.props;
-    const { bookingStatus, bookingResult } = this.state;
+    const { classes, selectedFlights } = this.props;
+    const {bookingStatus, bookingResult,} = this.state;
+    const bull = <span className={classes.bullet}>•</span>;
+    return (
+      <div class="confirmationSection" id="confirmationSection">
+        <Paper>
+          <div className="reviewFlights"> 
+          {selectedFlights.map((eachResult, index) => {
+            return (<List component="nav" className="reviewFlightsEach">
+            <ListItem button>
+                <Typography className={`reviewFlightHeading ${classes.title}`} color="textPrimary">
+                  Flight-{index} Details: 
+                </Typography>
+              </ListItem>
+              <ListItem button>
+                <Typography className={classes.title} color="textSecondary">
+                  Depart City: 
+                </Typography>
+                <ListItemText primary={eachResult.depart_city} />
+              </ListItem>
+              <ListItem button>
+                <Typography className={classes.title} color="textSecondary">
+                  Depart State: 
+                </Typography>
+                <ListItemText primary={eachResult.depart_state} />
+              </ListItem>
+              <ListItem button>
+                <Typography className={classes.title} color="textSecondary">
+                  Depart Date: 
+                </Typography>
+                <ListItemText primary={eachResult.depart_datetime} />
+              </ListItem>
+              <ListItem button>
+                <Typography className={classes.title} color="textSecondary">
+                  Arrival City: 
+                </Typography>
+                <ListItemText primary={eachResult.arrive_city} />
+              </ListItem>
+              <ListItem button>
+                <Typography className={classes.title} color="textSecondary">
+                  Arrival State: 
+                </Typography>
+                <ListItemText primary={eachResult.arrive_state} />
+              </ListItem>
+              <ListItem button>
+                <Typography className={classes.title} color="textSecondary">
+                  Arrival Date: 
+                </Typography>
+                <ListItemText primary={eachResult.arrive_datetime} />
+              </ListItem>
+              <ListItem button>
+                <Typography className={classes.title} color="textSecondary">
+                  Passengers: 
+                </Typography>
+                <ListItemText primary={eachResult.passengers} />
+              </ListItem>
+              <ListItem button>
+                <Typography className={classes.title} color="textSecondary">
+                  Price: 
+                </Typography>
+                <ListItemText primary={eachResult.price} />
+              </ListItem>
+            </List>)
+          })}
+          </div>
+          <div className="userFormGroup">
+            <input type="button" name="submit" id="submit" value="Confirm your Booking"
+              className="SubmitButton"
+              onClick={() => { this.bookFlight(); }} />
+          </div>
+          <p className="bookingResponse">{bookingStatus && bookingResult}</p>
+        </Paper>
+      </div>
+    )
+  }
+}
+
+const styles = theme => ({
+  root: {
+    width: '100%',
+    marginTop: theme.spacing.unit * 3,
+    overflowX: 'auto',
+  },
+  table: {
+    minWidth: 700,
+  },
+});
+
+const ShowConfirmationSection = withStyles(styles)(ShowConfirmationSectionClass);
+
+
+class FlightResults extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      bookingResult: '',
+      bookingStatus: false,
+      selectedFlights: [],
+      showConfirmationBox: false,
+    }
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    return {
+      ...prevState,
+      searchResults: nextProps.searchResults
+    };
+  }
+
+  showConfirmationSec = () => {
+    const { selectedFlights } = this.state;
+
+    if (selectedFlights.length < 1 && selectedFlights.length > 2) {
+      alert("Please select two flights");
+    } else {
+      this.setState({
+        showConfirmationBox: true,
+      });
+    }
+  }
+
+  selectFlight = (flightDetails) => {
+    const { selectedFlights, searchResults } = this.state;
+    // const newSearchResults = searchResults.map(eachitem => (eachitem.checked = true));
+    if (selectedFlights.length === 2) {
+      selectedFlights[1] = flightDetails;
+    } else {
+      selectedFlights.push(flightDetails);
+    }
+    this.setState({
+      selectedFlights,
+    });
+  }
+
+  render() {
+    const { classes, bookingInputs } = this.props;
+    const { searchResults, showConfirmationBox,
+      selectedFlights } = this.state;
     return (
       <Paper className={classes.root}>
         <label> Please select flight from below </label>
-        <p className="bookingResponse">{bookingStatus && bookingResult}</p>
         <Table className={classes.table}>
           <TableHead>
             <TableRow>
@@ -104,17 +237,35 @@ class FlightResults extends React.Component {
                   <TableCell >{eachResult.fields.arrive_datetime}</TableCell>
                   <TableCell >{eachResult.fields.price}</TableCell>
                   <TableCell >
-                    <div className="userFormGroup">
-                      <input type="button" name="submit" id="submit" value="Book Flight"
-                        className="SubmitButton"
-                        onClick={() => { this.bookFlight(eachResult.fields); }} />
-                    </div>
+                    <FormGroup row>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={eachResult.fields.checked}
+                            onChange={() => this.selectFlight(eachResult.fields)}
+                            value="checkedB"
+                            color="primary"
+                          />
+                        }
+                        label="Select this flight"
+                      />
+                    </FormGroup>
                   </TableCell>
                 </TableRow>
               );
             })}
           </TableBody>
         </Table>
+        <div className="userFormGroup">
+          <input type="button" name="submit" id="submit" value="Book Selected Flights"
+            className="SubmitButton"
+            onClick={() => { this.showConfirmationSec(); }} />
+        </div>
+
+        {showConfirmationBox && <ShowConfirmationSection
+        selectedFlights={selectedFlights}
+        bookingInputs={bookingInputs}
+        />}
       </Paper>
     );
   }
