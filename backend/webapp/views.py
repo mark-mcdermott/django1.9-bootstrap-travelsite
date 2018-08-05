@@ -141,6 +141,12 @@ def dealsApi(request):
             depart_city = request.POST.get("depart_city", ""),
             depart_state = request.POST.get("depart_state", ""),
             depart_datetime = request.POST.get("depart_datetime", ""),
+            airline_name = request.POST.get("airline_name", ""),
+            hotel_name = request.POST.get("hotel_name", ""),
+            hotel_street = request.POST.get("hotel_street", ""),
+            hotel_city = request.POST.get("hotel_city", ""),
+            hotel_state = request.POST.get("hotel_state", ""),
+            hotel_zip = request.POST.get("hotel_zip", ""),
             price_low = request.POST.get("price_low", ""),
             price_high = request.POST.get("price_high", "")
         )
