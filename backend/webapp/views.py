@@ -87,7 +87,7 @@ def flightsHotelsApi(request):
             arrive_state = request.POST.get("arrive_state", ""),
             arrive_datetime = request.POST.get("arrive_datetime", ""),
             est_arrive_datetime = request.POST.get("est_arrive_datetime", ""),
-            price = request.POST.get("price", "")
+            price = request.POST.get("flight_price", "")
         )
         f.save()
         h = Hotel(
@@ -96,7 +96,7 @@ def flightsHotelsApi(request):
             city = request.POST.get("city", ""),
             state = request.POST.get("state", ""),
             zip = request.POST.get("zip", ""),
-            price = request.POST.get("price", "")
+            price = request.POST.get("hotel_price", "")
         )
         h.save()
         return HttpResponse("hotels post request")
@@ -104,6 +104,7 @@ def flightsHotelsApi(request):
 @csrf_exempt
 def bookingApi(request):
     if request.method == "POST":
+        ### TODO: check for milage
         b = Booking(
             cust_name = request.POST.get("cust_name", ""),
             airline_name = request.POST.get("airline_name", ""),
@@ -122,6 +123,7 @@ def bookingApi(request):
             mileage = request.POST.get("mileage", ""),
         )
         b.save()
+        ### TODO: update user milage
         return HttpResponse("booking post request")
 
 @csrf_exempt
@@ -248,6 +250,7 @@ def getFlightStatusApi(request):
             expected = flight.arrive_datetime
             estimated = flight.est_arrive_datetime
             difference = int((estimated - expected).total_seconds() / 60)
+            # TODO: update the language to match reqs doc!!!
             if difference < -5:
                 status = str(abs(difference)) + ' minutes early'
             elif difference > 5:
