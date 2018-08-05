@@ -52,7 +52,7 @@ class AppRoute extends React.Component {
                         <div className="innerBgOverlay">
                         </div>
                         <div className="headingText">
-                            <h2>Explore our most tavel agency</h2>
+                            <h2>Explore our tavel agency</h2>
                             <h1>Our Travel Agency</h1>
                         </div>
                     </div>

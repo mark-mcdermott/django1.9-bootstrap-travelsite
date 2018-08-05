@@ -120,7 +120,7 @@ class Flight extends React.Component {
           <div className="userFormGroup passengers">
             <label htmlFor="date" className="formLabel">Passengers:</label>
             <div className="formField">
-              <input type="number" id="location" className="formControl" placeholder="Search Location" onChange={this.passengersChange} />
+              <input type="number" id="location" className="formControl" placeholder="Passengers" onChange={this.passengersChange} />
             </div>
           </div>
           <div className="userFormGroup">

@@ -26,26 +26,38 @@
   pk: 3
   fields:
     flight_id: 3
-    depart_city: Oklahoma City
+    depart_city: Houston
     depart_state: OK
-    depart_datetime: 2018-09-03 04:15
-    arrive_city: Dallas
+    depart_datetime: 2018-11-02 12:30
+    arrive_city: Austin
     arrive_state: TX
-    arrive_datetime: 2018-09-03 06:01
-    est_arrive_datetime: 2018-09-03 06:03
+    arrive_datetime: 2018-11-03 06:01
+    est_arrive_datetime: 2018-11-03 06:01
     price: 58.00
 - model: webapp.flight
   pk: 4
   fields:
     flight_id: 4
-    depart_city: Santa Clara
-    depart_state: CA
-    depart_datetime: 2018-11-30 13:01
-    arrive_city: New York
-    arrive_state: NY
-    arrive_datetime: 2019-12-01 10:01
-    est_arrive_datetime: 2019-12-01 9:50
-    price: 100.00
+    depart_city: Houston
+    depart_state: OK
+    depart_datetime: 2018-10-15 12:30
+    arrive_city: Austin
+    arrive_state: TX
+    arrive_datetime: 2018-10-15 16:01
+    est_arrive_datetime: 2018-10-15 16:01
+    price: 58.00
+- model: webapp.flight
+  pk: 5
+  fields:
+    flight_id: 2
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-9-25 11:02
+    arrive_city: Houston
+    arrive_state: TX
+    arrive_datetime: 2018-10-31 12:30
+    est_arrive_datetime: 2018-10-31 12:30
+    price: 200.00
 - model: webapp.hotel
   pk: 1
   fields:

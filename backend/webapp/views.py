@@ -18,6 +18,15 @@ def flightsApi(request):
     if request.method == "GET":
         fromcity = request.GET.get('fromcity', '')
         tocity = request.GET.get('tocity', '')
+        date = request.GET.get('date', '')
+        #fmt = '%Y-%m-%d %H:%M'
+        fmt = '%Y-%m-%d'
+        date_datetime = datetime.strptime(date, fmt)
+        day = date_datetime.date()
+        returndate = request.GET.get('returndate', '')
+        returndate_datetime = datetime.strptime(returndate, fmt)
+        returndate_day = returndate_datetime.date()
+        passengers = request.GET.get('passengers', '')
         if fromcity is '' and tocity is '':
             flights = Flight.objects.all()
         elif tocity is '':
@@ -25,7 +34,13 @@ def flightsApi(request):
         elif fromcity is '':
             flights = Flight.objects.filter(arrive_city__iexact=tocity)
         else:
-            flights = Flight.objects.filter(depart_city__iexact=fromcity,arrive_city__iexact=tocity)
+            flights = Flight.objects.filter(depart_city__iexact=fromcity,arrive_city__iexact=tocity,depart_datetime__date=day) | Flight.objects.filter(depart_city__iexact=tocity,arrive_city__iexact=fromcity,depart_datetime__date=returndate_day)
+            #flights = Flight.objects.filter(depart_city__iexact=fromcity,arrive_city__iexact=tocity)
+
+            #for flight in flights:
+                #print day
+                #print flight.depart_datetime.date()
+
         flights_serialized = serializers.serialize('json', flights)
         # flights_serialized['Access-Control-Allow-Origin'] = '*'
         # flights_serialized['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS, PUT'
