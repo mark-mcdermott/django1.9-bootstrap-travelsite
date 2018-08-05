@@ -63,6 +63,19 @@
     est_arrive_datetime: 2018-10-31 12:30
     price: 200.00
     intl: false
+- model: webapp.flight
+  pk: 5
+  fields:
+    flight_id: 2
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-9-25 11:02
+    arrive_city: London
+    arrive_state: Middlesex
+    arrive_datetime: 2018-10-31 12:30
+    est_arrive_datetime: 2018-10-31 12:30
+    price: 200.00
+    intl: true
 - model: webapp.hotel
   pk: 1
   fields:
