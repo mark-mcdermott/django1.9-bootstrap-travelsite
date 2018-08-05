@@ -134,6 +134,7 @@ def dealsApi(request):
             return JsonResponse(deals_serialized, safe=False)
     elif request.method == "POST":
         d = Deal(
+            username = request.POST.get("username", ""),
             arrive_city = request.POST.get("arrive_city", ""),
             arrive_state = request.POST.get("arrive_state", ""),
             arrive_datetime = request.POST.get("arrive_datetime", ""),
