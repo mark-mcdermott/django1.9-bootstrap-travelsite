@@ -7,7 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import FlightIcon from '@material-ui/icons/Flight';
 import HotelIcon from '@material-ui/icons/Hotel';
 import FlightTakeoff from '@material-ui/icons/FlightTakeoff';
-import HelpIcon from '@material-ui/icons/Help';
+import DealsIcon from '@material-ui/icons/Bookmark';
 import Typography from '@material-ui/core/Typography';
 import './tabs.css';
 import Flight from '../Flight';
@@ -73,7 +73,7 @@ class ScrollableTabsButtonForce extends React.Component {
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
             <Tab label="Flight+Hotel" icon={<FlightTakeoff />}
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
-            <Tab label="Deals" icon={<HelpIcon />}
+            <Tab label="Deals" icon={<DealsIcon />}
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
           </Tabs>
         </AppBar>

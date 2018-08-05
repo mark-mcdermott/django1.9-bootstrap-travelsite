@@ -142,18 +142,18 @@ class Signup extends React.Component {
         return (
             <div>
                 <div id="signup">
-                    <input type="text" id="first" placeholder="First Name" onChange={this.updateFName} />
-                    <input type="text" id="last" placeholder="Last Name" onChange={this.updateLName}/>
-                    <input type="text" id="last" placeholder="Middle Name" onChange={this.updateMName}/>
-                    <input type="text" id="last" placeholder="Mailing Address" onChange={this.updateMailingAddr}/>
-                    <input type="email" id="email" placeholder="Email" onChange={this.updateEmail}/>
-                    <input type="number" id="last" placeholder="Credit Card Number" onChange={this.updateCreditCard}/>
-                    <input type="text" id="last" placeholder="Credit Card Name" onChange={this.updateCreditName}/>
-                    <input type="number" id="last" placeholder="Credit Card Security" onChange={this.updateCreditSec}/>
-                    <input type="date" id="last" placeholder="Credit Card Expiration" onChange={this.updateCreditExp}/>
-                    <input type="text" id="last" placeholder="Pick a username" onChange={this.updateUsername}/>
-                    <input type="password" id="password" placeholder="Password" onChange={this.updatePassword}/>
-                    <button id="send" onClick={this.signUpUser}>Signup</button>
+                    <input type="text"  placeholder="First Name" onChange={this.updateFName} />
+                    <input type="text" placeholder="Last Name" onChange={this.updateLName}/>
+                    <input type="text"  placeholder="Middle Name" onChange={this.updateMName}/>
+                    <input type="text"  placeholder="Mailing Address" onChange={this.updateMailingAddr}/>
+                    <input type="email"  placeholder="Email" onChange={this.updateEmail}/>
+                    <input type="number"placeholder="Credit Card Number" onChange={this.updateCreditCard}/>
+                    <input type="text"  placeholder="Credit Card Name" onChange={this.updateCreditName}/>
+                    <input type="number"  placeholder="Credit Card Security" onChange={this.updateCreditSec}/>
+                    <input type="date"  placeholder="Credit Card Expiration" onChange={this.updateCreditExp}/>
+                    <input type="text"  placeholder="Pick a username" onChange={this.updateUsername}/>
+                    <input type="password"  placeholder="Password" onChange={this.updatePassword}/>
+                    <button onClick={this.signUpUser}>Signup</button>
                     {this.state.regStatusShow &&<p className={this.state.regResultClass}>{this.state.regStatus}</p>}
                 </div>
             </div>
