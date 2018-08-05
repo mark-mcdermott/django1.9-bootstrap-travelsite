@@ -41,7 +41,19 @@ def flightsApi(request):
         # flights_serialized['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS, PUT'
         return JsonResponse(flights_serialized, safe=False)
     elif request.method == "POST":
-        return HttpResponse("post request")
+        f = Flight(
+            flight_id = request.POST.get("flight_id", ""),
+            depart_city = request.POST.get("depart_city", ""),
+            depart_state = request.POST.get("depart_state", ""),
+            depart_datetime = request.POST.get("depart_datetime", ""),
+            arrive_city = request.POST.get("arrive_city", ""),
+            arrive_state = request.POST.get("arrive_state", ""),
+            arrive_datetime = request.POST.get("arrive_datetime", ""),
+            est_arrive_datetime = request.POST.get("est_arrive_datetime", ""),
+            price = request.POST.get("price", "")
+        )
+        f.save()
+        return HttpResponse("feedback post request")
 
 def hotelsApi(request):
     if request.method == "GET":
@@ -53,7 +65,18 @@ def hotelsApi(request):
         hotels_serialized = serializers.serialize('json', hotels)
         return JsonResponse(hotels_serialized, safe=False)
     elif request.method == "POST":
-        return HttpResponse("post request")
+        h = Hotel(
+            name = request.POST.get("name", ""),
+            street = request.POST.get("street", ""),
+            city = request.POST.get("city", ""),
+            state = request.POST.get("state", ""),
+            zip = request.POST.get("zip", ""),
+            price = request.POST.get("price", "")
+        )
+        h.save()
+        return HttpResponse("feedback post request")
+
+# def flightsHotelsApi(request):
 
 @csrf_exempt
 def bookingApi(request):
