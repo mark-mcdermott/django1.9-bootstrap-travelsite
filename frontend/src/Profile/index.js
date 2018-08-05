@@ -14,6 +14,8 @@ class Profile extends Component {
 
   render(){
     const {name , email, milleage, } = this.state;
+    const {userDetails} = this.props;
+  
         return (
           <div>
               <div className="profileHeaderRow">
@@ -26,7 +28,7 @@ class Profile extends Component {
                   Name:
                 </label>
                 <label className="labelValue">
-                  {name}
+                  {userDetails.name_first}  {userDetails.name_middle} {userDetails.name_last}
                 </label>
               </div>
               <div className="eachValue">
@@ -34,15 +36,17 @@ class Profile extends Component {
                   Email:
                 </label>
                 <label className="labelValue">
-                  {email}
+                  {userDetails.email}
                 </label>
               </div>
               <div className="eachValue">
                 <label className="labelName">
-                Milleage:
+                Address:
                 </label>
                 <label className="labelValue">
-                  {milleage}
+                  {userDetails.address_street},
+                  {userDetails.address_city},
+                  {userDetails.address_state} - {userDetails.address_zip}
                 </label>
               </div>
         </div>
