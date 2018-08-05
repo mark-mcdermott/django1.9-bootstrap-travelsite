@@ -24,16 +24,16 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
+            username: '',
             password: '',
             loginError: false,
             loginErrorMsg: 'Login Failed'
         }
     }
     onLogin = () => {
-        const {email, password } = this.state;
+        const { username, password } = this.state;
         var bodyFormData = new FormData();
-        bodyFormData.set('email', email);
+        bodyFormData.set('username', username);
         bodyFormData.set('password', password);
         axios({
           method: 'post',
@@ -42,13 +42,13 @@ class Login extends Component {
           config: { headers: { 'Content-Type': 'multipart/form-data' } }
         })
           .then((response) => {
-            console.log(response.data);
-            console.log(typeof response.data);
-            if(typeof response.data === "object") {
+            if( !(response.data === "no matching email & password in database")) {
+              const parsedData = JSON.parse(response.data);  
               this.setState({
                 loginError: false,
+                loginErrorMsg: ''
               })
-               this.props.onLogin(response.fields);
+               this.props.onLogin(parsedData[0].fields);
             } else {
                 this.setState({
                     loginError: true,
@@ -64,9 +64,9 @@ class Login extends Component {
             })
           });
     }
-    updateEmail = (e) => {
+    updateusername = (e) => {
         this.setState({
-            email: e.target.value,
+            username: e.target.value,
         });
     }
 
@@ -81,7 +81,7 @@ class Login extends Component {
         return (
             <div>
                 <div id="login">
-                    <input type="email" id="email" placeholder="Email" onChange={this.updateEmail}/>
+                    <input type="text" id="email" placeholder="User Name" onChange={this.updateusername}/>
                     <input type="password" id="password" placeholder="Password" onChange={this.updatePassword} />
                     <button id="send" onClick={this.onLogin}>Login</button>
                     {this.state.loginError && <p className="loginError">{this.state.loginErrorMsg} </p>}

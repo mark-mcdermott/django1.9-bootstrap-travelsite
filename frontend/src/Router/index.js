@@ -15,6 +15,7 @@ class  AppRoute extends React.Component {
         console.log("it is refresh");
     }
     onLogin = (userDetails) => {
+        console.log("User details .", userDetails);
         this.setState({
             isLoggedIn: true,
             userDetails,
