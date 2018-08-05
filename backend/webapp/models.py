@@ -10,9 +10,10 @@ class Flight(models.Model):
     arrive_city = models.CharField(max_length=255)
     arrive_state = models.CharField(max_length=2)
     arrive_datetime = models.DateTimeField(default='')
-    est_arrive_datetime = models.DateTimeField(default='')
     price = models.DecimalField(max_digits=6, decimal_places=2)
     intl = models.BooleanField()
+    status = models.CharField(null=True,max_length=255)
+    #est_arrive_datetime = models.DateTimeField(default='')
 
 class Hotel(models.Model):
     name = models.CharField(max_length=255)

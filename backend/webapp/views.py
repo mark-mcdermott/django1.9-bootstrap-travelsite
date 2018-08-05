@@ -266,16 +266,16 @@ def getFlightStatusApi(request):
         else:
             fmt = '%Y-%m-%d %H:%M'
             flight = Flight.objects.get(flight_id=flightId)
-            expected = flight.arrive_datetime
-            estimated = flight.est_arrive_datetime
-            difference = int((estimated - expected).total_seconds() / 60)
-            # TODO: update the language to match reqs doc!!!
-            if difference < -5:
-                status = str(abs(difference)) + ' minutes early'
-            elif difference > 5:
-                status = str(difference) + ' minutes late'
-            else:
-                status = 'on time'
+            status = flight.status
+            # expected = flight.arrive_datetime
+            # estimated = flight.est_arrive_datetime
+            # difference = int((estimated - expected).total_seconds() / 60)
+            # if difference < -5:
+            #     status = str(abs(difference)) + ' minutes early'
+            # elif difference > 5:
+            #     status = str(difference) + ' minutes late'
+            # else:
+            #     status = 'on time'
             return HttpResponse(status)
     elif request.method == "POST":
         return HttpResponse("post get flight status request")
