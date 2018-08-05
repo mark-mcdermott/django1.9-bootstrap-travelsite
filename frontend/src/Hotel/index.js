@@ -77,7 +77,19 @@ class Hotel extends React.Component {
           </div>
 
           <div className="userFormGroup">
-            <label htmlFor="date" className="formLabel">When:</label>
+            <label htmlFor="date" className="formLabel">Check-in Date:</label>
+            <div className="formField">
+              <input type="date" id="location" className="formControl" placeholder="Search Location" onChange={this.dateChange}/>
+            </div>
+          </div>
+          <div className="userFormGroup">
+            <label htmlFor="date" className="formLabel">Check-out Date:</label>
+            <div className="formField">
+              <input type="text" id="location" className="formControl" placeholder="Search Location" onChange={this.dateChange}/>
+            </div>
+          </div>
+          <div className="userFormGroup">
+            <label htmlFor="date" className="formLabel">No of People:</label>
             <div className="formField">
               <input type="text" id="location" className="formControl" placeholder="Search Location" onChange={this.dateChange}/>
             </div>

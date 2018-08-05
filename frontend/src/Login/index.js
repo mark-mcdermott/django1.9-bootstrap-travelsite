@@ -27,6 +27,7 @@ class Login extends Component {
             email: '',
             password: '',
             loginError: false,
+            loginErrorMsg: 'Login Failed'
         }
     }
     onLogin = () => {
@@ -41,16 +42,25 @@ class Login extends Component {
           config: { headers: { 'Content-Type': 'multipart/form-data' } }
         })
           .then((response) => {
-            console.log(response);
-            this.setState({
+            console.log(response.data);
+            console.log(typeof response.data);
+            if(typeof response.data === "object") {
+              this.setState({
                 loginError: false,
               })
-            this.props.onLogin(response.fields);
+               this.props.onLogin(response.fields);
+            } else {
+                this.setState({
+                    loginError: true,
+                    loginErrorMsg: response.data
+                  })
+            }
           })
           .catch((error) => {
             console.log(error);
             this.setState({
               loginError: true,
+              loginErrorMsg: 'Login Failed'
             })
           });
     }
@@ -74,7 +84,7 @@ class Login extends Component {
                     <input type="email" id="email" placeholder="Email" onChange={this.updateEmail}/>
                     <input type="password" id="password" placeholder="Password" onChange={this.updatePassword} />
                     <button id="send" onClick={this.onLogin}>Login</button>
-                    {this.state.loginError && <p className="loginError">Login Failed </p>}
+                    {this.state.loginError && <p className="loginError">{this.state.loginErrorMsg} </p>}
                 </div>
             </div>)
     }
