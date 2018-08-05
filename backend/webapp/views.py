@@ -192,9 +192,9 @@ def historyApi(request):
 @csrf_exempt
 def loginApi(request):
     if request.method == "POST":
-        email = request.POST.get("email", "")
+        username = request.POST.get("username", "")
         password = request.POST.get("password", "")
-        user = User.objects.filter(email__iexact=email,password=password)
+        user = User.objects.filter(username=username,password=password)
         if user:
             user_serialized = serializers.serialize('json', user)
             return JsonResponse(user_serialized, safe=False)
