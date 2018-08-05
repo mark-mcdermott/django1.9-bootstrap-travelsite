@@ -35,12 +35,6 @@ def flightsApi(request):
             flights = Flight.objects.filter(arrive_city__iexact=tocity)
         else:
             flights = Flight.objects.filter(depart_city__iexact=fromcity,arrive_city__iexact=tocity,depart_datetime__date=day) | Flight.objects.filter(depart_city__iexact=tocity,arrive_city__iexact=fromcity,depart_datetime__date=returndate_day)
-            #flights = Flight.objects.filter(depart_city__iexact=fromcity,arrive_city__iexact=tocity)
-
-            #for flight in flights:
-                #print day
-                #print flight.depart_datetime.date()
-
         flights_serialized = serializers.serialize('json', flights)
         # flights_serialized['Access-Control-Allow-Origin'] = '*'
         # flights_serialized['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS, PUT'
@@ -128,6 +122,17 @@ def dealsApi(request):
         deals_serialized = serializers.serialize('json', deals)
         return JsonResponse(deals_serialized, safe=False)
     elif request.method == "POST":
+        d = Deal(
+            arrive_city = request.POST.get("arrive_city", ""),
+            arrive_state = request.POST.get("arrive_state", ""),
+            arrive_datetime = request.POST.get("arrive_datetime", ""),
+            depart_city = request.POST.get("depart_city", ""),
+            depart_state = request.POST.get("depart_state", ""),
+            depart_datetime = request.POST.get("depart_datetime", ""),
+            price_low = request.POST.get("price_low", ""),
+            price_high = request.POST.get("price_high", "")
+        )
+        d.save()
         return HttpResponse("deals post request")
 
 @csrf_exempt
@@ -165,8 +170,6 @@ def getUserApi(request):
         return JsonResponse(users_serialized, safe=False)
     elif request.method == "POST":
         return HttpResponse("post request")
-
-
     return HttpResponse("get user api stub")
 
 @csrf_exempt
