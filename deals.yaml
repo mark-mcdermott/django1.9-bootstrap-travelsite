@@ -1,0 +1,134 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww21380\viewh13740\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 template =\'93-model:proto.deals\\n\'94\\\
+	 \'93 pk:%d \\n\'94\\\
+\'93fields:\\n\'94\\\
+\'93pk: %D\\n\'94\\\
+\'93username : %s\\n\'94\\\
+\'93arrive_city\
+arrive_state\
+arrive_date\
+depart_city\
+depart_state\
+depart_date\
+airline_name\
+hotel_name\
+hotel_address\
+price_low\
+price_high\
+\
+\
+-model:proto.deals\
+fields:\
+pk:1\
+username : Sirisha\
+arrive_city:  Hyderabad\
+arrive_state: TN\
+arrive_date:2018-8-22\
+depart_city: Austin\
+depart_state: Tx\
+depart_date: 2018-8-20\
+airline_name:1 #United Airlines\
+hotel_name: Faluknama Palace\
+hotel_address :3456\
+hotel_Street: Faluknama Blvd\
+hotel_zip: 55492\
+price_low: 150\
+price_high: 500\
+\
+\
+-model:proto.deals\
+fields:\
+pk:2\
+username : Harika\
+arrive_city:  Boston\
+arrive_state: NJ\
+arrive_date:2018-8-06\
+depart_city: Austin\
+depart_state: Tx\
+depart_date: 2018-8-06\
+airline_name:1 #United Airlines\
+hotel_name: Sheraton\
+hotel_address :6857\
+hotel_Street: Research Blvd\
+hotel_zip:  55492\
+price_low: 345\
+price_high: 800\
+\
+\
+-model:proto.deals\
+fields:\
+pk:3\
+username : Andrew\
+arrive_city:  san Francisco\
+arrive_state: SF\
+arrive_date:2018-12-06\
+depart_city: Austin\
+depart_state: Tx\
+depart_date: 2018-10-22\
+airline_name:4 #British Airways\
+hotel_name: Sheraton\
+hotel_address :4567\
+hotel_Street: parmer\
+hotel_zip:  44456\
+price_low: 345\
+price_high: 800\
+\
+-model:proto.deals\
+fields:\
+pk:4\
+username : Mark\
+arrive_city:  Chicago\
+arrive_state: IL\
+arrive_date:2018-09-01\
+depart_city: Austin\
+depart_state: Tx\
+depart_date: 2018-09-06\
+airline_name:2 #Delta\
+hotel_name: Park\
+hotel_address :6857\
+hotel_Street: Hope Dr\
+hotel_zip:  454545\
+price_low: 2234\
+price_high: 4354\
+\
+-model:proto.deals\
+fields:\
+pk:5\
+username : Jon\
+arrive_city:  Cairo\
+arrive_state: EG\
+arrive_date:2018\'9609-06\
+depart_city: Austin\
+depart_state: Tx\
+depart_date: 2018-11-29\
+airline_name:7 #Emirates\
+hotel_name: Sheraton\
+hotel_address :5555\
+hotel_Street: Nice Blvd\
+hotel_zip:  55492\
+price_low: 555\
+price_high: 1111\
+\
+-model:proto.deals\
+fields:\
+pk:6\
+username : Jane\
+arrive_city:  Sydney\
+arrive_state: Au\
+arrive_date:2018\'9608-09\
+depart_city: Austin\
+depart_state: Tx\
+depart_date: 2018-08-04\
+airline_name:6 \
+hotel_name: Sheraton\
+hotel_address :5555\
+hotel_Street: Nice Blvd\
+hotel_zip:  55492\
+price_low: 111\
+price_high: 1111}
