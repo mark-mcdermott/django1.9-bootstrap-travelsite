@@ -135,6 +135,10 @@
     position: relative;
 }
 
+.HeaderMenu  ul li.active > a:hover {
+  color: #ffffff !important;
+}
+
 .MuiTabs-scroller-42,
 .userForm {
   margin-left: auto;

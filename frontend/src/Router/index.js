@@ -40,12 +40,9 @@ class AppRoute extends React.Component {
                             </div>
                             <div className="HeaderMenu">
                                 <ul>
-                                    <li className="active">
-                                        <Link to="/">Home</Link>
-                                    </li>
+                                    {this.state.isLoggedIn && (<li className="active"><Link to="/">Home</Link></li>)}
                                     {this.state.isLoggedIn && (<li ><a className="logout" onClick={(e) => this.onLogOut(e)}>Logout</a></li>)}
-                                    {!this.state.isLoggedIn && (<li ><Link to="/Login">Login</Link></li>)}
-                                    <li><Link to="/Profile">Profile</Link></li>
+                                    {this.state.isLoggedIn && (<li><Link to="/Profile">Profile</Link></li>)}
                                 </ul>
                             </div>
                         </div>
