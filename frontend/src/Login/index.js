@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from 'axios';
+import MaskedInput from 'react-text-mask'
 import './App.css';
 
 class Signup extends React.Component {
@@ -55,7 +56,13 @@ class Signup extends React.Component {
         });
     }
 
-    updateCreditCard = (e) => {
+    updateCreditCardType = (e) => {
+        this.setState({
+            creditType: e.target.value,
+        });
+    }
+
+    updateCreditCardNum = (e) => {
         this.setState({
             creditNo: e.target.value,
         });
@@ -90,21 +97,22 @@ class Signup extends React.Component {
     signUpUser = () => {
         const {
             firstName,
-            lastName ,
-            middleName ,
-            mailingAddr ,
-            email ,
+            lastName,
+            middleName,
+            mailingAddr,
+            email,
+            creditType,
             creditNo,
-            creditName ,
+            creditName,
             creditSecurity,
-            creditExpiration ,
-            username ,
+            creditExpiration,
+            username,
             password,
         } = this.state;
 
         var bodyFormData = new FormData();
         bodyFormData.set('cust_name', username);
-        bodyFormData.set('credit_type', 'Visa');
+        bodyFormData.set('credit_type', creditType);
         bodyFormData.set('credit_name', creditName);
         bodyFormData.set('credit_number', creditNo);
         bodyFormData.set('credit_expiration', creditExpiration);
@@ -145,16 +153,36 @@ class Signup extends React.Component {
             <div>
                 <div id="signup">
                     <input type="text"  placeholder="First Name" onChange={this.updateFName} />
-                    <input type="text" placeholder="Last Name" onChange={this.updateLName}/>
                     <input type="text"  placeholder="Middle Name" onChange={this.updateMName}/>
+                    <input type="text" placeholder="Last Name" onChange={this.updateLName}/>
                     <input type="text"  placeholder="Mailing Address" onChange={this.updateMailingAddr}/>
                     <input type="email"  placeholder="Email" onChange={this.updateEmail}/>
-                    <input type="number" placeholder="Credit Card Number" onChange={this.updateCreditCard}/>
-                    <input type="text"  placeholder="Credit Card Name" maxlength="16" onChange={this.updateCreditName}/>
-                    <input type="number"  placeholder="Credit Card Security" maxlength="3" onChange={this.updateCreditSec}/>
-                    <input type="text"  placeholder="Credit Card Expiration" onChange={this.updateCreditExp}/>
+                    <select onChange={this.updateCreditType}>
+                      <option value="" disabled selected>Credit Card Type</option>
+                      <option value="visa">Visa</option>
+                      <option value="mastercard">Master Card</option>
+                      <option value="amex">American Express</option>
+                    </select>
+                    <MaskedInput
+                      mask={[/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,' ',/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,' ',/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,' ',/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,' ']}
+                      className="form-control"
+                      placeholder="Credit Card Number"
+                      onChange={this.updateCreditCardNum}
+                    />
+                    <MaskedInput
+                      mask={[/[0-9]/,/[0-9]/,/[0-9]/]}
+                      className="form-control"
+                      placeholder="Credit Card Security Code (3 digit code on back of card)"
+                      onChange={this.updateCreditSec}
+                    />
+                    <MaskedInput
+                      mask={[/[0-9]/,/[0-9]/,'/','2','0',/[0-9]/,/[0-9]/]}
+                      className="form-control"
+                      placeholder="Credit Card Expiration (mm/yyyy)"
+                      onChange={this.updateCreditExp}
+                    />
                     <input type="text"  placeholder="Pick a username" onChange={this.updateUsername}/>
-                    <input type="password"  placeholder="Password" onChange={this.updatePassword}/>
+                    <input type="password"  placeholder="Pick a password" onChange={this.updatePassword}/>
                     <button onClick={this.signUpUser}>Signup</button>
                     {this.state.regStatusShow &&<p className={this.state.regResultClass}>{this.state.regStatus}</p>}
                 </div>

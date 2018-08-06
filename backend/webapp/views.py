@@ -234,6 +234,11 @@ def dealsApi(request):
 @csrf_exempt
 def createUserApi(request):
     if request.method == "POST":
+        credit_number_spaces = request.POST.get("credit_number", "")
+        credit_number_no_spaces = credit_number_spaces.replace(" ", "")
+        format_str = '%m/%Y'
+        credit_expiration_string = request.POST.get("credit_expiration", "")
+        credit_expiration_datetime = datetime.strptime(credit_expiration_string, format_str)
         u = User(
             username = request.POST.get("username", ""),
             email = request.POST.get("email", ""),
@@ -247,8 +252,8 @@ def createUserApi(request):
             address_zip = request.POST.get("address_zip", ""),
             credit_type = request.POST.get("credit_type", ""),
             credit_name = request.POST.get("credit_name", ""),
-            credit_number = request.POST.get("credit_number", ""),
-            credit_expiration = request.POST.get("credit_expiration", ""),
+            credit_number = credit_number_no_spaces,
+            credit_expiration = credit_expiration_datetime,
             credit_security = request.POST.get("credit_security", ""),
             user_miles = 0
         )
