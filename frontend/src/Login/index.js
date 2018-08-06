@@ -149,10 +149,10 @@ class Signup extends React.Component {
                     <input type="text"  placeholder="Middle Name" onChange={this.updateMName}/>
                     <input type="text"  placeholder="Mailing Address" onChange={this.updateMailingAddr}/>
                     <input type="email"  placeholder="Email" onChange={this.updateEmail}/>
-                    <input type="number"placeholder="Credit Card Number" onChange={this.updateCreditCard}/>
-                    <input type="text"  placeholder="Credit Card Name" onChange={this.updateCreditName}/>
-                    <input type="number"  placeholder="Credit Card Security" onChange={this.updateCreditSec}/>
-                    <input type="date"  placeholder="Credit Card Expiration" onChange={this.updateCreditExp}/>
+                    <input type="number" placeholder="Credit Card Number" onChange={this.updateCreditCard}/>
+                    <input type="text"  placeholder="Credit Card Name" maxlength="16" onChange={this.updateCreditName}/>
+                    <input type="number"  placeholder="Credit Card Security" maxlength="3" onChange={this.updateCreditSec}/>
+                    <input type="text"  placeholder="Credit Card Expiration" onChange={this.updateCreditExp}/>
                     <input type="text"  placeholder="Pick a username" onChange={this.updateUsername}/>
                     <input type="password"  placeholder="Password" onChange={this.updatePassword}/>
                     <button onClick={this.signUpUser}>Signup</button>
@@ -231,7 +231,7 @@ class Login extends Component {
                 <div id="login">
                     <input type="text" id="email" placeholder="User Name" onChange={this.updateusername} onKeyPress={this._handleKeyPress} />
                     <input type="password" id="password" placeholder="Password" onChange={this.updatePassword} onKeyPress={this._handleKeyPress} />
-                    <button id="send" onClick={this.onLogin}>Login.</button>
+                    <button id="send" onClick={this.onLogin}>Login</button>
                     {this.state.loginError && <p className="loginError">{this.state.loginErrorMsg} </p>}
                 </div>
             </div>)
