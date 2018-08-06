@@ -20,9 +20,11 @@ class Signup extends React.Component {
             password: '',
             regStatusShow: false,
             regStatus: '',
-            regResultClass: 'regResultSuccess'
+            regResultClass: 'regResultSuccess',
+
         }
     }
+
     updateFName = (e) => {
         this.setState({
             firstName: e.target.value,
@@ -184,7 +186,7 @@ class Login extends Component {
         })
           .then((response) => {
             if( !(response.data === "no matching email & password in database")) {
-              const parsedData = JSON.parse(response.data);  
+              const parsedData = JSON.parse(response.data);
               this.setState({
                 loginError: false,
                 loginErrorMsg: ''
@@ -237,7 +239,9 @@ class LoginForm extends Component {
         console.log(props);
         this.state = {
             signup: false,
-            login: true
+            login: true,
+            loginHover: false,
+            signupHover: false
         }
     }
 
@@ -249,13 +253,56 @@ class LoginForm extends Component {
         return this.setState({ login: login, signup: signup })
     };
 
+    styleLogin = () => {
+      if (this.state.loginHover) {
+        if (this.state.login) {
+          return { backgroundColor: "#FFDD00" }
+        } else {
+          return { backgroundColor: "#666" }
+        }
+      } else {
+        if (this.state.login) {
+          return { backgroundColor: "#FFDD00" }
+        } else {
+          return { backgroundColor: "#2c3e50" }
+        }
+      }
+    }
+
+    styleSignup = () => {
+      if (this.state.signupHover) {
+        if (this.state.signup) {
+          return { backgroundColor: "#FFDD00" }
+        } else {
+          return { backgroundColor: "#666" }
+        }
+      } else {
+        if (this.state.signup) {
+          return { backgroundColor: "#FFDD00" }
+        } else {
+          return { backgroundColor: "#2c3e50" }
+        }
+      }
+    }
+
+    onMouseOver = (word) => {
+      let signupHover;
+      let loginHover;
+      if (word == "signup") { signupHover = true; loginHover = false; }
+      else { loginHover = true; signupHover = false; }
+      return this.setState({ loginHover: loginHover, signupHover: signupHover });
+    }
+
+    onMouseOut = (word) => {
+      return this.setState({ loginHover: false, signupHover: false });
+    }
+
     render() {
         return (
             <div>
                 <div id="buttons">
-                    <p id="loginButton" onClick={this.switch.bind(null, "login")} className={this.state.login ? "yellow" : "blue"}> Login</p>
-                    <p id="signupButton" onClick={this.switch.bind(null, "signup")} className={this.state.signup ? "yellow" : "blue"}>Sign up</p>
-
+                    <p id="loginButton" onClick={this.switch.bind(null, "login")} className={this.state.login ? "yellow" : "blue"} onMouseOver={this.onMouseOver.bind(null, "login")} onMouseOut={this.onMouseOut.bind(null, "login")} style={this.styleLogin()}> Login</p>
+                    <p id="signupButton" onClick={this.switch.bind(null, "signup")} className={this.state.signup ? "yellow" : "blue"} onMouseOver={this.onMouseOver.bind(null, "signup")} onMouseOut={this.onMouseOut.bind(null, "signup")} style={this.styleSignup()}>Sign up</p>
                 </div>
 
                 {this.state.signup ? <Signup /> : null}

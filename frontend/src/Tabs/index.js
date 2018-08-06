@@ -66,7 +66,7 @@ class ScrollableTabsButtonForce extends React.Component {
           <Tabs
             value={value}
             onChange={this.handleChange}
-          
+
             scrollButtons="off"
             indicatorColor="primary"
             textColor="primary"
@@ -78,11 +78,11 @@ class ScrollableTabsButtonForce extends React.Component {
             <Tab label="Flight+Hotel" icon={<FlightTakeoff />}
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
             <Tab label="Flight Status" icon={<LocationIcon />}
-              classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/> 
+              classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
             <Tab label="Deals" icon={<DealsIcon />}
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
             <Tab label="Feedback" icon={<FeedbackIcon />}
-              classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>  
+              classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
           </Tabs>
         </AppBar>
         {value === 0 && <Flight className="tabContent" />}
