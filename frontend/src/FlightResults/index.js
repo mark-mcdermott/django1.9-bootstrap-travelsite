@@ -17,6 +17,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
+import Moment from 'moment';
 import './flightresults.css';
 
 class ShowConfirmationSectionClass extends React.Component {
@@ -75,59 +76,59 @@ class ShowConfirmationSectionClass extends React.Component {
     return (
       <div class="confirmationSection" id="confirmationSection">
         <Paper>
-          <div className="reviewFlights"> 
+          <div className="reviewFlights">
           {selectedFlights.map((eachResult, index) => {
             return (<List component="nav" className="reviewFlightsEach">
             <ListItem button>
                 <Typography className={`reviewFlightHeading ${classes.title}`} color="textPrimary">
-                  Flight-{index} Details: 
+                  Flight-{index} Details:
                 </Typography>
               </ListItem>
               <ListItem button>
                 <Typography className={classes.title} color="textSecondary">
-                  Depart City: 
+                  Depart City:
                 </Typography>
                 <ListItemText primary={eachResult.depart_city} />
               </ListItem>
               <ListItem button>
                 <Typography className={classes.title} color="textSecondary">
-                  Depart State: 
+                  Depart State:
                 </Typography>
                 <ListItemText primary={eachResult.depart_state} />
               </ListItem>
               <ListItem button>
                 <Typography className={classes.title} color="textSecondary">
-                  Depart Date: 
+                  Depart Date:
                 </Typography>
                 <ListItemText primary={eachResult.depart_datetime} />
               </ListItem>
               <ListItem button>
                 <Typography className={classes.title} color="textSecondary">
-                  Arrival City: 
+                  Arrival City:
                 </Typography>
                 <ListItemText primary={eachResult.arrive_city} />
               </ListItem>
               <ListItem button>
                 <Typography className={classes.title} color="textSecondary">
-                  Arrival State: 
+                  Arrival State:
                 </Typography>
                 <ListItemText primary={eachResult.arrive_state} />
               </ListItem>
               <ListItem button>
                 <Typography className={classes.title} color="textSecondary">
-                  Arrival Date: 
+                  Arrival Date:
                 </Typography>
                 <ListItemText primary={eachResult.arrive_datetime} />
               </ListItem>
               <ListItem button>
                 <Typography className={classes.title} color="textSecondary">
-                  Passengers: 
+                  Passengers:
                 </Typography>
                 <ListItemText primary={eachResult.passengers} />
               </ListItem>
               <ListItem button>
                 <Typography className={classes.title} color="textSecondary">
-                  Price: 
+                  Price:
                 </Typography>
                 <ListItemText primary={eachResult.price} />
               </ListItem>
@@ -204,6 +205,8 @@ class FlightResults extends React.Component {
   }
 
   render() {
+    Moment.locale('en');
+    var dt = '2016-05-02T00:00:00';
     const { classes, bookingInputs } = this.props;
     const { searchResults, showConfirmationBox,
       selectedFlights } = this.state;
@@ -214,13 +217,15 @@ class FlightResults extends React.Component {
           <TableHead>
             <TableRow>
               <TableCell>Depart City</TableCell>
-              <TableCell >Departure State </TableCell>
-              <TableCell >Departure Time</TableCell>
-              <TableCell >Arrival City</TableCell>
-              <TableCell >Arrival State</TableCell>
-              <TableCell >Arrival Time</TableCell>
-              <TableCell >Price</TableCell>
-              <TableCell >Book</TableCell>
+              <TableCell>Departure State </TableCell>
+              <TableCell>Departure Date</TableCell>
+              <TableCell>Departure Time</TableCell>
+              <TableCell>Arrival City</TableCell>
+              <TableCell>Arrival State</TableCell>
+              <TableCell>Arrival Date</TableCell>
+              <TableCell>Arrival Time</TableCell>
+              <TableCell>Price</TableCell>
+              <TableCell>Book</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -230,13 +235,15 @@ class FlightResults extends React.Component {
                   <TableCell component="th" scope="row">
                     {eachResult.fields.depart_city}
                   </TableCell>
-                  <TableCell >{eachResult.fields.depart_state}</TableCell>
-                  <TableCell >{eachResult.fields.depart_datetime}</TableCell>
-                  <TableCell >{eachResult.fields.arrive_city}</TableCell>
-                  <TableCell >{eachResult.fields.arrive_state}</TableCell>
-                  <TableCell >{eachResult.fields.arrive_datetime}</TableCell>
-                  <TableCell >{eachResult.fields.price}</TableCell>
-                  <TableCell >
+                  <TableCell>{eachResult.fields.depart_state}</TableCell>
+                  <TableCell>{Moment(eachResult.fields.depart_datetime).format('MM/DD/YYYY')}</TableCell>
+                  <TableCell>{Moment(eachResult.fields.depart_datetime).format('h:mm a')}</TableCell>
+                  <TableCell>{eachResult.fields.arrive_city}</TableCell>
+                  <TableCell>{eachResult.fields.arrive_state}</TableCell>
+                  <TableCell>{Moment(eachResult.fields.arrive_datetime).format('MM/DD/YYYY')}</TableCell>
+                  <TableCell>{Moment(eachResult.fields.arrive_datetime).format('h:mm a')}</TableCell>
+                  <TableCell>{eachResult.fields.price}</TableCell>
+                  <TableCell>
                     <FormGroup row>
                       <FormControlLabel
                         control={

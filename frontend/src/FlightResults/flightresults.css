@@ -1,17 +1,17 @@
 .SubmitButton {
-background: #FFDD00;
-        margin-top: 28px;
+    background: #FFDD00;
+    margin-top: 28px;
     padding: 12px !important;
     font-size: 14px;
     color: #000;
     border: 1px solid #FFDD00;
-        margin-right: 4px;
+    margin-right: 4px;
     margin-bottom: 4px;
     font-size: 16px;
     font-weight: 400;
-        border-radius: 30px;
-        width:180px;
-        cursor: pointer;
+    border-radius: 30px;
+    width:180px;
+    cursor: pointer;
 }
 
 .bookingResponse {
@@ -29,4 +29,14 @@ background: #FFDD00;
 }
 .reviewFlightsEach{
     flex: 2;
+}
+.FlightResults-root-83 {
+  padding: 0 0 30px;
+}
+.FlightResults-table-84 {
+  margin: 0 50px;
+  width: 80%;
+}
+td.MuiTableCell-root-92 {
+  padding: 4px;
 }

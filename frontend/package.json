@@ -8,6 +8,7 @@
     "axios": "^0.18.0",
     "eslint": "^5.2.0",
     "material-ui": "^0.20.1",
+    "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
