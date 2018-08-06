@@ -1,0 +1,72 @@
+- model: proto.hotel
+  pk:2
+  fields: 
+  name: The Liberty
+  number_of_rooms: 100
+  city: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+- model: proto.hotel
+  pk:3
+  fields: 
+  name: Motel 6
+  number_of_rooms: 101
+  city: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+- model: proto.hotel
+  pk:4
+  fields: 
+  name: Taj,Sheraton
+  number_of_rooms: 102
+  city: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+- model: proto.hotel
+  pk:5
+  fields: 
+  name: Taj,Sheraton
+  number_of_rooms: 103
+  city: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+- model: proto.hotel
+  pk:6
+  fields: 
+  name: Wyadham
+  number_of_rooms: 104
+  city: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+- model: proto.hotel
+  pk:7
+  fields: 
+  name: Faluknuma Palace
+  number_of_rooms: 105
+  city: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+- model: proto.hotel
+  pk:8
+  fields: 
+  name: Wyadham
+  number_of_rooms: 106
+  city: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+- model: proto.hotel
+  pk:9
+  fields: 
+  name: W Mexico City
+  number_of_rooms: 107
+  city: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+- model: proto.hotel
+  pk:10
+  fields: 
+  name: The Liberty
+  number_of_rooms: 108
+  city: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+- model: proto.hotel
+  pk:11
+  fields: 
+  name: Faluknuma Palace
+  number_of_rooms: 109
+  city: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+- model: proto.hotel
+  pk:12
+  fields: 
+  name: omni
+  number_of_rooms: 110
+  city: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+- model: proto.hotel
+  pk:13
+  fields: 
+  name: omni
+  number_of_rooms: 111
+  city: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]

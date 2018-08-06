@@ -10,7 +10,7 @@ template = "- model: proto.creditcard\n"\
            "  expiration: %s\n"\
            "  billing_address: %s\n"
 def out_fun():
-    f = open('outputcreditcard.py','a+')
+    f = open('output_creditcard.yaml','a+')
     #print(template % (int(pk),name,city,number_of_rooms))
     f.write(output)
 pk=1
@@ -23,7 +23,7 @@ type_option=["MC","AE","VS"]
 name_option=["sirisha","Harika","Andrew","Mark","Sandeep","Scott","John","Ann","Sai","Jon","Jonah"]
 street=["University Blvd","Research Blvd","Parmer Lane","Mopac","Capital Highway","Spectrum Dr","Dreams Dr","Hope Dr","E Whitestone Blvd","FM 620 Highland Horizon","RM 1431 stoneOaks"]
 billing_address='1234 texas state university , university Blvd, tx 78717'
-for number in range(0,10):
+for number in range(0,30):
     name=random.choice(name_option)
     #billing_address
     cardnumber = random.randint(1000000000000000,9999999999999999)
