@@ -300,7 +300,7 @@ class LoginForm extends Component {
     render() {
         return (
             <div>
-                <div id="buttons">
+                <div id="buttons" class="loginButtons">
                     <p id="loginButton" onClick={this.switch.bind(null, "login")} className={this.state.login ? "yellow" : "blue"} onMouseOver={this.onMouseOver.bind(null, "login")} onMouseOut={this.onMouseOut.bind(null, "login")} style={this.styleLogin()}> Login</p>
                     <p id="signupButton" onClick={this.switch.bind(null, "signup")} className={this.state.signup ? "yellow" : "blue"} onMouseOver={this.onMouseOver.bind(null, "signup")} onMouseOut={this.onMouseOut.bind(null, "signup")} style={this.styleSignup()}>Sign up</p>
                 </div>

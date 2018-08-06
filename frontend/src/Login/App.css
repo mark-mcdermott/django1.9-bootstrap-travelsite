@@ -4,6 +4,7 @@ body {
   height: 700px;
   margin: 0;
   padding: 0;
+  background: #2c3e50;
 }
 
 
@@ -22,7 +23,10 @@ body {
 }
 
 #buttons {
-  height: 100px;
+  /* height: 100px; */
+  padding: 0 0 25px;
+  margin: 0 0 20px;
+  height: 38px;
   background: #2c3e50;
 }
 #buttons > p {
@@ -31,12 +35,16 @@ body {
   color: white;
   text-align: center;
   padding-top: 25px;
-  height: 38%;
+  /* height: 38%; */
+  height: 100%;
   margin: 0;
 }
 #buttons > p:hover {
   color: #fff;
   cursor: pointer;
+}
+.loginButtons {
+  border-bottom: 1px solid #333;
 }
 #signup > input {
   height: 50px;
@@ -126,7 +134,7 @@ font-weight: 400;
 }
 
 .formControl {
-  
+
 }
 
 .SubmitButton {
