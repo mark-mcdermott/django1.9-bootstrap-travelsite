@@ -218,15 +218,20 @@ class Login extends Component {
             password: e.target.value,
         });
     }
+    _handleKeyPress = (e) => {
+      if (e.key === 'Enter') {
+        this.onLogin();
+      }
+    }
 
 
     render() {
         return (
             <div>
                 <div id="login">
-                    <input type="text" id="email" placeholder="User Name" onChange={this.updateusername}/>
-                    <input type="password" id="password" placeholder="Password" onChange={this.updatePassword} />
-                    <button id="send" onClick={this.onLogin}>Login</button>
+                    <input type="text" id="email" placeholder="User Name" onChange={this.updateusername} onKeyPress={this._handleKeyPress} />
+                    <input type="password" id="password" placeholder="Password" onChange={this.updatePassword} onKeyPress={this._handleKeyPress} />
+                    <button id="send" onClick={this.onLogin}>Login.</button>
                     {this.state.loginError && <p className="loginError">{this.state.loginErrorMsg} </p>}
                 </div>
             </div>)
@@ -300,7 +305,7 @@ class LoginForm extends Component {
     render() {
         return (
             <div>
-                <div id="buttons" class="loginButtons">
+                <div id="buttons" className="loginButtons">
                     <p id="loginButton" onClick={this.switch.bind(null, "login")} className={this.state.login ? "yellow" : "blue"} onMouseOver={this.onMouseOver.bind(null, "login")} onMouseOut={this.onMouseOut.bind(null, "login")} style={this.styleLogin()}> Login</p>
                     <p id="signupButton" onClick={this.switch.bind(null, "signup")} className={this.state.signup ? "yellow" : "blue"} onMouseOver={this.onMouseOver.bind(null, "signup")} onMouseOut={this.onMouseOut.bind(null, "signup")} style={this.styleSignup()}>Sign up</p>
                 </div>
