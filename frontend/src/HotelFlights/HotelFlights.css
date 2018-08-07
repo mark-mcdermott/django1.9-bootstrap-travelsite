@@ -60,4 +60,10 @@
   .passengers {
   
   }
+
+  .hotelDetailsCommon{
+      width: 80%;
+      margin: 0 auto;
+      padding: 15px 0 50px 0;
+  }
   

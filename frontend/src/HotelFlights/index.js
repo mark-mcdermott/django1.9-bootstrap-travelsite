@@ -37,12 +37,12 @@ class Flight extends React.Component {
       //     from: '',
       //      returndate: '', passengers:0
       // },
-      from: 'austin',
-      to: 'austin',
-      date: '2018-10-30',
+      from: 'Philadelphia',
+      to: 'Dallas',
+      date: '2018-12-30',
       searchResults: null,
       searchHotelResults: [],
-      returndate: '2018-11-02',
+      returndate: '2019-01-01',
       passengers: 1,
       bookingInputs: {
         date: '',
@@ -171,13 +171,28 @@ class Flight extends React.Component {
             searchResults={this.state.searchResults}
             bookingInputs={this.state.bookingInputs}
             userDetails={this.props.userDetails}
+            disableItemBooking
           />)}
           {((this.state.searchResults !== null) && (this.state.searchResults.length === 0)) && (<p> No Flight results found. Please change your search data.</p>)}
           {(this.state.searchResults === null) && (<p> Please enter search values</p>)}
         </div>
-        <div className="hotelDetails">
-          <HotelResults
-            searchResults={this.state.searchHotelResults} />
+        <div className="hotelDetails hotelDetailsCommon">
+        {(this.state.searchHotelResults && this.state.searchHotelResults.length > 0) && (<HotelResults
+            searchResults={this.state.searchHotelResults}
+            disableItemBooking />)}
+
+         {/* {!this.props.disableItemBooking && (<div className="userFormGroup">
+          <input type="button" name="submit" id="submit" value="Book Selected Flights"
+            className="SubmitButton"
+            onClick={() => { this.showConfirmationSec(); }} />
+        </div>)}
+
+        {showConfirmationBox && <ShowConfirmationSection
+          selectedFlights={selectedFlights}
+          bookingInputs={bookingInputs}
+          userDetails={this.props.userDetails}
+        />}    */}
+          
         </div>
       </div>
     );

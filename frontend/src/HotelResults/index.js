@@ -9,6 +9,9 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import './hotelresults.css';
 import axios from 'axios';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 const styles = theme => ({
   root: {
@@ -27,7 +30,15 @@ class HotelResults extends React.Component {
     this.state = {
       bookingResult:'',
       bookingStatus: false,
+      hotelDetails: {},
     }
+  }
+
+  selectHotel = (hotelDetails) => {
+    
+    this.setState({
+      hotelDetails,
+    });
   }
 
   bookHotel = (hotelDetails) => {
@@ -123,10 +134,24 @@ class HotelResults extends React.Component {
                 <TableCell >{eachResult.fields.state}</TableCell>
                 <TableCell >{eachResult.fields.price}</TableCell>
                 <TableCell >
-                  <div className="userFormGroup">
+                  {!this.props.disableItemBooking && (<div className="userFormGroup">
                     <input type="button" name="submit" id="submit" value="Book Hotel" className="SubmitButton"  
                     onClick={(eachResult) => { this.bookHotel(eachResult); }} />
-                  </div>
+                  </div>)}
+
+                  {this.props.disableItemBooking &&(<FormGroup row>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={eachResult.fields.checked}
+                            onChange={() => this.selectHotel(eachResult.fields)}
+                            value="checkedB"
+                            color="primary"
+                          />
+                        }
+                        label="Select this Hotel"
+                      />
+                    </FormGroup>)}
                 </TableCell>
               </TableRow>
             );

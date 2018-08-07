@@ -342,11 +342,11 @@ class FlightResults extends React.Component {
             })}
           </TableBody>
         </Table>
-        <div className="userFormGroup">
+        {!this.props.disableItemBooking && (<div className="userFormGroup">
           <input type="button" name="submit" id="submit" value="Book Selected Flights"
             className="SubmitButton"
             onClick={() => { this.showConfirmationSec(); }} />
-        </div>
+        </div>)}
 
         {showConfirmationBox && <ShowConfirmationSection
           selectedFlights={selectedFlights}

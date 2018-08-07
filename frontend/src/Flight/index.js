@@ -24,30 +24,30 @@ class Flight extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      from: '',
-      to: '',
-      date: '',
-      searchResults: null,
-      returndate: '',
-      passengers: 0,
-      bookingInputs: {
-        date: '',
-         to: '',
-          from: '',
-           returndate: '', passengers:0
-      },
-      // from: 'austin',
-      // to: 'houston',
-      // date: '2018-10-30',
+      // from: '',
+      // to: '',
+      // date: '',
       // searchResults: null,
-      // returndate: '2018-11-02',
-      // passengers: 1,
+      // returndate: '',
+      // passengers: 0,
       // bookingInputs: {
       //   date: '',
       //    to: '',
       //     from: '',
       //      returndate: '', passengers:0
       // },
+      from: 'austin',
+      to: 'houston',
+      date: '2018-10-30',
+      searchResults: null,
+      returndate: '2018-11-02',
+      passengers: 1,
+      bookingInputs: {
+        date: '',
+         to: '',
+          from: '',
+           returndate: '', passengers:0
+      },
     };
   }
 
@@ -144,6 +144,7 @@ class Flight extends React.Component {
             searchResults={this.state.searchResults}
             bookingInputs={this.state.bookingInputs}
             userDetails={this.props.userDetails}
+            disableItemBooking={this.props.disableItemBooking}
           />)}
           {((this.state.searchResults !== null) && (this.state.searchResults.length === 0)) && (<p> No results found. Please change your search data.</p>)}
           {(this.state.searchResults === null) && (<p> Please enter search values</p>)}

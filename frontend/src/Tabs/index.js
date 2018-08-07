@@ -18,6 +18,7 @@ import HotelFlights from '../HotelFlights';
 import Deals from '../Deals';
 import FlightStatus from '../FlightStatus';
 import Feedback from '../Feedback';
+import History from '../History';
 
 function TabContainer(props) {
   return (
@@ -83,6 +84,8 @@ class ScrollableTabsButtonForce extends React.Component {
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
             <Tab label="Feedback" icon={<FeedbackIcon />}
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
+            <Tab label="History" icon={<FeedbackIcon />}
+              classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>  
           </Tabs>
         </AppBar>
         {value === 0 && <Flight className="tabContent" userDetails={this.props.userDetails} />}
@@ -91,6 +94,7 @@ class ScrollableTabsButtonForce extends React.Component {
         {value === 3 && <FlightStatus className="tabContent" userDetails={this.props.userDetails} />}
         {value === 4 && <Deals className="tabContent" userDetails={this.props.userDetails} />}
         {value === 5 && <Feedback className="tabContent" userDetails={this.props.userDetails} />}
+        {value === 6 && <History className="tabContent" userDetails={this.props.userDetails} />}
       </div>
     );
   }

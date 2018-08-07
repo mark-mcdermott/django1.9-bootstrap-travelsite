@@ -100,8 +100,8 @@ class Hotel extends React.Component {
         </form>
         <div className="flightDetails">
           <label> Please select hotel from below </label>
-          <HotelResults
-            searchResults={this.state.searchResults} />
+          {(this.state.searchResults && this.state.searchResults.length > 0) && (<HotelResults
+            searchResults={this.state.searchResults} />)}
         </div>
 
       </div>
