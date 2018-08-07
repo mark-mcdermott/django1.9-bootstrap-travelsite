@@ -25,7 +25,8 @@ SECRET_KEY = '1ak-$qvjedw*iezwuhj@*a+sbq7eskx^*^lh3eej-#)^2rjmc@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['boz.io','travel.boz.io','beta.apps.boz.io','www.boz.io']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','0.0.0.0''boz.io','travel.boz.io',
+'beta.apps.boz.io','www.boz.io']
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
