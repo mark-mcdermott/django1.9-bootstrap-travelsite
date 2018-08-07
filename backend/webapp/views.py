@@ -103,12 +103,12 @@ def flightsHotelsApi(request):
 
 @csrf_exempt
 def bookingApi(request):
-    username = request.POST.get("username", "")
-    depart_datetime2 = request.POST.get("depart_datetime2", "")
-    user = User.objects.get(username__iexact=username)
-    miles = user.user_miles
-    flight1_milage = request.POST.get("mileage1", "")
-    flight2_milage = request.POST.get("mileage2", "")
+    # username = request.POST.get("username", "")
+    # depart_datetime2 = request.POST.get("depart_datetime2", "")
+    # user = User.objects.get(username__iexact=username)
+    # miles = user.user_miles
+    # flight1_milage = request.POST.get("mileage1", "")
+    # flight2_milage = request.POST.get("mileage2", "")
     if request.method == "POST":
         b1 = Booking(
             username =  request.POST.get("username", ""),
@@ -119,41 +119,41 @@ def bookingApi(request):
             credit_number = request.POST.get("credit_number", ""),
             credit_expiration = request.POST.get("credit_expiration", ""),
             credit_security = request.POST.get("credit_security", ""),
-            depart_city = request.POST.get("depart_city1", ""),
-            depart_state = request.POST.get("depart_state1", ""),
-            depart_datetime = request.POST.get("depart_datetime1", ""),
-            arrive_city = request.POST.get("arrive_city1", ""),
-            arrive_state = request.POST.get("arrive_state1", ""),
-            arrive_datetime = request.POST.get("arrive_datetime1", ""),
-            num_passengers = request.POST.get("num_passengers1", ""),
-            mileage = request.POST.get("mileage1", ""),
+            depart_city = request.POST.get("depart_city", ""),
+            depart_state = request.POST.get("depart_state", ""),
+            depart_datetime = request.POST.get("depart_datetime", ""),
+            arrive_city = request.POST.get("arrive_city", ""),
+            arrive_state = request.POST.get("arrive_state", ""),
+            arrive_datetime = request.POST.get("arrive_datetime", ""),
+            num_passengers = request.POST.get("num_passengers", ""),
+            mileage = request.POST.get("mileage", ""),
         )
         b1.save()
-        if depart_datetime2 is not "":
-            b2 = Booking(
-                username =  request.POST.get("username", ""),
-                cust_name = request.POST.get("cust_name", ""),
-                airline_name = request.POST.get("airline_name", ""),
-                credit_type = request.POST.get("credit_type", ""),
-                credit_name = request.POST.get("credit_name", ""),
-                credit_number = request.POST.get("credit_number", ""),
-                credit_expiration = request.POST.get("credit_expiration", ""),
-                credit_security = request.POST.get("credit_security", ""),
-                depart_city = request.POST.get("depart_city2", ""),
-                depart_state = request.POST.get("depart_state2", ""),
-                depart_datetime = request.POST.get("depart_datetime2", ""),
-                arrive_city = request.POST.get("arrive_city2", ""),
-                arrive_state = request.POST.get("arrive_state2", ""),
-                arrive_datetime = request.POST.get("arrive_datetime2", ""),
-                num_passengers = request.POST.get("num_passengers2", ""),
-                mileage = request.POST.get("mileage2", ""),
-            )
-            b2.save()
-        miles += int(flight1_milage)
-        if flight2_milage is not "":
-            miles += int(flight2_milage)
-        user.user_miles = miles
-        user.save()
+        # if depart_datetime2 is not "":
+        #     b2 = Booking(
+        #         username =  request.POST.get("username", ""),
+        #         cust_name = request.POST.get("cust_name", ""),
+        #         airline_name = request.POST.get("airline_name", ""),
+        #         credit_type = request.POST.get("credit_type", ""),
+        #         credit_name = request.POST.get("credit_name", ""),
+        #         credit_number = request.POST.get("credit_number", ""),
+        #         credit_expiration = request.POST.get("credit_expiration", ""),
+        #         credit_security = request.POST.get("credit_security", ""),
+        #         depart_city = request.POST.get("depart_city2", ""),
+        #         depart_state = request.POST.get("depart_state2", ""),
+        #         depart_datetime = request.POST.get("depart_datetime2", ""),
+        #         arrive_city = request.POST.get("arrive_city2", ""),
+        #         arrive_state = request.POST.get("arrive_state2", ""),
+        #         arrive_datetime = request.POST.get("arrive_datetime2", ""),
+        #         num_passengers = request.POST.get("num_passengers2", ""),
+        #         mileage = request.POST.get("mileage2", ""),
+        #     )
+        #     b2.save()
+        # miles += int(flight1_milage)
+        # if flight2_milage is not "":
+        #     miles += int(flight2_milage)
+        # user.user_miles = miles
+        # user.save()
         return HttpResponse("booking post request")
 
 @csrf_exempt
