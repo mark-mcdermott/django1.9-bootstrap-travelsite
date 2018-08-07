@@ -59,7 +59,7 @@ class AppRoute extends React.Component {
                             exact path="/"
                             render={() =>
                                 this.state.isLoggedIn ? (
-                                    <App />
+                                    <App userDetails={this.state.userDetails} />
                                 ) : (<Login onLogin={this.onLogin} />)
                             }
                         />

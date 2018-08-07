@@ -85,12 +85,12 @@ class ScrollableTabsButtonForce extends React.Component {
               classes={{ root: classes.tabWrapper , selected: classes.tabSelected, }}/>
           </Tabs>
         </AppBar>
-        {value === 0 && <Flight className="tabContent" />}
-        {value === 1 && <Hotel className="tabContent" />}
-        {value === 2 && <HotelFlights className="tabContent" />}
-        {value === 3 && <FlightStatus className="tabContent" />}
-        {value === 4 && <Deals className="tabContent" />}
-        {value === 5 && <Feedback className="tabContent" />}
+        {value === 0 && <Flight className="tabContent" userDetails={this.props.userDetails} />}
+        {value === 1 && <Hotel className="tabContent" userDetails={this.props.userDetails} />}
+        {value === 2 && <HotelFlights className="tabContent" userDetails={this.props.userDetails} />}
+        {value === 3 && <FlightStatus className="tabContent" userDetails={this.props.userDetails} />}
+        {value === 4 && <Deals className="tabContent" userDetails={this.props.userDetails} />}
+        {value === 5 && <Feedback className="tabContent" userDetails={this.props.userDetails} />}
       </div>
     );
   }

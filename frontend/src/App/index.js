@@ -8,7 +8,7 @@ import Tabs from '../Tabs';
 class App extends Component {
   render() {
     return (
-      <Tabs /> 
+      <Tabs userDetails={this.props.userDetails}/> 
     );
   }
 }

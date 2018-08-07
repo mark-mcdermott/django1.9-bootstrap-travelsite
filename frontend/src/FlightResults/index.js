@@ -29,19 +29,19 @@ class ShowConfirmationSectionClass extends React.Component {
     }
   }
   bookFlight = () => {
-    const { user, bookingInputs: { date, to, from, returndate, passengers },selectedFlights } = this.props;
+    const { userDetails, bookingInputs: { date, to, from, returndate, passengers },selectedFlights } = this.props;
     // console.log(user)
     const flightDetails = selectedFlights[0];
     var bodyFormData = new FormData();
     // console.log(user);
     // console.log('passengers' + passengers);
     // console.log(flightDetails)
-    bodyFormData.set('cust_name', user.name_first);
+    bodyFormData.set('cust_name', userDetails.name_first);
     bodyFormData.set('airline_name', 'Delta');
     bodyFormData.set('credit_type', 'Visa');
-    bodyFormData.set('credit_name', 'user.credit_name');
+    bodyFormData.set('credit_name', userDetails.credit_name);
     bodyFormData.set('credit_number', '1234567890123456');
-    bodyFormData.set('credit_expiration', user.credit_expiration);
+    bodyFormData.set('credit_expiration', userDetails.credit_expiration);
     bodyFormData.set('credit_security', '123');
     bodyFormData.set('depart_city', flightDetails.depart_city);
     bodyFormData.set('depart_state', flightDetails.depart_state);
@@ -289,6 +289,7 @@ class FlightResults extends React.Component {
         {showConfirmationBox && <ShowConfirmationSection
         selectedFlights={selectedFlights}
         bookingInputs={bookingInputs}
+        userDetails={this.props.userDetails}
         />}
       </Paper>
     );

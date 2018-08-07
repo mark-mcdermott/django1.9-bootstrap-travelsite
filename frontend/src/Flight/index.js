@@ -143,6 +143,7 @@ class Flight extends React.Component {
           {(this.state.searchResults && this.state.searchResults.length > 0) && (<FlightResults
             searchResults={this.state.searchResults}
             bookingInputs={this.state.bookingInputs}
+            userDetails={this.props.userDetails}
           />)}
           {((this.state.searchResults !== null) && (this.state.searchResults.length === 0)) && (<p> No results found. Please change your search data.</p>)}
           {(this.state.searchResults === null) && (<p> Please enter search values</p>)}
