@@ -61,7 +61,7 @@ class Airline(models.Model):
 ##########
 
 class Flight(models.Model):
-    number = models.CharField(max_length=6)
+    number = models.CharField(max_length=10)
     airline = models.ForeignKey(Airline)
     source = models.ForeignKey(City, related_name='departures')
     destination = models.ForeignKey(City, related_name='arrivals')
@@ -191,7 +191,7 @@ class Transaction(models.Model):
     credit_card = models.ForeignKey(Payment, related_name='transactions')
     discount = models.DecimalField(max_digits=4, decimal_places=2)
     tax = models.DecimalField(max_digits=4, decimal_places=2)
-    total = models.DecimalField(max_digits=4, decimal_places=2)
+    total = models.DecimalField(max_digits=8, decimal_places=2)
 
     class Meta:
         ordering = ["datetime"]
