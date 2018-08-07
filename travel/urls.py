@@ -7,7 +7,6 @@ urlpatterns = [
     # url(r'^api/', include('webapp.urls')),
     # url(r'^token-auth', obtain_jwt_token),
     url(r'^', TemplateView.as_view(template_name="index.html")),
-
 ]
 
 if settings.DEBUG:
