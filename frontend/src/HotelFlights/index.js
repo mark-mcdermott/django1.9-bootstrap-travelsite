@@ -163,7 +163,7 @@ class Flight extends React.Component {
             </div>
           </div>
           <div className="userFormGroup">
-            <input type="button" name="submit" id="submit" value="Find Flights" className="SubmitButton" onClick={this.getResults} />
+            <input type="button" name="submit" id="submit" value="Find Flights & Hotels" className="SubmitButton" onClick={this.getResults} />
           </div>
         </form>
         <div className="flightDetails">
