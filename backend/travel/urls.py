@@ -1,12 +1,13 @@
 from django.conf import settings
 from django.conf.urls import include, url
-
-from rest_framework_jwt.views import obtain_jwt_token
+from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^api/', include('api.urls', namespace='api')),
     # url(r'^api/', include('webapp.urls')),
     # url(r'^token-auth', obtain_jwt_token),
+    url(r'^', TemplateView.as_view(template_name="index.html")),
+
 ]
 
 if settings.DEBUG:
