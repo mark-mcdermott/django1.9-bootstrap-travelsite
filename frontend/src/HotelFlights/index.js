@@ -3,7 +3,8 @@ import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import './HotelFlights.css';
-import HotelFlightResults from '../HotelFlightResults';
+import FlightResults from '../FlightResults';
+import HotelResults from '../HotelResults';
 
 const styles = theme => ({
   container: {
@@ -20,37 +21,75 @@ const styles = theme => ({
 });
 
 
-class HotelFlights extends React.Component {
+class Flight extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: '',
-      date: '',
-      searchResults: [],
+      // from: '',
+      // to: '',
+      // date: '',
+      // searchResults: null,
+      // returndate: '',
+      // passengers: 0,
+      // bookingInputs: {
+      //   date: '',
+      //    to: '',
+      //     from: '',
+      //      returndate: '', passengers:0
+      // },
+      from: 'austin',
+      to: 'austin',
+      date: '2018-10-30',
+      searchResults: null,
+      searchHotelResults: [],
+      returndate: '2018-11-02',
+      passengers: 1,
+      bookingInputs: {
+        date: '',
+        to: '',
+        from: '',
+        returndate: '', passengers: 0
+      },
     };
   }
 
-  cityChange = event => {
-    this.setState({ city: event.target.value });
+  fromChange = event => {
+    this.setState({ from: event.target.value });
   };
 
   dateChange = event => {
     this.setState({ date: event.target.value });
   };
 
+  returnDateChange = event => {
+    this.setState({ returndate: event.target.value });
+  };
+
+  passengersChange = event => {
+    this.setState({ passengers: event.target.value });
+  };
+
+  toChange = event => {
+    this.setState({ to: event.target.value });
+  };
 
 
   getResults = () => {
-    const { date, city } = this.state;
-    console.log(date, city);
-    if (date && city) {
+    this.getHotels();
+    const { date, to, from, returndate, passengers } = this.state;
+    //console.log(date, to, from, returndate, passengers);
+    if (date && to && from) {
       // Make a request for a user with a given ID
-      axios.get(`http://localhost:8000/hotels-api?city=${city}`)
+      axios.get(`http://localhost:8000/flights-api?fromcity=${from}&tocity=${to}&date=${date}&returndate=${returndate}&passengers=${passengers}`)
         .then((response) => {
           // handle success
-          console.log(response);
+          //console.log(JSON.parse(response.data));
+
           this.setState({
-            searchResults: JSON.parse(response.data)
+            searchResults: JSON.parse(response.data),
+            bookingInputs: {
+              date, to, from, returndate, passengers
+            }
           });
         })
         .catch((error) => {
@@ -64,42 +103,90 @@ class HotelFlights extends React.Component {
       alert('Please enter values');
     }
   }
+
+  getHotels = () => {
+    const { date, to } = this.state;
+    if (date && to) {
+      // Make a request for a user with a given ID
+      axios.get(`http://localhost:8000/hotels-api?city=${to}`)
+        .then((response) => {
+          // handle success
+          console.log(response);
+          this.setState({
+            searchHotelResults: JSON.parse(response.data)
+          });
+        })
+        .catch((error) => {
+          // handle error
+          console.log(error);
+        })
+        .then(() => {
+          // always executed
+        });
+    } else {
+      alert('Please enter values');
+    }
+  }
+
   render() {
-    const { classes } = this.props;
     return (
       <div className={this.props.className}>
-        <form className="userForm">
+        <form className="userFormFlight">
           <div className="userFormGroup">
-            <label htmlFor="date" className="formLabel">City:</label>
+            <label htmlFor="date" className="formLabel">Source:</label>
             <div className="formField">
-              <input type="text" id="location" className="formControl" placeholder="Search Location" onChange={this.cityChange} />
-            </div>
-          </div>
-
-          <div className="userFormGroup">
-            <label htmlFor="date" className="formLabel">When:</label>
-            <div className="formField">
-              <input type="text" id="location" className="formControl" placeholder="Search Location" onChange={this.dateChange}/>
+              <input type="text" id="location" className="formControl" placeholder="Search Location" onChange={this.fromChange} />
             </div>
           </div>
           <div className="userFormGroup">
-            <input type="button" name="submit" id="submit" value="Find Hotels" className="SubmitButton" onClick={this.getResults} />
+            <label htmlFor="date" className="formLabel">Destination:</label>
+            <div className="formField">
+              <input type="text" id="location" className="formControl" placeholder="Search Location" onChange={this.toChange} />
+            </div>
+          </div>
+          <div className="userFormGroup">
+            <label htmlFor="date" className="formLabel">Departure Date:</label>
+            <div className="formField">
+              <input type="date" id="location" className="formControl" placeholder="Search Location" onChange={this.dateChange} />
+            </div>
+          </div>
+          <div className="userFormGroup">
+            <label htmlFor="date" className="formLabel">Return Date:</label>
+            <div className="formField">
+              <input type="date" id="location" className="formControl" placeholder="Search Location" onChange={this.returnDateChange} />
+            </div>
+          </div>
+          <div className="userFormGroup passengers">
+            <label htmlFor="date" className="formLabel">Passengers:</label>
+            <div className="formField">
+              <input type="number" id="location" className="formControl" placeholder="Passengers" onChange={this.passengersChange} />
+            </div>
+          </div>
+          <div className="userFormGroup">
+            <input type="button" name="submit" id="submit" value="Find Flights" className="SubmitButton" onClick={this.getResults} />
           </div>
         </form>
         <div className="flightDetails">
-          <label> Please select flight & hotel from below </label>
-          <HotelFlightResults
-            searchResults={this.state.searchResults} />
+          {(this.state.searchResults && this.state.searchResults.length > 0) && (<FlightResults
+            searchResults={this.state.searchResults}
+            bookingInputs={this.state.bookingInputs}
+            userDetails={this.props.userDetails}
+          />)}
+          {((this.state.searchResults !== null) && (this.state.searchResults.length === 0)) && (<p> No Flight results found. Please change your search data.</p>)}
+          {(this.state.searchResults === null) && (<p> Please enter search values</p>)}
         </div>
-
+        <div className="hotelDetails">
+          <HotelResults
+            searchResults={this.state.searchHotelResults} />
+        </div>
       </div>
     );
   };
 }
 
 
-HotelFlights.propTypes = {
+Flight.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(HotelFlights);
+export default withStyles(styles)(Flight);
