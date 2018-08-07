@@ -1,0 +1,200 @@
+- model: webapp.flight
+  pk: 1
+  fields:
+    flight_id: 1
+    depart_city: Philadelphia
+    depart_state: PA
+    depart_datetime: 2018-12-30 13:01
+    arrive_city: Dallas
+    arrive_state: TX
+    arrive_datetime: 2019-01-01 10:01
+    price: 100.00
+    intl: false
+    status:
+- model: webapp.flight
+  pk: 2
+  fields:
+    flight_id: 2
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-10-30 11:02
+    arrive_city: Houston
+    arrive_state: TX
+    arrive_datetime: 2018-10-31 12:30
+    price: 200.00
+    intl: false
+    status:
+- model: webapp.flight
+  pk: 3
+  fields:
+    flight_id: 3
+    depart_city: Houston
+    depart_state: OK
+    depart_datetime: 2018-11-02 12:30
+    arrive_city: Austin
+    arrive_state: TX
+    arrive_datetime: 2018-11-03 06:01
+    price: 58.00
+    intl: false
+    status:
+- model: webapp.flight
+  pk: 4
+  fields:
+    flight_id: 4
+    depart_city: Houston
+    depart_state: OK
+    depart_datetime: 2018-10-15 12:30
+    arrive_city: Austin
+    arrive_state: TX
+    arrive_datetime: 2018-10-15 16:01
+    price: 58.00
+    intl: false
+    status:
+- model: webapp.flight
+  pk: 5
+  fields:
+    flight_id: 5
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-9-25 11:02
+    arrive_city: Houston
+    arrive_state: TX
+    arrive_datetime: 2018-10-31 12:30
+    price: 200.00
+    intl: false
+    status:
+- model: webapp.flight
+  pk: 5
+  fields:
+    flight_id: 6
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-9-25 11:02
+    arrive_city: London
+    arrive_state: Middlesex
+    arrive_datetime: 2018-10-31 12:30
+    price: 200.00
+    intl: true
+    status:
+- model: webapp.flight
+  pk: 6
+  fields:
+    flight_id: 7
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-8-5 13:02
+    arrive_city: London
+    arrive_state: Middlesex
+    arrive_datetime: 2018-8-5 23:30
+    price: 200.00
+    intl: true
+    status: in flight
+- model: webapp.flight
+  pk: 7
+  fields:
+    flight_id: 8
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-8-5 01:01
+    arrive_city: London
+    arrive_state: Middlesex
+    arrive_datetime: 2018-8-5 13:01
+    price: 200.00
+    intl: true
+    status: arrived
+- model: webapp.flight
+  pk: 8
+  fields:
+    flight_id: 9
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-8-5 01:01
+    arrive_city: London
+    arrive_state: Middlesex
+    arrive_datetime: 2018-8-5 13:01
+    price: 200.00
+    intl: true
+    status: delayed
+- model: webapp.hotel
+  pk: 1
+  fields:
+    name: The W
+    street: 7683 Chavez St
+    city: Austin
+    state: TX
+    zip: 78705
+    price: 200.00
+- model: webapp.hotel
+  pk: 2
+  fields:
+    name: Red Roof Inn
+    street: 1234 Guadalupe St
+    city: Austin
+    state: TX
+    zip: 78757
+    price: 200.00
+- model: webapp.hotel
+  pk: 3
+  fields:
+    name: Riata
+    street: 150 Test St
+    city: Dallas
+    state: TX
+    zip: 78758
+    price: 150.00
+- model: webapp.user
+  pk: 1
+  fields:
+    username: markmcdermott
+    email: mark@markmcdermott.io
+    password: password
+    name_first: Mark
+    name_middle: Halbasch
+    name_last: McDermott
+    address_street: 123 Happy St
+    address_city: Austin
+    address_state: TX
+    address_zip: 78757
+    credit_type: Visa
+    credit_name: Mark markmcdermott
+    credit_number: 1234567890123456
+    credit_expiration: 2018-09-03 06:01
+    credit_security: 123
+    user_miles: 0
+- model: webapp.deal
+  pk: 1
+  fields:
+    username: none
+    arrive_city: Philadelphia
+    arrive_state: PA
+    arrive_datetime: 2018-11-30 13:01
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-11-30 11:01
+    airline_name: Delta
+    hotel_name: Hyatt
+    hotel_street: 123 Nice St
+    hotel_city: Philadelphia
+    hotel_state: PA
+    hotel_zip: 19019
+    price_low: 100
+    price_high: 200
+- model: webapp.booking
+  pk: 1
+  fields:
+    username: markmcdermott
+    cust_name: Mark McDermott
+    airline_name: Delta
+    credit_type: Visa
+    credit_name: Mark McDermott
+    credit_number: 1234567890123456
+    credit_expiration: 2018-11-30 11:01
+    credit_security: 123
+    depart_city: Austin
+    depart_state: TX
+    depart_datetime: 2018-11-30 11:01
+    arrive_city: Dallas
+    arrive_state: TX
+    arrive_datetime: 2018-11-30 11:01
+    num_passengers: 1
+    mileage: 100

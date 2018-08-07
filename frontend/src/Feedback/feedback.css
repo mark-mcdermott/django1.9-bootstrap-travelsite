@@ -1,0 +1,93 @@
+.userForm {
+    font-weight: normal;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    padding: 30px 45px;
+  }
+
+  
+  .userForm .userFormGroup .formLabel {
+  
+  }
+  
+  .formField {
+  
+  }
+
+  
+  .SubmitButton {
+  background: #FFDD00;
+          margin-top: 28px;
+      padding: 12px !important;
+      font-size: 14px;
+      color: #000;
+      border: 1px solid #FFDD00;
+          margin-right: 4px;
+      margin-bottom: 4px;
+      font-size: 16px;
+      font-weight: 400;
+          border-radius: 30px;
+          width:180px;
+          cursor: pointer;
+  }
+  
+  .flightDetails {
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px 0 50px 0;
+  }
+
+  .feedbackUserForm {
+      flex-direction: column !important;
+  }
+
+  .textAreaForm {
+    width: 400px;
+    height: 100px;
+    text-align: start;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      font-size: 16px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid #fff;
+          color: #000;
+      background: #fff;
+      border-radius: 15px;
+      padding: 0px 10px;
+  }
+  
+  .userFormGroupFeedback {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 20px 15px;
+
+  }
+
+  .ratingForm {
+    width: 400px;
+    height: 50px;
+    text-align: start;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      font-size: 16px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid #fff;
+          color: #000;
+      background: #fff;
+      border-radius: 15px;
+      padding: 0px 10px;
+  }

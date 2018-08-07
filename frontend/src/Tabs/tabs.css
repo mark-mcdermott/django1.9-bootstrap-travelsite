@@ -1,0 +1,9 @@
+.tabContent {
+  background: #2C2E3E;
+  color: #fff !important;
+  min-height: 500px;
+}
+
+.activeTab {
+  background: #2C2E3E !important;
+}
