@@ -14,7 +14,7 @@
  $ npm install
  $ npm run dev
 ```
-### quitting
+## quitting
 ```
  $ ^C # ctrl-c to quit npm dev server
  $ fg # to bring django dev server into the foreground
