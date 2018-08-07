@@ -35,7 +35,11 @@
 }
 .FlightResults-table-84 {
   margin: 0 50px;
-  width: 80%;
+  min-width: inherit !important;
+  /* width: 80%; */
+}
+.MuiTable-root-85 {
+  min-width: inherit !important;
 }
 td.MuiTableCell-root-92 {
   padding: 4px;

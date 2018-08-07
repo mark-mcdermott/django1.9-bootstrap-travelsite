@@ -30,14 +30,18 @@ class ShowConfirmationSectionClass extends React.Component {
   }
   bookFlight = () => {
     const { user, bookingInputs: { date, to, from, returndate, passengers },selectedFlights } = this.props;
+    // console.log(user)
     const flightDetails = selectedFlights[0];
     var bodyFormData = new FormData();
-    bodyFormData.set('cust_name', 'Mark McDermott');
+    // console.log(user);
+    // console.log('passengers' + passengers);
+    // console.log(flightDetails)
+    bodyFormData.set('cust_name', user.name_first);
     bodyFormData.set('airline_name', 'Delta');
     bodyFormData.set('credit_type', 'Visa');
-    bodyFormData.set('credit_name', 'Mark McDermott');
+    bodyFormData.set('credit_name', 'user.credit_name');
     bodyFormData.set('credit_number', '1234567890123456');
-    bodyFormData.set('credit_expiration', '2018-11-30 11:01');
+    bodyFormData.set('credit_expiration', user.credit_expiration);
     bodyFormData.set('credit_security', '123');
     bodyFormData.set('depart_city', flightDetails.depart_city);
     bodyFormData.set('depart_state', flightDetails.depart_state);
@@ -55,7 +59,7 @@ class ShowConfirmationSectionClass extends React.Component {
       config: { headers: { 'Content-Type': 'multipart/form-data' } }
     })
       .then((response) => {
-        console.log(response);
+        //console.log(response);
         this.setState({
           bookingResult: 'Booking completed successfully',
           bookingStatus: true,
@@ -70,18 +74,20 @@ class ShowConfirmationSectionClass extends React.Component {
       });
   }
   render() {
-    const { classes, selectedFlights } = this.props;
-    const {bookingStatus, bookingResult,} = this.state;
+    Moment.locale('en');
+    var dt = '2016-05-02T00:00:00';
+    const { classes, selectedFlights, bookingInputs } = this.props;
+    const {bookingStatus, bookingResult} = this.state;
     const bull = <span className={classes.bullet}>•</span>;
     return (
-      <div class="confirmationSection" id="confirmationSection">
+      <div className="confirmationSection" id="confirmationSection">
         <Paper>
           <div className="reviewFlights">
           {selectedFlights.map((eachResult, index) => {
             return (<List component="nav" className="reviewFlightsEach">
             <ListItem button>
                 <Typography className={`reviewFlightHeading ${classes.title}`} color="textPrimary">
-                  Flight-{index} Details:
+                  Flight-{index+1} Details:
                 </Typography>
               </ListItem>
               <ListItem button>
@@ -100,7 +106,13 @@ class ShowConfirmationSectionClass extends React.Component {
                 <Typography className={classes.title} color="textSecondary">
                   Depart Date:
                 </Typography>
-                <ListItemText primary={eachResult.depart_datetime} />
+                <ListItemText primary={Moment(eachResult.depart_datetime).format('MM/DD/YYYY')} />
+              </ListItem>
+              <ListItem button>
+                <Typography className={classes.title} color="textSecondary">
+                  Depart Time:
+                </Typography>
+                <ListItemText primary={Moment(eachResult.depart_datetime).format('h:mm a')} />
               </ListItem>
               <ListItem button>
                 <Typography className={classes.title} color="textSecondary">
@@ -118,13 +130,19 @@ class ShowConfirmationSectionClass extends React.Component {
                 <Typography className={classes.title} color="textSecondary">
                   Arrival Date:
                 </Typography>
-                <ListItemText primary={eachResult.arrive_datetime} />
+                <ListItemText primary={Moment(eachResult.arrive_datetime).format('MM/DD/YYYY')} />
+              </ListItem>
+              <ListItem button>
+                <Typography className={classes.title} color="textSecondary">
+                  Arrival Time:
+                </Typography>
+                <ListItemText primary={Moment(eachResult.arrive_datetime).format('h:mm a')} />
               </ListItem>
               <ListItem button>
                 <Typography className={classes.title} color="textSecondary">
                   Passengers:
                 </Typography>
-                <ListItemText primary={eachResult.passengers} />
+                <ListItemText primary={bookingInputs.passengers} />
               </ListItem>
               <ListItem button>
                 <Typography className={classes.title} color="textSecondary">
@@ -181,7 +199,7 @@ class FlightResults extends React.Component {
 
   showConfirmationSec = () => {
     const { selectedFlights } = this.state;
-
+    //console.log(selectedFlights)
     if (selectedFlights.length < 1 && selectedFlights.length > 2) {
       alert("Please select two flights");
     } else {
@@ -208,8 +226,7 @@ class FlightResults extends React.Component {
     Moment.locale('en');
     var dt = '2016-05-02T00:00:00';
     const { classes, bookingInputs } = this.props;
-    const { searchResults, showConfirmationBox,
-      selectedFlights } = this.state;
+    const { searchResults, showConfirmationBox, selectedFlights } = this.state;
     return (
       <Paper className={classes.root}>
         <label> Please select flight from below </label>

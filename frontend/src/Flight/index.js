@@ -74,13 +74,13 @@ class Flight extends React.Component {
 
   getResults = () => {
     const { date, to, from, returndate, passengers } = this.state;
-    console.log(date, to, from);
+    //console.log(date, to, from, returndate, passengers);
     if (date && to && from){
    // Make a request for a user with a given ID
     axios.get(`http://localhost:8000/flights-api?fromcity=${from}&tocity=${to}&date=${date}&returndate=${returndate}&passengers=${passengers}`)
       .then((response) => {
         // handle success
-        console.log(JSON.parse(response.data));
+        //console.log(JSON.parse(response.data));
 
         this.setState({
           searchResults: JSON.parse(response.data),
