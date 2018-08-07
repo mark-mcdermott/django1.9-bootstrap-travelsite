@@ -1,11 +1,11 @@
 *.py[cod]
 db.sqlite3
 .DS_Store
-*/migrations/0*.py
+migrations/
 *.swp
-*/node_modules/
-*/coverage/
+node_modules/
+coverage/
 *.log
 *.env.*
 *.zip
-*/build/
+build/
