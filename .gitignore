@@ -1,24 +1,11 @@
+*.py[cod]
+db.sqlite3
 .DS_Store
-### backend
-backend/*.py[cod]
-backend/*.pyc
-backend/db.sqlite3
-backend/migrations/0*.py
-*.pyc
-### frontend
-# dependencies
-frontend/node_modules
-# testing
-frontend/coverage
-# production
-frontend/build
-# misc
-frontend/.env.local
-frontend/.env.development.local
-frontend/.env.test.local
-frontend/.env.production.local
-frontend/npm-debug.log*
-frontend/yarn-debug.log*
-frontend/yarn-error.log*
+*/migrations/0*.py
+*.swp
+*/node_modules/
+*/coverage/
+*.log
+*.env.*
 *.zip
-
+*/build/
