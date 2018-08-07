@@ -5,7 +5,7 @@
     flex-direction: row;
     align-items: center;
     align-content: center;
-    padding: 30px 45px;
+    padding: 10px 45px;
   }
   
   .userForm .userFormGroup {
@@ -68,4 +68,26 @@
   .bookingResponse {
     color: #000;
 }
+
+.userFormDeals {
+    display: flex;
+    flex-direction: column;
+}
+
+.groupOne, .groupTwo {
+    font-weight: normal;
+    color: white;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    padding: 5px 5px;
+}
   
+.searchStatusMessage {
+    color: #000;
+}
