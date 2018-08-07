@@ -22,6 +22,11 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     color: '#fff',
   },
+  root:{
+    width: '100%',
+    marginTop: theme.spacing.unit * 3,
+    overflowX: 'auto',
+  }
 });
 
 
@@ -61,6 +66,11 @@ class Deals extends React.Component {
     bodyFormData.set('arrive_state', flightDetails.arrive_state);
     bodyFormData.set('arrive_datetime', flightDetails.arrive_datetime);
     bodyFormData.set('price_high', flightDetails.price_high);
+    bodyFormData.set('hotel_name', flightDetails.hotel_name);
+    bodyFormData.set('hotel_street', flightDetails.hotel_street);
+    bodyFormData.set('hotel_city', flightDetails.hotel_city);
+    bodyFormData.set('hotel_state', flightDetails.hotel_state);
+    bodyFormData.set('hotel_zip', flightDetails.hotel_zip);
     bodyFormData.set('price_low', flightDetails.price_low);
     axios({
       method: 'post',
@@ -111,6 +121,7 @@ class Deals extends React.Component {
 
   getResults = () => {
     const { from, to, date, returndate, formPrice, toPrice } = this.state;
+    if(from && to && date && returndate) {
     // Make a request for a user with a given ID
    const getURL = `http://localhost:8000/deals-api?source=${from}&destination=${to}&fromdate=${date}&todate=${returndate}&lowprice=${formPrice}&highprice=${toPrice}`;
     axios.get(getURL)
@@ -127,6 +138,9 @@ class Deals extends React.Component {
       .then(() => {
         // always executed
       });
+    } else {
+      alert("Please enter values");
+    }
   }
   render() {
     const { classes } = this.props;
@@ -166,17 +180,17 @@ class Deals extends React.Component {
             <div className="userFormGroup passengers">
               <label htmlFor="date" className="formLabel">Price From:</label>
               <div className="formField">
-                <input type="number" id="location" className="formControl" placeholder="From Price" onChange={this.formPrice} />
+                <input type="number" id="location" className="formControl" placeholder="From Price" onChange={this.formPriceChange} />
               </div>
             </div>
             <div className="userFormGroup passengers">
               <label htmlFor="date" className="formLabel">Price To:</label>
               <div className="formField">
-                <input type="number" id="location" className="formControl" placeholder="To Price" onChange={this.toPrice} />
+                <input type="number" id="location" className="formControl" placeholder="To Price" onChange={this.toPriceChange} />
               </div>
             </div>
             <div className="userFormGroup">
-              <input type="button" name="submit" id="submit" value="Find Flights" className="SubmitButton" onClick={this.getResults} />
+              <input type="button" name="submit" id="submit" value="Find Deals" className="SubmitButton" onClick={this.getResults} />
             </div>
           </div>
         </form>
@@ -193,8 +207,13 @@ class Deals extends React.Component {
                   <TableCell >Arrival City</TableCell>
                   <TableCell >Arrival State</TableCell>
                   <TableCell >Arrival Time</TableCell>
-                  <TableCell >Actual Price</TableCell>
-                  <TableCell >Deal Price</TableCell>
+                  <TableCell >Price Low</TableCell>
+                  <TableCell >Price High</TableCell>
+                  <TableCell >Hotel Name</TableCell>
+                  <TableCell >Hotel Street</TableCell>
+                  <TableCell >Hotel City</TableCell>
+                  <TableCell >Hotel State</TableCell>
+                  <TableCell >Hotel Zip</TableCell>
                   <TableCell >Book</TableCell>
                 </TableRow>
               </TableHead>
@@ -210,9 +229,13 @@ class Deals extends React.Component {
                       <TableCell >{eachResult.fields.arrive_city}</TableCell>
                       <TableCell >{eachResult.fields.arrive_state}</TableCell>
                       <TableCell >{eachResult.fields.arrive_datetime}</TableCell>
-                      <TableCell >${eachResult.fields.price_high}</TableCell>
                       <TableCell >${eachResult.fields.price_low}</TableCell>
-
+                      <TableCell >${eachResult.fields.price_high}</TableCell>
+                      <TableCell >{eachResult.fields.hotel_name}</TableCell>
+                      <TableCell >{eachResult.fields.hotel_street}</TableCell>
+                      <TableCell >{eachResult.fields.hotel_city}</TableCell>
+                      <TableCell >{eachResult.fields.hotel_state}</TableCell>
+                      <TableCell >{eachResult.fields.hotel_zip}</TableCell>
                       <TableCell >
                         <div className="userFormGroup">
                           <input type="button" name="submit" id="submit" value="Book"
