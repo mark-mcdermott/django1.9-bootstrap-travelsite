@@ -53,7 +53,7 @@
 - model: webapp.flight
   pk: 5
   fields:
-    flight_id: 2
+    flight_id: 5
     depart_city: Austin
     depart_state: TX
     depart_datetime: 2018-9-25 11:02
@@ -66,7 +66,7 @@
 - model: webapp.flight
   pk: 5
   fields:
-    flight_id: 2
+    flight_id: 6
     depart_city: Austin
     depart_state: TX
     depart_datetime: 2018-9-25 11:02
@@ -79,7 +79,7 @@
 - model: webapp.flight
   pk: 6
   fields:
-    flight_id: 2
+    flight_id: 7
     depart_city: Austin
     depart_state: TX
     depart_datetime: 2018-8-5 13:02
@@ -92,7 +92,7 @@
 - model: webapp.flight
   pk: 7
   fields:
-    flight_id: 2
+    flight_id: 8
     depart_city: Austin
     depart_state: TX
     depart_datetime: 2018-8-5 01:01
@@ -105,7 +105,7 @@
 - model: webapp.flight
   pk: 8
   fields:
-    flight_id: 2
+    flight_id: 9
     depart_city: Austin
     depart_state: TX
     depart_datetime: 2018-8-5 01:01
