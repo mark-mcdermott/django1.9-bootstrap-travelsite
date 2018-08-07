@@ -1,0 +1,1 @@
+[{"model": "api.payment", "pk": 1, "fields": {"profile": 1, "card_type": "VS", "number": "1234123412341234", "cvc": "111", "name": "Bob Jones", "expiration": "1111-11-11"}}]

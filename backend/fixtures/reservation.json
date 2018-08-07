@@ -1,0 +1,1 @@
+[{"model": "api.reservation", "pk": 1, "fields": {"profile": 1, "hotel": 1, "rooms": 1, "guests": 2, "check_in_date": "1111-11-11", "duration": 2, "transaction": null}}]

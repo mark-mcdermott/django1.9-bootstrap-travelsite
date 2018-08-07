@@ -1,0 +1,1 @@
+[{"model": "api.address", "pk": 1, "fields": {"profile": 1, "street_number": "100", "street_name": "MyStreet", "city": "Austin", "state_provence": "TX", "postal_code": "7878", "country": "US", "address_type": "B"}}]

@@ -25,7 +25,7 @@ SECRET_KEY = '1ak-$qvjedw*iezwuhj@*a+sbq7eskx^*^lh3eej-#)^2rjmc@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['boz.io','travel.boz.io','beta.apps.boz.io','www.boz.io']
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
@@ -39,14 +39,16 @@ CORS_ORIGIN_REGEX_WHITELIST = (
 # Application definition
 
 INSTALLED_APPS = [
-    'webapp',
-    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'rest_framework',
+    'webapp',
+    'api',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -1,0 +1,1 @@
+[{"model": "api.flightinstance", "pk": 1, "fields": {"flight": 1, "capacity": 100, "date": "1111-11-11", "status": "FF"}}, {"model": "api.flightinstance", "pk": 2, "fields": {"flight": 2, "capacity": 100, "date": "1111-12-12", "status": "FF"}}]

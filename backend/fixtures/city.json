@@ -1,0 +1,1 @@
+[{"model": "api.city", "pk": 1, "fields": {"name": "Austin", "state": "TX", "country": "US"}}, {"model": "api.city", "pk": 2, "fields": {"name": "Houston", "state": "TX", "country": "US"}}, {"model": "api.city", "pk": 3, "fields": {"name": "Dallas", "state": "TX", "country": "US"}}]

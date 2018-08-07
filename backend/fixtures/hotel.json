@@ -1,0 +1,1 @@
+[{"model": "api.hotel", "pk": 1, "fields": {"name": "Hyatt", "number_of_rooms": 100, "cities": [1, 2]}}]
