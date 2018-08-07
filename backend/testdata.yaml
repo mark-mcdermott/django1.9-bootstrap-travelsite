@@ -82,13 +82,13 @@
     flight_id: 7
     depart_city: Austin
     depart_state: TX
-    depart_datetime: 2018-8-5 13:02
+    depart_datetime: 2018-8-7 13:02
     arrive_city: London
     arrive_state: Middlesex
-    arrive_datetime: 2018-8-5 23:30
+    arrive_datetime: 2018-8-7 17:30
     price: 200.00
     intl: true
-    status: in flight
+    status: delayed
 - model: webapp.flight
   pk: 7
   fields:
@@ -108,13 +108,13 @@
     flight_id: 9
     depart_city: Austin
     depart_state: TX
-    depart_datetime: 2018-8-5 01:01
+    depart_datetime: 2018-8-7 01:01
     arrive_city: London
     arrive_state: Middlesex
-    arrive_datetime: 2018-8-5 13:01
+    arrive_datetime: 2018-8-8 13:01
     price: 200.00
     intl: true
-    status: delayed
+    status: in flight
 - model: webapp.hotel
   pk: 1
   fields:

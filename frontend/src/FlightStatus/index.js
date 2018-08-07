@@ -103,7 +103,7 @@ class FlightStatus extends React.Component {
           </div>
         </form>
         <div className="flightDetails">
-          <label> Selected flight status is: </label>
+          {/* <label> Selected flight status is: </label> */}
           <p>{this.state.searchResults}</p>
           {this.state.showError && <p>{this.state.errorMsg}</p>}
         </div>
