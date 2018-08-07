@@ -1,11 +1,12 @@
-## Setup
+## setup
 
 ```
  $ pip install -r requirements.txt
  $ cd backend
- $ ./manage makemigrations
- $ ./manage migrate
- $ ./manage loaddata fixtures/db.json
+ $ ./manage.py makemigrations
+ $ ./manage.py migrate
+ $ ./manage.py createsuperuser --username bobby --email bobby@email.com
+ $ ./manage.py loaddata fixtures/*.json
 ```
 ## running
 ```
