@@ -58,8 +58,18 @@ class ShowConfirmationSectionClass extends React.Component {
     bodyFormData.set('arrive_state', flightDetails.arrive_state);
     bodyFormData.set('arrive_datetime', flightDetails.arrive_datetime);
     bodyFormData.set('num_passengers', passengers);
-    bodyFormData.set('mileage', '100');
-    bodyFormData.set('flight2', JSON.stringify(selectedFlights[1]));
+    bodyFormData.set('mileage', userDetails.user_miles);
+    if (selectedFlights[1]) {
+      bodyFormData.set('depart_city2', selectedFlights[1].depart_city);
+      bodyFormData.set('depart_state2', selectedFlights[1].depart_state);
+      bodyFormData.set('depart_datetime2', selectedFlights[1].depart_datetime);
+      bodyFormData.set('arrive_city2', selectedFlights[1].arrive_city);
+      bodyFormData.set('arrive_state2', selectedFlights[1].arrive_state);
+      bodyFormData.set('arrive_datetime2', selectedFlights[1].arrive_datetime);
+      bodyFormData.set('num_passengers2', passengers);
+      bodyFormData.set('mileage2', userDetails.user_miles);
+      // bodyFormData.set('flight2', JSON.stringify(selectedFlights[1]));
+    }
     axios({
       method: 'post',
       url: 'http://localhost:8000/booking-api',
@@ -87,6 +97,16 @@ class ShowConfirmationSectionClass extends React.Component {
     const { classes, selectedFlights, bookingInputs, userDetails } = this.props;
     const { bookingStatus, bookingResult } = this.state;
     const bull = <span className={classes.bullet}>•</span>;
+    let totlPrice = parseInt(selectedFlights[0].price);
+    if (selectedFlights[1]) {
+      totlPrice += parseInt(selectedFlights[1].price);
+    }
+    totlPrice += (totlPrice * 15 / 100);
+    let milesFactor = 25000;
+    if (selectedFlights[0].intl) {
+      milesFactor = 50000;
+    }
+    const creditCard = "" + userDetails.credit_number;
     return (
       <div className="confirmationSection" id="confirmationSection">
         <Paper>
@@ -164,24 +184,37 @@ class ShowConfirmationSectionClass extends React.Component {
           </div>
           <List component="nav" className="reviewFlightsUser">
             <ListItem button>
-                <Typography className={`reviewFlightHeading ${classes.title}`} color="textPrimary">
-                  User Miles:
+              <Typography className={`reviewFlightHeading ${classes.title}`} color="textPrimary">
+                Total Price(Including 15% taxes):
                   </Typography>
-                  <ListItemText primary={userDetails.user_miles} />
-              </ListItem>
-              <ListItem button>
-                <Typography className={`reviewMileageHeading ${classes.title}`} color="textPrimary">
-                  Please check this box if you want use miles for this booking:
+              <ListItemText primary={totlPrice} />
+            </ListItem>
+            <ListItem button>
+              <Typography className={`reviewFlightHeading ${classes.title}`} color="textPrimary">
+                User Miles:
                   </Typography>
-                  {(userDetails.user_miles > 25000 ) && (<Checkbox
-                    checked={this.state.userMiles}
-                    onChange={this.handleUserMilesSelected}
-                    value="checkedB"
-                    color="primary"
-                  />)}
-                  {(userDetails.user_miles < 25000) && (<p className="milleageError"> You do not have enough mileage to reddem.</p>)}
-              </ListItem>
-            </List>
+              <ListItemText primary={userDetails.user_miles} />
+            </ListItem>
+            <ListItem button>
+              <Typography className={`reviewMileageHeading ${classes.title}`} color="textPrimary">
+                Please check this box if you want use miles for this booking:
+                * Checkbox will be enabled only if you have enough mileage
+                  </Typography>
+              {(<Checkbox
+                checked={this.state.userMiles}
+                onChange={this.handleUserMilesSelected}
+                value="checkedB"
+                color="primary"
+                disabled={(userDetails.user_miles < milesFactor)}
+              />)}
+            </ListItem>
+            <ListItem button>
+              <Typography className={`reviewFlightHeading ${classes.title}`} color="textPrimary">
+                Default Payment Card Number:
+                  </Typography>
+              <ListItemText primary={creditCard.replace(/\d(?=\d{4})/g, "*")} />
+            </ListItem>
+          </List>
           <div className="userFormGroup">
             <input type="button" name="submit" id="submit" value="Confirm your Booking"
               className="SubmitButton"
