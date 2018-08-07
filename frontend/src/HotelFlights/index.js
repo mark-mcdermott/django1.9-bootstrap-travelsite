@@ -25,31 +25,31 @@ class Flight extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // from: '',
-      // to: '',
-      // date: '',
-      // searchResults: null,
-      // returndate: '',
-      // passengers: 0,
-      // bookingInputs: {
-      //   date: '',
-      //    to: '',
-      //     from: '',
-      //      returndate: '', passengers:0
-      // },
-      from: 'Philadelphia',
-      to: 'Dallas',
-      date: '2018-12-30',
+      from: '',
+      to: '',
+      date: '',
       searchResults: null,
-      searchHotelResults: [],
-      returndate: '2019-01-01',
-      passengers: 1,
+      returndate: '',
+      passengers: 0,
       bookingInputs: {
         date: '',
-        to: '',
-        from: '',
-        returndate: '', passengers: 0
+         to: '',
+          from: '',
+           returndate: '', passengers:0
       },
+      // from: 'Philadelphia',
+      // to: 'Dallas',
+      // date: '2018-12-30',
+      // searchResults: null,
+      // searchHotelResults: [],
+      // returndate: '2019-01-01',
+      // passengers: 1,
+      // bookingInputs: {
+      //   date: '',
+      //   to: '',
+      //   from: '',
+      //   returndate: '', passengers: 0
+      // },
     };
   }
 
