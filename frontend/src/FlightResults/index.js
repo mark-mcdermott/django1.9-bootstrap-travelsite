@@ -28,8 +28,16 @@ class ShowConfirmationSectionClass extends React.Component {
       bookingStatus: false,
     }
   }
+
+  handleUserMilesSelected = () => {
+    const { userMiles } = this.state;
+    this.setState({
+      userMiles: !userMiles,
+    });
+  }
+
   bookFlight = () => {
-    const { userDetails, bookingInputs: { date, to, from, returndate, passengers },selectedFlights } = this.props;
+    const { userDetails, bookingInputs: { date, to, from, returndate, passengers }, selectedFlights } = this.props;
     // console.log(user)
     const flightDetails = selectedFlights[0];
     var bodyFormData = new FormData();
@@ -76,83 +84,104 @@ class ShowConfirmationSectionClass extends React.Component {
   render() {
     Moment.locale('en');
     var dt = '2016-05-02T00:00:00';
-    const { classes, selectedFlights, bookingInputs } = this.props;
-    const {bookingStatus, bookingResult} = this.state;
+    const { classes, selectedFlights, bookingInputs, userDetails } = this.props;
+    const { bookingStatus, bookingResult } = this.state;
     const bull = <span className={classes.bullet}>•</span>;
     return (
       <div className="confirmationSection" id="confirmationSection">
         <Paper>
           <div className="reviewFlights">
-          {selectedFlights.map((eachResult, index) => {
-            return (<List component="nav" className="reviewFlightsEach">
+            {selectedFlights.map((eachResult, index) => {
+              return (<List component="nav" className="reviewFlightsEach">
+                <ListItem button>
+                  <Typography className={`reviewFlightHeading ${classes.title}`} color="textPrimary">
+                    Flight-{index + 1} Details:
+                </Typography>
+                </ListItem>
+                <ListItem button>
+                  <Typography className={classes.title} color="textSecondary">
+                    Depart City:
+                </Typography>
+                  <ListItemText primary={eachResult.depart_city} />
+                </ListItem>
+                <ListItem button>
+                  <Typography className={classes.title} color="textSecondary">
+                    Depart State:
+                </Typography>
+                  <ListItemText primary={eachResult.depart_state} />
+                </ListItem>
+                <ListItem button>
+                  <Typography className={classes.title} color="textSecondary">
+                    Depart Date:
+                </Typography>
+                  <ListItemText primary={Moment(eachResult.depart_datetime).format('MM/DD/YYYY')} />
+                </ListItem>
+                <ListItem button>
+                  <Typography className={classes.title} color="textSecondary">
+                    Depart Time:
+                </Typography>
+                  <ListItemText primary={Moment(eachResult.depart_datetime).format('h:mm a')} />
+                </ListItem>
+                <ListItem button>
+                  <Typography className={classes.title} color="textSecondary">
+                    Arrival City:
+                </Typography>
+                  <ListItemText primary={eachResult.arrive_city} />
+                </ListItem>
+                <ListItem button>
+                  <Typography className={classes.title} color="textSecondary">
+                    Arrival State:
+                </Typography>
+                  <ListItemText primary={eachResult.arrive_state} />
+                </ListItem>
+                <ListItem button>
+                  <Typography className={classes.title} color="textSecondary">
+                    Arrival Date:
+                </Typography>
+                  <ListItemText primary={Moment(eachResult.arrive_datetime).format('MM/DD/YYYY')} />
+                </ListItem>
+                <ListItem button>
+                  <Typography className={classes.title} color="textSecondary">
+                    Arrival Time:
+                </Typography>
+                  <ListItemText primary={Moment(eachResult.arrive_datetime).format('h:mm a')} />
+                </ListItem>
+                <ListItem button>
+                  <Typography className={classes.title} color="textSecondary">
+                    Passengers:
+                </Typography>
+                  <ListItemText primary={bookingInputs.passengers} />
+                </ListItem>
+                <ListItem button>
+                  <Typography className={classes.title} color="textSecondary">
+                    Price:
+                </Typography>
+                  <ListItemText primary={eachResult.price} />
+                </ListItem>
+
+              </List>)
+            })}
+          </div>
+          <List component="nav" className="reviewFlightsUser">
             <ListItem button>
                 <Typography className={`reviewFlightHeading ${classes.title}`} color="textPrimary">
-                  Flight-{index+1} Details:
-                </Typography>
+                  User Miles:
+                  </Typography>
+                  <ListItemText primary={userDetails.user_miles} />
               </ListItem>
               <ListItem button>
-                <Typography className={classes.title} color="textSecondary">
-                  Depart City:
-                </Typography>
-                <ListItemText primary={eachResult.depart_city} />
+                <Typography className={`reviewMileageHeading ${classes.title}`} color="textPrimary">
+                  Please check this box if you want use miles for this booking:
+                  </Typography>
+                  {(userDetails.user_miles > 25000 ) && (<Checkbox
+                    checked={this.state.userMiles}
+                    onChange={this.handleUserMilesSelected}
+                    value="checkedB"
+                    color="primary"
+                  />)}
+                  {(userDetails.user_miles < 25000) && (<p className="milleageError"> You do not have enough mileage to reddem.</p>)}
               </ListItem>
-              <ListItem button>
-                <Typography className={classes.title} color="textSecondary">
-                  Depart State:
-                </Typography>
-                <ListItemText primary={eachResult.depart_state} />
-              </ListItem>
-              <ListItem button>
-                <Typography className={classes.title} color="textSecondary">
-                  Depart Date:
-                </Typography>
-                <ListItemText primary={Moment(eachResult.depart_datetime).format('MM/DD/YYYY')} />
-              </ListItem>
-              <ListItem button>
-                <Typography className={classes.title} color="textSecondary">
-                  Depart Time:
-                </Typography>
-                <ListItemText primary={Moment(eachResult.depart_datetime).format('h:mm a')} />
-              </ListItem>
-              <ListItem button>
-                <Typography className={classes.title} color="textSecondary">
-                  Arrival City:
-                </Typography>
-                <ListItemText primary={eachResult.arrive_city} />
-              </ListItem>
-              <ListItem button>
-                <Typography className={classes.title} color="textSecondary">
-                  Arrival State:
-                </Typography>
-                <ListItemText primary={eachResult.arrive_state} />
-              </ListItem>
-              <ListItem button>
-                <Typography className={classes.title} color="textSecondary">
-                  Arrival Date:
-                </Typography>
-                <ListItemText primary={Moment(eachResult.arrive_datetime).format('MM/DD/YYYY')} />
-              </ListItem>
-              <ListItem button>
-                <Typography className={classes.title} color="textSecondary">
-                  Arrival Time:
-                </Typography>
-                <ListItemText primary={Moment(eachResult.arrive_datetime).format('h:mm a')} />
-              </ListItem>
-              <ListItem button>
-                <Typography className={classes.title} color="textSecondary">
-                  Passengers:
-                </Typography>
-                <ListItemText primary={bookingInputs.passengers} />
-              </ListItem>
-              <ListItem button>
-                <Typography className={classes.title} color="textSecondary">
-                  Price:
-                </Typography>
-                <ListItemText primary={eachResult.price} />
-              </ListItem>
-            </List>)
-          })}
-          </div>
+            </List>
           <div className="userFormGroup">
             <input type="button" name="submit" id="submit" value="Confirm your Booking"
               className="SubmitButton"
@@ -287,9 +316,9 @@ class FlightResults extends React.Component {
         </div>
 
         {showConfirmationBox && <ShowConfirmationSection
-        selectedFlights={selectedFlights}
-        bookingInputs={bookingInputs}
-        userDetails={this.props.userDetails}
+          selectedFlights={selectedFlights}
+          bookingInputs={bookingInputs}
+          userDetails={this.props.userDetails}
         />}
       </Paper>
     );
