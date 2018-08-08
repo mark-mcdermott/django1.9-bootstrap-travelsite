@@ -6,7 +6,7 @@
  $ ./manage.py makemigrations
  $ ./manage.py migrate
  $ ./manage.py createsuperuser --username bobby --email bobby@email.com
- $ ./manage.py loaddata fixtures/db.json
+ $ ./manage.py loaddata fixtures/*.yaml
 ```
 ## running
 ```

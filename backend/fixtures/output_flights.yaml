@@ -1,0 +1,2548 @@
+- model: webapp.flight
+  pk: 70
+  fields: 
+  flight_id: 6001
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 8285
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 71
+  fields: 
+  flight_id: 6002
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 1970
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 72
+  fields: 
+  flight_id: 6003
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 3657
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 73
+  fields: 
+  flight_id: 6004
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 1405
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 74
+  fields: 
+  flight_id: 6005
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 6782
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 75
+  fields: 
+  flight_id: 6006
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 7736
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 76
+  fields: 
+  flight_id: 6007
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 3632
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 77
+  fields: 
+  flight_id: 6008
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 9968
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 78
+  fields: 
+  flight_id: 6009
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 2518
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 79
+  fields: 
+  flight_id: 6010
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 6413
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 80
+  fields: 
+  flight_id: 6011
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 5542
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 81
+  fields: 
+  flight_id: 6012
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 5702
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 82
+  fields: 
+  flight_id: 6013
+  depart_city: Austin
+  depart_state: Tx
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 6272
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 83
+  fields: 
+  flight_id: 6014
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 3621
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 84
+  fields: 
+  flight_id: 6015
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 1624
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 85
+  fields: 
+  flight_id: 6016
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 9614
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 86
+  fields: 
+  flight_id: 6017
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 1570
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 87
+  fields: 
+  flight_id: 6018
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 2276
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 88
+  fields: 
+  flight_id: 6019
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 4282
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 89
+  fields: 
+  flight_id: 6020
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 4307
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 90
+  fields: 
+  flight_id: 6021
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 1806
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 91
+  fields: 
+  flight_id: 6022
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 7194
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 92
+  fields: 
+  flight_id: 6023
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 5860
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 93
+  fields: 
+  flight_id: 6024
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 2642
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 94
+  fields: 
+  flight_id: 6025
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 8298
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 95
+  fields: 
+  flight_id: 6026
+  depart_city: Boston
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 7926
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 96
+  fields: 
+  flight_id: 6027
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 5967
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 97
+  fields: 
+  flight_id: 6028
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 3005
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 98
+  fields: 
+  flight_id: 6029
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 9109
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 99
+  fields: 
+  flight_id: 6030
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 5879
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 100
+  fields: 
+  flight_id: 6031
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 9044
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 101
+  fields: 
+  flight_id: 6032
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 5722
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 102
+  fields: 
+  flight_id: 6033
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 7827
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 103
+  fields: 
+  flight_id: 6034
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 6059
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 104
+  fields: 
+  flight_id: 6035
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 2156
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 105
+  fields: 
+  flight_id: 6036
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 1987
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 106
+  fields: 
+  flight_id: 6037
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 8067
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 107
+  fields: 
+  flight_id: 6038
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 9505
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 108
+  fields: 
+  flight_id: 6039
+  depart_city: San Fransico
+  depart_state: SF
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 5068
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 109
+  fields: 
+  flight_id: 6040
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 6518
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 110
+  fields: 
+  flight_id: 6041
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 6260
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 111
+  fields: 
+  flight_id: 6042
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 7630
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 112
+  fields: 
+  flight_id: 6043
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 9249
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 113
+  fields: 
+  flight_id: 6044
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 3377
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 114
+  fields: 
+  flight_id: 6045
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 5998
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 115
+  fields: 
+  flight_id: 6046
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 1119
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 116
+  fields: 
+  flight_id: 6047
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 8036
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 117
+  fields: 
+  flight_id: 6048
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 9301
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 118
+  fields: 
+  flight_id: 6049
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 6288
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 119
+  fields: 
+  flight_id: 6050
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 1880
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 120
+  fields: 
+  flight_id: 6051
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 7279
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 121
+  fields: 
+  flight_id: 6052
+  depart_city: New Jersy
+  depart_state: NJ
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 4626
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 122
+  fields: 
+  flight_id: 6053
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 5184
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 123
+  fields: 
+  flight_id: 6054
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 9455
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 124
+  fields: 
+  flight_id: 6055
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 5625
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 125
+  fields: 
+  flight_id: 6056
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 3400
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 126
+  fields: 
+  flight_id: 6057
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 4722
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 127
+  fields: 
+  flight_id: 6058
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 5746
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 128
+  fields: 
+  flight_id: 6059
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 6872
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 129
+  fields: 
+  flight_id: 6060
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 4162
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 130
+  fields: 
+  flight_id: 6061
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 5564
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 131
+  fields: 
+  flight_id: 6062
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 8570
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 132
+  fields: 
+  flight_id: 6063
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 6852
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 133
+  fields: 
+  flight_id: 6064
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 5035
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 134
+  fields: 
+  flight_id: 6065
+  depart_city: Seattle
+  depart_state: PL
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 7310
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 135
+  fields: 
+  flight_id: 6066
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 4908
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 136
+  fields: 
+  flight_id: 6067
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 8735
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 137
+  fields: 
+  flight_id: 6068
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 6640
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 138
+  fields: 
+  flight_id: 6069
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 9351
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 139
+  fields: 
+  flight_id: 6070
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 4603
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 140
+  fields: 
+  flight_id: 6071
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 8844
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 141
+  fields: 
+  flight_id: 6072
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 8348
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 142
+  fields: 
+  flight_id: 6073
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 6995
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 143
+  fields: 
+  flight_id: 6074
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 9633
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 144
+  fields: 
+  flight_id: 6075
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 8162
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 145
+  fields: 
+  flight_id: 6076
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 3052
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 146
+  fields: 
+  flight_id: 6077
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 5526
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 147
+  fields: 
+  flight_id: 6078
+  depart_city: Washington DC
+  depart_state: DC
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 4574
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 148
+  fields: 
+  flight_id: 6079
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 3218
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 149
+  fields: 
+  flight_id: 6080
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 7464
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 150
+  fields: 
+  flight_id: 6081
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 7991
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 151
+  fields: 
+  flight_id: 6082
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 2384
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 152
+  fields: 
+  flight_id: 6083
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 3853
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 153
+  fields: 
+  flight_id: 6084
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 9844
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 154
+  fields: 
+  flight_id: 6085
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 2665
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 155
+  fields: 
+  flight_id: 6086
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 2725
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 156
+  fields: 
+  flight_id: 6087
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 8242
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 157
+  fields: 
+  flight_id: 6088
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 2614
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 158
+  fields: 
+  flight_id: 6089
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 2511
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 159
+  fields: 
+  flight_id: 6090
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 1127
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 160
+  fields: 
+  flight_id: 6091
+  depart_city: Saltlake city
+  depart_state: UT
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 5732
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 161
+  fields: 
+  flight_id: 6092
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 8773
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 162
+  fields: 
+  flight_id: 6093
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 3108
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 163
+  fields: 
+  flight_id: 6094
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 8240
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 164
+  fields: 
+  flight_id: 6095
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 7129
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 165
+  fields: 
+  flight_id: 6096
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 3658
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 166
+  fields: 
+  flight_id: 6097
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 8622
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 167
+  fields: 
+  flight_id: 6098
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 2248
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 168
+  fields: 
+  flight_id: 6099
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 4135
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 169
+  fields: 
+  flight_id: 6100
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 6637
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 170
+  fields: 
+  flight_id: 6101
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 2253
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 171
+  fields: 
+  flight_id: 6102
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 2662
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 172
+  fields: 
+  flight_id: 6103
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 7217
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 173
+  fields: 
+  flight_id: 6104
+  depart_city: Hyderabad
+  depart_state: TN
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 6269
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 174
+  fields: 
+  flight_id: 6105
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 9144
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 175
+  fields: 
+  flight_id: 6106
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 3764
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 176
+  fields: 
+  flight_id: 6107
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 4320
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 177
+  fields: 
+  flight_id: 6108
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 2371
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 178
+  fields: 
+  flight_id: 6109
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 7864
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 179
+  fields: 
+  flight_id: 6110
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 7326
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 180
+  fields: 
+  flight_id: 6111
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 4995
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 181
+  fields: 
+  flight_id: 6112
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 5292
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 182
+  fields: 
+  flight_id: 6113
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 4195
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 183
+  fields: 
+  flight_id: 6114
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 4017
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 184
+  fields: 
+  flight_id: 6115
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 2593
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 185
+  fields: 
+  flight_id: 6116
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 8292
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 186
+  fields: 
+  flight_id: 6117
+  depart_city: Cairo
+  depart_state: EG
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 2115
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 187
+  fields: 
+  flight_id: 6118
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 2095
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 188
+  fields: 
+  flight_id: 6119
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 8050
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 189
+  fields: 
+  flight_id: 6120
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 4339
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 190
+  fields: 
+  flight_id: 6121
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 5910
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 191
+  fields: 
+  flight_id: 6122
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 7592
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 192
+  fields: 
+  flight_id: 6123
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 6520
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 193
+  fields: 
+  flight_id: 6124
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 1306
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 194
+  fields: 
+  flight_id: 6125
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 2907
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 195
+  fields: 
+  flight_id: 6126
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 4829
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 196
+  fields: 
+  flight_id: 6127
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 6681
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 197
+  fields: 
+  flight_id: 6128
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 2379
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 198
+  fields: 
+  flight_id: 6129
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 8751
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 199
+  fields: 
+  flight_id: 6130
+  depart_city: Beijing
+  depart_state: BG
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 5935
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 200
+  fields: 
+  flight_id: 6131
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 9737
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 201
+  fields: 
+  flight_id: 6132
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 9434
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 202
+  fields: 
+  flight_id: 6133
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 7359
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 203
+  fields: 
+  flight_id: 6134
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 4807
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 204
+  fields: 
+  flight_id: 6135
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 9001
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 205
+  fields: 
+  flight_id: 6136
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 3726
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 206
+  fields: 
+  flight_id: 6137
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 4861
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 207
+  fields: 
+  flight_id: 6138
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 4026
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 208
+  fields: 
+  flight_id: 6139
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 8142
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 209
+  fields: 
+  flight_id: 6140
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 5358
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 210
+  fields: 
+  flight_id: 6141
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 8070
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 211
+  fields: 
+  flight_id: 6142
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 4075
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 212
+  fields: 
+  flight_id: 6143
+  depart_city: Sydney
+  depart_state: AU
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 9963
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 213
+  fields: 
+  flight_id: 6144
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 9640
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 214
+  fields: 
+  flight_id: 6145
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 5907
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 215
+  fields: 
+  flight_id: 6146
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 5560
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 216
+  fields: 
+  flight_id: 6147
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 2739
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 217
+  fields: 
+  flight_id: 6148
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 4731
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 218
+  fields: 
+  flight_id: 6149
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 2050
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 219
+  fields: 
+  flight_id: 6150
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 2283
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 220
+  fields: 
+  flight_id: 6151
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 5163
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 221
+  fields: 
+  flight_id: 6152
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 6441
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 222
+  fields: 
+  flight_id: 6153
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 8014
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 223
+  fields: 
+  flight_id: 6154
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 2710
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 224
+  fields: 
+  flight_id: 6155
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 1814
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 225
+  fields: 
+  flight_id: 6156
+  depart_city: Moscow
+  depart_state: RU
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 8112
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 226
+  fields: 
+  flight_id: 6157
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 4182
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 227
+  fields: 
+  flight_id: 6158
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 3287
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 228
+  fields: 
+  flight_id: 6159
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 2062
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 229
+  fields: 
+  flight_id: 6160
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 3577
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 230
+  fields: 
+  flight_id: 6161
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 9697
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 231
+  fields: 
+  flight_id: 6162
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 8436
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 232
+  fields: 
+  flight_id: 6163
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 6131
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 233
+  fields: 
+  flight_id: 6164
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 3548
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 234
+  fields: 
+  flight_id: 6165
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 5224
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 235
+  fields: 
+  flight_id: 6166
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 7602
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 236
+  fields: 
+  flight_id: 6167
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 7724
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 237
+  fields: 
+  flight_id: 6168
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 5118
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 238
+  fields: 
+  flight_id: 6169
+  depart_city: London
+  depart_state: EN
+  depart_datetime: 2018-08-07
+  arrive_city: Dubai
+  arrive_state: SA
+  arrive_datetime: 2018-08-08
+  price: 1013
+  miles: 4057
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 239
+  fields: 
+  flight_id: 6170
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: Austin
+  arrive_state: Tx
+  arrive_datetime: 2018-08-08
+  price: 1000
+  miles: 4771
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 240
+  fields: 
+  flight_id: 6171
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: Boston
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1001
+  miles: 9396
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 241
+  fields: 
+  flight_id: 6172
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: San Fransico
+  arrive_state: SF
+  arrive_datetime: 2018-08-08
+  price: 1002
+  miles: 7178
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 242
+  fields: 
+  flight_id: 6173
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: New Jersy
+  arrive_state: NJ
+  arrive_datetime: 2018-08-08
+  price: 1003
+  miles: 3233
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 243
+  fields: 
+  flight_id: 6174
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: Seattle
+  arrive_state: PL
+  arrive_datetime: 2018-08-08
+  price: 1004
+  miles: 6544
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 244
+  fields: 
+  flight_id: 6175
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: Washington DC
+  arrive_state: DC
+  arrive_datetime: 2018-08-08
+  price: 1005
+  miles: 7949
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 245
+  fields: 
+  flight_id: 6176
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: Saltlake city
+  arrive_state: UT
+  arrive_datetime: 2018-08-08
+  price: 1006
+  miles: 1053
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 246
+  fields: 
+  flight_id: 6177
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: Hyderabad
+  arrive_state: TN
+  arrive_datetime: 2018-08-08
+  price: 1007
+  miles: 9451
+  intl: True
+  status: DL
+- model: webapp.flight
+  pk: 247
+  fields: 
+  flight_id: 6178
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: Cairo
+  arrive_state: EG
+  arrive_datetime: 2018-08-08
+  price: 1008
+  miles: 2828
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 248
+  fields: 
+  flight_id: 6179
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: Beijing
+  arrive_state: BG
+  arrive_datetime: 2018-08-08
+  price: 1009
+  miles: 6990
+  intl: True
+  status: AR
+- model: webapp.flight
+  pk: 249
+  fields: 
+  flight_id: 6180
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: Sydney
+  arrive_state: AU
+  arrive_datetime: 2018-08-08
+  price: 1010
+  miles: 7751
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 250
+  fields: 
+  flight_id: 6181
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: Moscow
+  arrive_state: RU
+  arrive_datetime: 2018-08-08
+  price: 1011
+  miles: 4670
+  intl: True
+  status: IN
+- model: webapp.flight
+  pk: 251
+  fields: 
+  flight_id: 6182
+  depart_city: Dubai
+  depart_state: SA
+  depart_datetime: 2018-08-07
+  arrive_city: London
+  arrive_state: EN
+  arrive_datetime: 2018-08-08
+  price: 1012
+  miles: 9366
+  intl: True
+  status: DL
