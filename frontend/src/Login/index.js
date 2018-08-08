@@ -122,7 +122,7 @@ class Signup extends React.Component {
         bodyFormData.set('name_first', firstName);
         bodyFormData.set('name_last', lastName);
         bodyFormData.set('name_middle', middleName);
-        bodyFormData.set('mailingAddr', mailingAddr);
+        bodyFormData.set('address_street', mailingAddr);
         bodyFormData.set('email', email);
         axios({
           method: 'post',

@@ -44,9 +44,8 @@ class Profile extends Component {
                 Address:
                 </label>
                 <label className="labelValue">
-                  {userDetails.address_street},
-                  {userDetails.address_city},
-                  {userDetails.address_state} - {userDetails.address_zip}
+                  {userDetails.address_street}
+                  
                 </label>
               </div>
         </div>
