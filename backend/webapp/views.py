@@ -4,9 +4,11 @@ from django.http import JsonResponse
 from django.core import serializers
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from datetime import datetime
+from datetime import datetime, timedelta
 from decimal import Decimal
 import time
+import pytz
+
 
 def index(request):
     return render(request, 'home.html', {
@@ -284,16 +286,16 @@ def getFlightStatusApi(request):
             fmt = '%Y-%m-%d %H:%M'
             flight = Flight.objects.get(flight_id=flightId)
             status = flight.status
-            # expected = flight.arrive_datetime
-            # estimated = flight.est_arrive_datetime
-            # difference = int((estimated - expected).total_seconds() / 60)
-            # if difference < -5:
-            #     status = str(abs(difference)) + ' minutes early'
-            # elif difference > 5:
-            #     status = str(difference) + ' minutes late'
-            # else:
-            #     status = 'on time'
-            return HttpResponse(status)
+            now = datetime.now()
+            timezone = pytz.timezone("US/Central")
+            now_localized = timezone.localize(now)
+            depart = flight.depart_datetime - timedelta(hours=5)
+            arrive = flight.arrive_datetime - timedelta(hours=5)
+            if (depart > now_localized):
+                 statusString = 'Flight set to depart at ' + depart.strftime('%H:%M%p %-m/%-d/%y') + '.  Status will be available upon takeoff.'
+            else:
+                statusString = 'Flight status: ' + status
+            return HttpResponse(statusString)
     elif request.method == "POST":
         return HttpResponse("post get flight status request")
 

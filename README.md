@@ -1,31 +1,24 @@
-## To Setup
+## setup
 
-`cd backend`
+```
+ $ pip install -r requirements.txt
+ $ cd backend
+ $ ./manage.py makemigrations
+ $ ./manage.py migrate
+ $ ./manage.py createsuperuser --username bobby --email bobby@email.com
+ $ ./manage.py loaddata fixtures/db.json
+```
+## running
+```
+ $ ./manage runserver > dev.log 2>&1 &  # run in the background
+ $ cd ../frontend
+ $ npm install
+ $ npm run dev
+```
+## quitting
+```
+ $ ^C # ctrl-c to quit npm dev server
+ $ fg # to bring django dev server into the foreground
+ $ ^C # ctrl-c to quit django dev server
+```
 
-`pip install pyyaml`
-
-`pip install django-cors-headers`
-
-`python manage.py makemigrations`
-
-`python manage.py migrate`
-
-`python manage.py loaddata testdata.yaml`
-
-`cd ../frontend`
-
-`npm install`
-
-## To Run
-
-in one terminal tab:
-
-`cd backend`
-
-`python manage.py runserver`
-
-in another terminal tab:
-
- `cd frontend`
-
- `npm run dev`

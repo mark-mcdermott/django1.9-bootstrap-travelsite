@@ -119,9 +119,9 @@ class Signup extends React.Component {
         bodyFormData.set('credit_security', creditSecurity);
         bodyFormData.set('username', username);
         bodyFormData.set('password', password);
-        bodyFormData.set('firstName', firstName);
-        bodyFormData.set('lastName', lastName);
-        bodyFormData.set('middleName', middleName);
+        bodyFormData.set('name_first', firstName);
+        bodyFormData.set('name_last', lastName);
+        bodyFormData.set('name_middle', middleName);
         bodyFormData.set('mailingAddr', mailingAddr);
         bodyFormData.set('email', email);
         axios({
