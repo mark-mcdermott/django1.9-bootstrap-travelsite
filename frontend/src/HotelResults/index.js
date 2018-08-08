@@ -39,6 +39,10 @@ class HotelResults extends React.Component {
     this.setState({
       hotelDetails,
     });
+
+    if(this.props.getSelectedHotel) {
+      this.props.getSelectedHotel(hotelDetails);
+    }
   }
 
   bookHotel = (hotelDetails) => {

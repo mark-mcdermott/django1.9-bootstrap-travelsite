@@ -18,6 +18,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
 import Moment from 'moment';
+import TableSortLabel from '@material-ui/core/TableSortLabel';
+import Tooltip from '@material-ui/core/Tooltip';
 import './flightresults.css';
 
 class ShowConfirmationSectionClass extends React.Component {
@@ -249,6 +251,7 @@ class FlightResults extends React.Component {
       bookingStatus: false,
       selectedFlights: [],
       showConfirmationBox: false,
+      orderBy: '1234'
     }
   }
 
@@ -282,19 +285,72 @@ class FlightResults extends React.Component {
     this.setState({
       selectedFlights,
     });
+    if(this.props.getSelectedFlight){
+      this.props.getSelectedFlight(flightDetails);
+    }
+    
+  }
+
+  createSortHandler = (id) => {
+    const { order } = this.state;
+    let newOrder = '';
+    if(order === 'desc') {
+      newOrder = 'asc'
+    } else if(order === 'asc') {
+      newOrder = 'desc'
+    }
+    this.setState({
+      orderBy: id,
+      order: newOrder,
+    });
   }
 
   render() {
     Moment.locale('en');
     var dt = '2016-05-02T00:00:00';
     const { classes, bookingInputs } = this.props;
-    const { searchResults, showConfirmationBox, selectedFlights } = this.state;
+    const { searchResults, showConfirmationBox, selectedFlights, orderBy, order } = this.state;
+    const tableHeaders = [
+      {id: '1234', label: 'Depart City', numeric: false },
+      {id: '1235', label: 'Departure State', numeric: false },
+      {id: '1242', label: 'Depart Date', numeric: false },
+      {id: '1236', label: 'Depart Time', numeric: false },
+      {id: '1237', label: 'Arrival City', numeric: false },
+      {id: '1238', label: 'Arrival State', numeric: false },
+      {id: '1239', label: 'Arrival Date', numeric: false },
+      {id: '1240', label: 'Arrival Time', numeric: false },
+      {id: '1241', label: 'Price', numeric: true },
+    ];
     return (
       <Paper className={classes.root}>
         <label> Please select flight from below </label>
         <Table className={classes.table}>
           <TableHead>
             <TableRow>
+            {/* {tableHeaders.map(column => {
+                return (
+                  <TableCell
+                    key={column.id}
+                    numeric={column.numeric}
+                    padding={column.disablePadding ? 'none' : 'default'}
+                    sortDirection={orderBy === column.id ? order : false}
+                  >
+                    <Tooltip
+                      title="Sort"
+                      placement={column.numeric ? 'bottom-end' : 'bottom-start'}
+                      enterDelay={300}
+                    >
+                      <TableSortLabel
+                        direction={order}
+                        active={orderBy === column.id}
+                        onClick={() => this.createSortHandler(column.id)}
+                      >
+                        {column.label}
+                      </TableSortLabel>
+                    </Tooltip>
+                  </TableCell>
+                );
+              }, this)} */}
               <TableCell>Depart City</TableCell>
               <TableCell>Departure State </TableCell>
               <TableCell>Departure Date</TableCell>
