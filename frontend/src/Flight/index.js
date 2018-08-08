@@ -104,39 +104,51 @@ class Flight extends React.Component {
   render() {
     return (
       <div className={this.props.className}>
-      <form className="userFormFlight">
-      <div className="userFormGroup">
-        <label htmlFor="date" className="formLabel">Source:</label>
-          <div className="formField">
-            <input type="text" id="location" className="formControl" placeholder="Search Location" onChange={this.fromChange} />
-          </div>
-          </div>
-          <div className="userFormGroup">
-            <label htmlFor="date" className="formLabel">Destination:</label>
-            <div className="formField">
-              <input type="text" id="location" className="formControl" placeholder="Search Location" onChange={this.toChange} />
+        <form className="flightsFormColumnLayout">
+          <div className="formRow">
+            <div className="formCol">
+              <div className="userFormGroup">
+                <label htmlFor="date" className="formLabel">Source:</label>
+                <div className="formField">
+                  <input type="text" id="location" className="formControl" placeholder="Search Location" onChange={this.fromChange} />
+                </div>
+              </div>
+              <div className="userFormGroup">
+                <label htmlFor="date" className="formLabel">Destination:</label>
+                <div className="formField">
+                  <input type="text" id="location" className="formControl" placeholder="Search Location" onChange={this.toChange} />
+                </div>
+              </div>
+            </div>
+            <div className="formCol">
+              <div className="userFormGroup">
+                <label htmlFor="date" className="formLabel">Departure Date:</label>
+                <div className="formField">
+                  <input type="date" id="location" className="formControl" placeholder="Search Location" onChange={this.dateChange} />
+                </div>
+              </div>
+              <div className="userFormGroup">
+                <label htmlFor="date" className="formLabel">Return Date:</label>
+                <div className="formField">
+                  <input type="date" id="location" className="formControl" placeholder="Search Location" onChange={this.returnDateChange} />
+                </div>
+              </div>
+            </div>
+            <div className="formCol">
+              <div className="userFormGroup passengers">
+                <label htmlFor="date" className="formLabel">Passengers:</label>
+                <div className="formField">
+                  <input type="number" id="location" className="formControl" placeholder="Passengers" onChange={this.passengersChange} />
+                </div>
+              </div>
             </div>
           </div>
-          <div className="userFormGroup">
-            <label htmlFor="date" className="formLabel">Departure Date:</label>
-            <div className="formField">
-              <input type="date" id="location" className="formControl" placeholder="Search Location" onChange={this.dateChange} />
+          <div className="formRow">
+            <div className="formCol">
+              <div className="userFormGroup">
+                <input type="button" name="submit" id="submit" value="Find Flights" className="SubmitButton" onClick={this.getResults} />
+              </div>
             </div>
-          </div>
-          <div className="userFormGroup">
-            <label htmlFor="date" className="formLabel">Return Date:</label>
-            <div className="formField">
-              <input type="date" id="location" className="formControl" placeholder="Search Location" onChange={this.returnDateChange} />
-            </div>
-          </div>
-          <div className="userFormGroup passengers">
-            <label htmlFor="date" className="formLabel">Passengers:</label>
-            <div className="formField">
-              <input type="number" id="location" className="formControl" placeholder="Passengers" onChange={this.passengersChange} />
-            </div>
-          </div>
-          <div className="userFormGroup">
-            <input type="button" name="submit" id="submit" value="Find Flights" className="SubmitButton" onClick={this.getResults} />
           </div>
         </form>
         <div className="flightDetails">
@@ -150,7 +162,7 @@ class Flight extends React.Component {
           {(this.state.searchResults === null) && (<p> Please enter search values</p>)}
         </div>
 
-        </div>
+      </div>
     );
   };
 }
