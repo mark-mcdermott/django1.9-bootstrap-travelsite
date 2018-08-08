@@ -56,11 +56,12 @@ td.MuiTableCell-root-92 {
 }
 .historyTable{
     width: 80%;
-    margin: 0 auto;
+    margin-left: 10%;
+   /* margin: 0 auto;*/
     padding: 30px;
     max-width: 1200px;
     background-color: #2C2E3E !important;
-    margin: 0 !important;
+   /* margin: 0 !important;*/
 }
 
 .historyTable table{

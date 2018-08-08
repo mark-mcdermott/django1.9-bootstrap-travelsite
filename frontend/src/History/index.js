@@ -88,7 +88,7 @@ class History extends React.Component {
               <TableCell>Arrival State</TableCell>
               <TableCell>Arrival Date</TableCell>
               <TableCell>Arrival Time</TableCell>
-              <TableCell>Price</TableCell>
+              
             </TableRow>
           </TableHead>
           <TableBody>
@@ -105,7 +105,7 @@ class History extends React.Component {
                   <TableCell>{eachResult.fields.arrive_state}</TableCell>
                   <TableCell>{Moment(eachResult.fields.arrive_datetime).format('MM/DD/YYYY')}</TableCell>
                   <TableCell>{Moment(eachResult.fields.arrive_datetime).format('h:mm a')}</TableCell>
-                  <TableCell>{eachResult.fields.price}</TableCell>
+                 
                 </TableRow>
               );
             })}
